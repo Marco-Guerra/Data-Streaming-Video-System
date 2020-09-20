@@ -4,6 +4,7 @@
 #define MAX_GENRES 10
 
 #include <iostream>
+
 using namespace std;
 
 // definição da estrutura para armazenar o tempo de duração de um vídeo

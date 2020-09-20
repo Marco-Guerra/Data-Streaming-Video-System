@@ -1,4 +1,9 @@
-#include "movie_validator.h"
+#include "video_validator.h"
+
+#include <iostream>
+#include "../../structures/video_structure.h"
+
+using namespace std;
 
 bool validateVideoIdentification(string identification) {
 

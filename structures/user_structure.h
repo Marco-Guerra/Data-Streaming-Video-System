@@ -1,9 +1,10 @@
-#ifndef STRUCTURES
-#define STRUCTURES
+#ifndef USER_STRUCTURES
+#define USER_STRUCTURES
 
 #define MAX_HISTORY 100
 
 #include <iostream>
+
 using namespace std;
 
 // definição da estrutura para armazenar a data de nascimento de um usuário

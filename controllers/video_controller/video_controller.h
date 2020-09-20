@@ -1,0 +1,4 @@
+#ifndef VIDEO_CONTROLLER
+#define VIDEO_CONTROLLER
+
+#endif

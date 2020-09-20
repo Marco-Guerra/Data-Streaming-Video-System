@@ -1,4 +1,0 @@
-#ifndef MOVIE_CONTROLLER
-#define MOVIE_CONTROLLER
-
-#endif

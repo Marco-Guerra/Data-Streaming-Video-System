@@ -1,4 +1,0 @@
-#ifndef PRINT_STDIO_MOVIE
-#define PRINT_STDIO_MOVIE
-
-#endif

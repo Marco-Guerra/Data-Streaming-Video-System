@@ -1,4 +1,4 @@
-#include "../../structures/structures.h"
+#include "movie_validator.h"
 
 bool validateVideoIdentification(string identification) {
 

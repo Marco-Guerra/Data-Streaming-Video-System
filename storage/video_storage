@@ -1,0 +1,14 @@
+{
+identification = 342342342342;
+kindOfVideo = Tipo de video;
+name = Nome do video;
+directorName = Nome do director;
+durartion = 1:30:15;
+numberOfSeasons = 12;
+releaseYear = 2001;
+genres = {
+genero 1,
+genero 2,
+genero 3,
+}
+}

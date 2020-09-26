@@ -1,10 +1,5 @@
 #include "video_validator.h"
 
-#include <iostream>
-#include "../../structures/video_structure.h"
-
-using namespace std;
-
 bool validateVideoIdentification(string identification) {
 
     return 1;

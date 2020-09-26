@@ -1,10 +1,5 @@
 #include "user_validator.h"
 
-#include <iostream>
-#include "../../structures/user_structure.h"
-
-using namespace std;
-
 bool validateUserIdentification(string identification) {
 
     return 1;
@@ -35,7 +30,7 @@ bool validateDateOfBirth(DateOfBirthStructure dateOfBirth) {
     return 1;
 }
 
-bool validateVideoIdentification(string identification) {
+bool validateVideoIdentificationForUser(string identification) {
 
     return 1;
 }

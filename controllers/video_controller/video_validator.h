@@ -1,6 +1,12 @@
 #ifndef VIDEO_VALIDATOR
 #define VIDEO_VALIDATOR
 
+#include <iostream>
+#include <string>
+#include "../../structures/video_structure.h"
+
+using namespace std;
+
 bool validateVideoIdentification(string identification);
 
 bool validateKindOfVideo(string kindOfVideo);

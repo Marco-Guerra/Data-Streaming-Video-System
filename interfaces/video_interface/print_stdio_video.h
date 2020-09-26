@@ -1,30 +1,36 @@
 #ifndef PRINT_STDIO_VIDEO
 #define PRINT_STDIO_VIDEO
 
-bool printVideoIdentification(string identification);
+#include <iostream>
+#include <string>
+#include "../../structures/video_structure.h"
 
-bool printKindOfVideo(string kindOfVideo);
+using namespace std;
 
-bool printName(string name);
+void printVideoIdentification(string identification);
 
-bool printDirectorName(string directorName);
+void printKindOfVideo(string kindOfVideo);
 
-bool printHours(unsigned int hours);
+void printName(string name);
 
-bool printMinutes(unsigned int minutes);
+void printDirectorName(string directorName);
 
-bool printSeconds(unsigned int seconds);
+void printHours(unsigned int hours);
 
-bool printDuration(DurationStructure durartion);
+void printMinutes(unsigned int minutes);
 
-bool printNumberOfSeasons(int numberOfSeasons);
+void printSeconds(unsigned int seconds);
 
-bool printReleaseYear(int releaseYear);
+void printDuration(DurationStructure durartion);
 
-bool printGenre(string genre);
+void printNumberOfSeasons(int numberOfSeasons);
 
-bool printGenres(GenresStructure genres);
+void printReleaseYear(int releaseYear);
 
-bool printVideo(VideoDocumentStructure video);
+void printGenre(string genre);
+
+void printGenres(GenresStructure genres);
+
+void printVideo(VideoDocumentStructure video);
 
 #endif

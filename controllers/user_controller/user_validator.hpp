@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "../../structures/user_structure.h"
+#include "../../structures/user_structure.hpp"
 
 using namespace std;
 
@@ -13,11 +13,11 @@ bool validateUserName(string name);
 
 bool validateDay(int day);
 
-bool validateMonth(int month);
+bool validateMonthpp(int month);
 
 bool validateYear(int year);
 
-bool validateDateOfBirth(DateOfBirthStructure dateOfBirth);
+bool validateDateOfBirth(DateOfBirthStructure dateOfBirthpp);
 
 bool validateVideoIdentificationForUser(string identification);
 

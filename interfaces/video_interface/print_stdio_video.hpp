@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "../../structures/video_structure.h"
+#include "../../structures/video_structure.hpp"
 
 using namespace std;
 
@@ -15,7 +15,7 @@ void printName(string name);
 
 void printDirectorName(string directorName);
 
-void printHours(unsigned int hours);
+void printHours(unsigned inthours);
 
 void printMinutes(unsigned int minutes);
 

@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "../../structures/video_structure.h"
+#include "../../structures/video_structure.hpp"
 
 using namespace std;
 
@@ -15,7 +15,7 @@ bool validateName(string name);
 
 bool validateDirectorName(string directorName);
 
-bool validateHours(unsigned int hours);
+bool validateHours(unsigned inthours);
 
 bool validateMinutes(unsigned int minutes);
 

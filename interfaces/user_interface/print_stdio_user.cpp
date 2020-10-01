@@ -1,4 +1,4 @@
-#include "print_stdio_user.h"
+#include "print_stdio_user.hpp"
 
 using namespace std;
 
@@ -44,18 +44,18 @@ void printVideoIdentification(string identification, int position) {
 
 }
 
-void printNumberOfVideoIdentification(int historyLenght) {
+void printNumberOfVideoIdentification(int historyLenht) {
 
-    cout << "Qunatidade de vídeos no historial: " << historyLenght << endl;
+    cout << "Quantidade de vídeos no historial: " << historyLenht << endl;
 
 }
 
 void printHistory(HistoryStructure history) {
 
-    printNumberOfVideoIdentification(history.historyLenght);
+    printNumberOfVideoIdentification (history.historyLenght);
 
     for (int i = 0; i < history.historyLenght; i++) {
-        printVideoIdentification( history.videoIdentifications[i], i + 1 );
+        printVideoIdentification(history.videoIdentifications[i], i + 1 );
     }
 
 }

@@ -1,17 +1,17 @@
-#include "structures/user_structure.h"
-#include "structures/video_structure.h"
+#include "structures/user_structure.hpp"
+#include "structures/video_structure.hpp"
 
-#include "controllers/user_controller/user_controller.h"
-#include "controllers/user_controller/user_validator.h"
+#include "controllers/user_controller/user_controller.hpp"
+#include "controllers/user_controller/user_validator.hpp"
 
-#include "controllers/video_controller/video_controller.h"
-#include "controllers/video_controller/video_validator.h"
+#include "controllers/video_controller/video_controller.hpp"
+#include "controllers/video_controller/video_validator.hpp"
 
-#include "interfaces/user_interface/read_stdio_user.h"
-#include "interfaces/user_interface/print_stdio_user.h"
+#include "interfaces/user_interface/read_stdio_user.hpp"
+#include "interfaces/user_interface/print_stdio_user.hpp"
 
-#include "interfaces/video_interface/read_stdio_video.h"
-#include "interfaces/video_interface/print_stdio_video.h"
+#include "interfaces/video_interface/read_stdio_video.hpp"
+#include "interfaces/video_interface/print_stdio_video.hpp"
 
 int main (int argc, char *argv[]) {
 	
@@ -33,7 +33,7 @@ int main (int argc, char *argv[]) {
 	video[0].identification = "1111111111";
 	video[0].kindOfVideo = "Serie";
 	video[0].name = "Uma serie";
-	video[0].directorName = "Nome do director 0";
+	video[0].directorName = "Nome do diretor 0";
 	video[0].durartion.hours = 1;
 	video[0].durartion.minutes = 30;
 	video[0].durartion.seconds = 30;
@@ -46,7 +46,7 @@ int main (int argc, char *argv[]) {
 	video[1].identification = "1111111111";
 	video[1].kindOfVideo = "Serie";
 	video[1].name = "Uma serie";
-	video[1].directorName = "Nome do director 1";
+	video[1].directorName = "Nome do diretor 1";
 	video[1].durartion.hours = 1;
 	video[1].durartion.minutes = 30;
 	video[1].durartion.seconds = 30;
@@ -59,7 +59,7 @@ int main (int argc, char *argv[]) {
 	video[2].identification = "2222222222";
 	video[2].kindOfVideo = "Serie";
 	video[2].name = "Uma serie";
-	video[2].directorName = "Nome do director 2";
+	video[2].directorName = "Nome do diretor 2";
 	video[2].durartion.hours = 1;
 	video[2].durartion.minutes = 30;
 	video[2].durartion.seconds = 30;
@@ -72,7 +72,7 @@ int main (int argc, char *argv[]) {
 	video[3].identification = "3333333333";
 	video[3].kindOfVideo = "Serie";
 	video[3].name = "Uma serie";
-	video[3].directorName = "Nome do director 3";
+	video[3].directorName = "Nome do diretor 3";
 	video[3].durartion.hours = 1;
 	video[3].durartion.minutes = 30;
 	video[3].durartion.seconds = 30;
@@ -85,7 +85,7 @@ int main (int argc, char *argv[]) {
 	video[4].identification = "4444444444";
 	video[4].kindOfVideo = "Serie";
 	video[4].name = "Uma serie";
-	video[4].directorName = "Nome do director 4";
+	video[4].directorName = "Nome do diretor 4";
 	video[4].durartion.hours = 1;
 	video[4].durartion.minutes = 30;
 	video[4].durartion.seconds = 30;
@@ -106,7 +106,7 @@ int main (int argc, char *argv[]) {
 		- nome dos integrantes da equipe
 		- descrição e casos de uso
 		- diagrama UML
-		- descrição dirigida ao usuário, descrição de atalhos
+		- descrição dirigida ao usuário, descrição de ata.hppos
 		- documentar as funcionalidades, e funções, em texto
 
 	- powerpoint (seminario)
@@ -123,7 +123,7 @@ int main (int argc, char *argv[]) {
 		- depois de uma rotina de cadastro valida imprimir a lista de id de objetos validos
 		- rotina de inserir vídeo
 		- rotina de inserir usuário
-			- campos obcionais seram preenchidos posteriormente (histórico)
+			- campos obcionais seram preen.hppidos posteriormente .hppistórico)
 		- rotinas de validação
 			- alertar o usuário caso o video nao posa ser cadastrado
 			- guardar alerta em arquivo de log (id do vídeo mais regras desrespeitadas)
@@ -135,7 +135,7 @@ int main (int argc, char *argv[]) {
 	- reuisitos da primeira funcionalidade
 		- sem campos vazios
 		- valores inteiros serao positivos
-		- hora e minuto validos min [0-24] [0-59]
+		-.hppora e minuto validos min [0-24] [0-59]
 
 	interface simples -> selecionar funcionalidades e rutinas
 

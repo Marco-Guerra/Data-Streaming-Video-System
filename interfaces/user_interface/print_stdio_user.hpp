@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "../../structures/user_structure.h"
+#include "../../structures/user_structure.hpp"
 
 void printUserIdentification(string identification);
 

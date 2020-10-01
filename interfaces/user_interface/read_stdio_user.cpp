@@ -1,28 +1,19 @@
-#include "read_stdio_user.h"
+#include "read_stdio_user.hpp"
 
-void readUserIdentification(string identification) {
-}
+void readUserIdentification(string identification);
 
-void readUserName(string name) {
-}
+void readUserName(string name);
 
-void readDay(int day) {
-}
+void readDay(int day);
 
-void readMonth(int month) {
-}
+void readMonth(int month);
 
-void readYear(int year) {
-}
+void readYear(int year);
 
-void readDateOfBirth(DateOfBirthStructure dateOfBirth) {
-}
+void readDateOfBirth(DateOfBirthStructure dateOfBirth);
 
-void readVideoIdentificationForUser(string identification) {
-}
+void readVideoIdentificationForUser(string identification);
 
-void readNumberOfVideoIdentification(int numberOfVideoIdentification) {
-}
+void readNumberOfVideoIdentification(int numberOfVideoIdentification);
 
-void readHistory(HistoryStructure historyStructure) {
-}
+void readHistory(HistoryStructure historyStructure);

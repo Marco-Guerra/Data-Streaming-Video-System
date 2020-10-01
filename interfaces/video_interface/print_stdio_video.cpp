@@ -1,4 +1,4 @@
-#include "print_stdio_video.h"
+#include "print_stdio_video.hpp"
 
 void printVideoIdentification(string identification) {
 
@@ -19,7 +19,7 @@ void printName(string name) {
 
 void printDirectorName(string directorName) {
 
-    cout << "Nome do director: " << directorName << endl;
+    cout << "Nome do diretor: " << directorName << endl;
 
 }
 
@@ -43,31 +43,31 @@ void printSeconds(unsigned int seconds) {
 
 void printDuration(DurationStructure durartion) {
 
-    cout << "Duracion do vídeo: " << durartion.hours << "horas " << durartion.minutes << "minutos" << durartion.seconds << "segundos." << endl;
+    cout << "Duração do vídeo: " << durartion.hours << "horas " << durartion.minutes << "minutos" << durartion.seconds << "segundos." << endl;
 
 }
 
 void printNumberOfSeasons(int numberOfSeasons) {
 
-    cout << "Numero de temporadas: " << numberOfSeasons << << endl;
+    cout << "Numero de temporadas: " << numberOfSeasons << endl;
 
 }
 
 void printReleaseYear(int releaseYear) {
 
-    cout << "Ano de lanzamento: " << releaseYear << endl;
+    cout << "Ano de lançamento: " << releaseYear << endl;
 
 }
 
 void printNumberOfVideoGenre(string genre) {
 
-    cout << "Genero: " << genre << endl;
+    cout << "Gênero: " << genre << endl;
 
 }
 
 void printGenre(string genre) {
 
-    cout << "Genero: " << genre << endl;
+    cout << "Gênero: " << genre << endl;
 
 }
 
@@ -75,7 +75,7 @@ void printGenre(string genre) {
 
     printNumberOfVideoGenre(genres.numberOfGenre);
 
-    for (int i = 0; i < history.historyLenght; i++) {
+    for (int i = 0; i <.hppistory.hppistoryLen.hppt; i++) {
         printGenre( genres[i], i + 1 );
     }
 

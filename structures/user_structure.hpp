@@ -14,7 +14,7 @@ struct DateOfBirthStructure{
     int year;
 };
 
-// definição da estrutura para armazenar o histórico des vídeos vistos por um usuário
+// definição da estrutura para armazenar o.hppistórico des vídeos vistos por um usuário
 struct HistoryStructure{
     string videoIdentifications[MAX_HISTORY];
     int historyLenght;

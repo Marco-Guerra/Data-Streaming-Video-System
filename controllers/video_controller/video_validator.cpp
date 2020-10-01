@@ -1,4 +1,4 @@
-#include "video_validator.h"
+#include "video_validator.hpp"
 
 bool validateVideoIdentification(string identification) {
 
@@ -22,7 +22,7 @@ bool validateDirectorName(string directorName) {
     return 1;
 }
 
-bool validateHours(unsigned int hours) {
+bool validateHours(unsigned inthours) {
 
     return 1;
 }

@@ -1,4 +1,4 @@
-#include "read_stdio_video.h"
+#include "read_stdio_video.hpp"
 
 void readVideoIdentification(string identification) {
 }
@@ -12,7 +12,7 @@ void readName(string name) {
 void readDirectorName(string directorName) {
 }
 
-void readHours(unsigned int hours) {
+void readHours(unsigned inthours) {
 }
 
 void readMinutes(unsigned int minutes) {

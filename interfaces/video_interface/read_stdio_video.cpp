@@ -1,49 +1,85 @@
 #include "read_stdio_video.hpp"
-#include <boost/algorithm/string/split.hpp>
 
-void readVideoIdentification(ifstream *fn, string identificator) {
+string processInput(string s) {
+	return s.substr( (s.find("=")) + 1);
+}
+
+void readVideoIdentification(ifstream *fn, string *identificator) {
 	//testar, pois
-	string aux, guarda[2];
+	string aux;
+	//guarda[2];
 	getline(*fn, aux);
 	aux = removeStringSpaces(aux);
-	boost::split(guarda, aux, boost::is_any_of("="));
-	aux = guarda[1];
+	*identificator = processInput(aux);
 }
 
-void readKindOfVideo(ifstream *fn,  string kindOfVideo) {
+void readKindOfVideo(ifstream *fn,  string *kindOfVideo) {
+	string aux;
+	getline(*fn, aux);
+	aux = removeStringSpaces(aux);
+	*kindOfVideo = processInput(aux);
+
 }
 
-void readName(ifstream *fn,  string name) {
+void readName(ifstream *fn,  string *name) {
+	string aux;
+	getline(*fn, aux);
+	aux = removeStringSpaces(aux);
+	*name = processInput(aux);
 }
 
-void readDirectorName(ifstream *fn, string directorName) {
+void readDirectorName(ifstream *fn, string *directorName) {
+	string aux;
+	getline(*fn, aux);
+	aux = removeStringSpaces(aux);
+	*directorName = processInput(aux);
 }
 
 void readHours(ifstream *fn,  unsigned inthours) {
+	string aux;
+	getline(*fn, aux);
 }
 
-void readMinutes(ifstream *fn, unsigned int minutes) {
+void readMinutes(ifstream *fn, unsigned int *minutes) {
+	string aux;
+	getline(*fn, aux);
 }
 
-void readSeconds(ifstream *fn, unsigned int seconds) {
+void readSeconds(ifstream *fn, unsigned int *seconds) {
+	string aux;
+	getline(*fn, aux);
 }
 
-void readDuration(ifstream *fn, DurationStructure durartion) {
+void readDuration(ifstream *fn, DurationStructure* durartion) {
+	string aux;
+	getline(*fn, aux);
 }
 
-void readNumberOfSeasons(ifstream *fn, int numberOfSeasons) {
+void readNumberOfSeasons(ifstream *fn, int *numberOfSeasons) {
+	string aux;
+	getline(*fn, aux);
 }
 
-void readReleaseYear(ifstream *fn, int releaseYear) {
+void readReleaseYear(ifstream *fn, int *releaseYear) {
+	string aux;
+	getline(*fn, aux);
 }
 
-void readGenre(ifstream *fn, string genre) {
+void readGenre(ifstream *fn, string *genre) {
+	string aux;
+	getline(*fn, aux);
+	aux = removeStringSpaces(aux);
+	= processInput(aux);
 }
 
-void readGenres(ifstream *fn, GenresStructure genres) {
+void readGenres(ifstream *fn, GenresStructure *genres) {
+	string aux;
+	getline(*fn, aux);
 }
 
-void readVideo(ifstream *fn, VideoDocumentStructure video) {
+void readVideo(ifstream *fn, VideoDocumentStructure *video) {
+	string aux;
+	getline(*fn, aux);
 }
 
 void findBeginOfStructureVideo(ifstream *fn) {
@@ -54,12 +90,12 @@ void findBeginOfStructureVideo(ifstream *fn) {
 	return;
 }
 
-VideoDocumentStructure readStructure(ifstream *fn, VideoDocumentStructure aux) {
+VideoDocumentStructure readStructure(ifstream *fn, VideoDocumentStructure *aux) {
 
 	return aux;
 }
 
-void readFile(string file_name, VetorOfVideos vetor) {
+void readFile(string file_name, VetorOfVideos *vetor) {
 	ifstream inputFile;
 
     inputFile.open(file_name);
@@ -70,7 +106,7 @@ void readFile(string file_name, VetorOfVideos vetor) {
 
 	for (int i = 0; !((inputFile).eof()); i++) {
 		findBeginOfStructureVideo(&inputFile);
-		readVideoIdentification(&inputFile, vetor.vet[i].identification);
+		readVideoIdentification(&inputFile, &vetor.vet[i].identification);
 		readKindOfVideo(&inputFile, vetor.vet[i].kindOfVideo);
 		readName(&inputFile, vetor.vet[i].name);
 		readDirectorName(&inputFile, vetor.vet[i].directorName);

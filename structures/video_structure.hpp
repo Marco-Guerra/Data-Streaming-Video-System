@@ -2,6 +2,7 @@
 #define VIDEO_STRUCTURE
 
 #define MAX_GENRES 10
+#define MAX_VIDEOS 50
 
 #include <iostream>
 
@@ -30,6 +31,11 @@ struct VideoDocumentStructure{
     int numberOfSeasons;
     int releaseYear;
     GenresStructure genres;
+};
+
+struct VetorOfVideos {
+	VideoDocumentStructure vet[MAX_VIDEOS];
+	int tam;
 };
 
 #endif

@@ -3,6 +3,12 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
+#include <cstdio>
+#include <cstdlib>
+#include <vector>
+#include <boost/algorithm/string.hpp>
+#include "../utilities.cpp"
 #include "../../structures/video_structure.hpp"
 
 using namespace std;
@@ -32,5 +38,9 @@ void readGenre(string genre);
 void readGenres(GenresStructure genres);
 
 void readVideo(VideoDocumentStructure video);
+
+void findBeginOfStructureVideo(ifstream *fn);
+
+void readFile(ifstream *fn, string file_name, VetorOfVideos vetor);
 
 #endif

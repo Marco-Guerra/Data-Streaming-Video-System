@@ -16,5 +16,17 @@ genero 3,
 }
 }
 
-
-
+{
+identification = 10000000;
+kindOfVideo = Filme;
+name = World of Warcraft;
+directorName = Nome do director;
+durartion = 2:10:25;
+numberOfSeasons = 0;
+releaseYear = 2018;
+genres = {
+genero acao,
+genero aventura,
+genero fantasia,
+}
+}

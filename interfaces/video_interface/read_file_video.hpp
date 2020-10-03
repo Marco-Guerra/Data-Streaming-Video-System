@@ -1,5 +1,5 @@
-#ifndef READ_STDIO_VIDEO
-#define READ_STDIO_VIDEO
+#ifndef READ_FILE_VIDEO
+#define READ_FILE_VIDEO
 
 #include <iostream>
 #include <string>
@@ -40,7 +40,7 @@ void readGenres(ifstream &fn, GenresStructure &genres);
 
 void readVideo(ifstream &fn, VideoDocumentStructure &video);
 
-void findBeginOfStructureVideo(ifstream &fn);
+bool findBeginOfStructureVideo(ifstream &fn);
 
 VideoDocumentStructure readStructure(ifstream &fn, VideoDocumentStructure &aux);
 

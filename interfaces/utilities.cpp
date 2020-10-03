@@ -1,7 +1,9 @@
 #include "utilities.hpp"
 
 string processInput(string s) {
-	return s.substr( (s.find("=")) + 1);
+	int aux = ((s.find("=")) + 1);
+	// substr((int) índice do inicio da substring, (int) tamanho da substring)
+	return s.substr( aux, (s.size() - aux - 1));
 }
 
 string removeStringDelimitator(string line, char delimitator) {

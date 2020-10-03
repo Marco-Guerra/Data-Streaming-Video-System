@@ -10,7 +10,8 @@
 #include "interfaces/user_interface/read_stdio_user.hpp"
 #include "interfaces/user_interface/print_stdio_user.hpp"
 
-#include "interfaces/video_interface/read_stdio_video.hpp"
+//#include "interfaces/video_interface/read_stdio_video.hpp"
+#include "interfaces/video_interface/read_file_video.hpp"
 #include "interfaces/video_interface/print_stdio_video.hpp"
 #include "interfaces/utilities.hpp"
 
@@ -99,7 +100,11 @@ int main (int argc, char *argv[]) {
 
 	bool teste;
 	teste = readFile("storage/video_storage", vetor);
-	cout << teste << endl;
+	if (teste) {
+		cout << "Leitura realizada com sucesso\n";
+	}else {
+		cout << "Falha na leitura\n";
+	}
 //	printUser(user);
 
 	return 0;

@@ -1,14 +1,15 @@
-#include <iostream>
-#include <string>
+#include "utilities.hpp"
 
-using namespace std;
+string processInput(string s) {
+	return s.substr( (s.find("=")) + 1);
+}
 
-string removeStringSpaces(string line) {
+string removeStringDelimitator(string line, char delimitator) {
 
     string newLine = "";
 
     for (int i = 0; i < (int)line.size(); i++) {
-        if (line[i] != ' ') {
+        if (line[i] != delimitator) {
             newLine += line[i];
         }
     }
@@ -16,7 +17,7 @@ string removeStringSpaces(string line) {
     return newLine;
 }
 
-void errorMessagesRead(int code) {
+void errorMessagesRead(int code, string mensage) {
 	switch(code) {
 		case 0:
 			cout << "Você está usando o programa de forma errada!\n"

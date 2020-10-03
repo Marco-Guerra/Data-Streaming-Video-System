@@ -7,40 +7,43 @@
 #include <cstdio>
 #include <cstdlib>
 #include <vector>
-#include <boost/algorithm/string.hpp>
-#include "../utilities.cpp"
+#include "../utilities.hpp"
 #include "../../structures/video_structure.hpp"
 
 using namespace std;
 
-void readVideoIdentification(string identification);
+void readVideoIdentification(ifstream &fn, string &identificator);
 
-void readKindOfVideo(string kindOfVideo);
+void readKindOfVideo(ifstream &fn,  string &kindOfVideo);
 
-void readName(string name);
+void readName(ifstream &fn,  string &name);
 
-void readDirectorName(string directorName);
+void readDirectorName(ifstream &fn, string &directorName);
 
-void readHours(unsigned inthours);
+//void readHours(ifstream &fn,  unsigned int &hours);
 
-void readMinutes(unsigned int minutes);
+//void readMinutes(ifstream &fn, unsigned int &minutes);
 
-void readSeconds(unsigned int seconds);
+//void readSeconds(ifstream &fn, unsigned int &seconds);
 
-void readDuration(DurationStructure durartion);
+void readDuration(ifstream &fn, DurationStructure &duration);
 
-void readNumberOfSeasons(int numberOfSeasons);
+void readNumberOfSeasons(ifstream &fn, int &numberOfSeasons);
 
-void readReleaseYear(int releaseYear);
+void readReleaseYear(ifstream &fn, int &releaseYear);
 
-void readGenre(string genre);
+string processGenre(string s);
 
-void readGenres(GenresStructure genres);
+bool readGenre(ifstream &fn, string &genre);
 
-void readVideo(VideoDocumentStructure video);
+void readGenres(ifstream &fn, GenresStructure &genres);
 
-void findBeginOfStructureVideo(ifstream *fn);
+void readVideo(ifstream &fn, VideoDocumentStructure &video);
 
-void readFile(ifstream *fn, string file_name, VetorOfVideos vetor);
+void findBeginOfStructureVideo(ifstream &fn);
+
+VideoDocumentStructure readStructure(ifstream &fn, VideoDocumentStructure &aux);
+
+bool readFile(string file_name, VetorOfVideos &vetor);
 
 #endif

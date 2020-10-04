@@ -1,5 +1,17 @@
 #include "video_validator.hpp"
 
+// Imprime as mensagens que encerram o arquivo
+void errorMessagesCodeUser(int code, string message) {
+
+    switch(code) {
+        case 0:
+            cout << "" << endl;
+            break;
+        case 1:
+            cout << "" << endl;
+            break;
+}
+
 bool validateVideoIdentification(string identification) {
 
     return 1;

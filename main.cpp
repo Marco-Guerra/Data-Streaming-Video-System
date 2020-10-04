@@ -13,12 +13,11 @@
 //#include "interfaces/video_interface/read_stdio_video.hpp"
 #include "interfaces/video_interface/read_file_video.hpp"
 #include "interfaces/video_interface/print_stdio_video.hpp"
-#include "interfaces/utilities.hpp"
+#include "utilities/utilities.hpp"
 
 int main (int argc, char *argv[]) {
 	
 	UserDocumentStructure user;
-<<<<<<< Updated upstream
 	//VideoDocumentStructure video[5];
 	VetorOfVideos vetor;
 
@@ -107,7 +106,6 @@ int main (int argc, char *argv[]) {
 		cout << "Falha na leitura\n";
 	}
 //	printUser(user);
-=======
 	VideoDocumentStructure video[5];
 
 	user.identification = "00000000000000000000";
@@ -188,7 +186,6 @@ int main (int argc, char *argv[]) {
 	video[4].genres.numberOfGenre = 2;
 
 	printUser(user);
->>>>>>> Stashed changes
 
 	return 0;
 }

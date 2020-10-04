@@ -1,21 +1,20 @@
 #include "user_validator.hpp"
-#include <cctype>
 
 // Imprime as mensagens que encerram o arquivo
 void errorMessagesCodeUser(int code, string message) {
 
-    switch(code) {
-        case 0:
-            cout << "Erro de código de identificação: faltam carateres." << endl;
-            break;
-        case 1:
-            cout << "Erro de código de identificação: a cadeia de entrada ingresada possui carateres inválidos." << endl;
-            break;
-        case 2:
-            cout << "Erro de nome: o nome ingressado n'ao possui nenhum carater." << endl;
-            break;
+	switch(code) {
+		case 0:
+			cout << "Erro de código de identificação: faltam caráteres." << endl;
+			break;
+		case 1:
+			cout << "Erro de código de identificação: a cadeia de entrada possui caráteres inválidos." << endl;
+			break;
+		case 2:
+			cout << "Erro de nome: o nome ingressado n'ao possui nenhum caráter." << endl;
+			break;
+	}
 }
-
 
 bool validateUserIdentification(string identification) {
 
@@ -24,7 +23,7 @@ bool validateUserIdentification(string identification) {
         return 0;
     }
 
-    if ( !isalnum(identification) ) {
+    if ( !stringIsAlNum(identification) ) {
         errorMessagesCodeUser(1, "");
         return 0;
     }
@@ -36,10 +35,10 @@ bool validateUserName(string name) {
 
     if( name.size() != 0 ) {
         errorMessagesCodeUser(2, "");
-        return 0
+        return 0;
     }
 
-    if( isalpha(name) ) {
+    if( stringIsAlpha(name) ) {
         errorMessagesCodeUser(3, "");
         return 0;
     }

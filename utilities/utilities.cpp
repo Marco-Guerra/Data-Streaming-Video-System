@@ -19,6 +19,27 @@ string removeStringDelimitator(string line, char delimitator) {
     return newLine;
 }
 
+bool stringIsAlNum (string s) {
+	for (int i = 0; i < (int)s.size(); i++) {
+		if (!isalnum(s[i])) {
+			return false;
+		}
+	}
+	return true;
+}
+
+
+bool stringIsAlpha (string s) {
+	for (int i = 0; i < (int)s.size(); i++) {
+		if (!isalpha(s[i])) {
+			return false;
+		}
+	}
+	return true;
+}
+
+
+
 void errorMessagesRead(int code, string mensage) {
 	switch(code) {
 		case 0:

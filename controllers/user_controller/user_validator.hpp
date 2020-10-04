@@ -3,7 +3,9 @@
 
 #include <iostream>
 #include <string>
+#include <cctype>
 #include "../../structures/user_structure.hpp"
+#include "../../utilities/utilities.hpp"
 
 using namespace std;
 

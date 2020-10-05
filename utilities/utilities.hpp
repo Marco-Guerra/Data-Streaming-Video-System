@@ -14,8 +14,6 @@ bool stringIsAlNum (string s);
 
 bool stringIsAlpha (string s);
 
-void errorMessagesRead(int code, string mensage = "");
-
 string removeEspaces(string s);
 
 #endif

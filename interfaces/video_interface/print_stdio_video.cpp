@@ -41,10 +41,13 @@ void printSeconds(unsigned int seconds) {
 
 }
 
-void printDuration(DurationStructure durartion) {
+void printDuration(DurationStructure duration) {
 
-    cout << "Duração do vídeo: " << durartion.hours << "horas " << durartion.minutes << "minutos" << durartion.seconds << "segundos." << endl;
-
+    //cout << "Duração do vídeo: " << durartion.hours << "horas " << durartion.minutes << "minutos" << durartion.seconds << "segundos." << endl;
+	cout << "Duração do vídeo:\n";
+	printHours(duration.hours);
+	printMinutes(duration.minutes);
+	printSeconds(duration.seconds);
 }
 
 void printNumberOfSeasons(int numberOfSeasons) {
@@ -59,27 +62,44 @@ void printReleaseYear(int releaseYear) {
 
 }
 
-void printNumberOfVideoGenre(string genre) {
+void printNumberOfVideoGenre(int numberOfGenre) {
 
-    cout << "Gênero: " << genre << endl;
-
-}
-
-void printGenre(string genre) {
-
-    cout << "Gênero: " << genre << endl;
+    cout << "Numero de gêneros: " << numberOfGenre << endl;
 
 }
 
-/*void printGenres(GenresStructure genres) {
+void printGenre(string genre, int number) {
+
+    cout << "Gênero numero " << number << ": " << genre << endl;
+
+}
+
+void printGenres(GenresStructure genres) {
 
     printNumberOfVideoGenre(genres.numberOfGenre);
 
-    for (int i = 0; i <.hppistory.hppistoryLen.hppt; i++) {
-        printGenre( genres[i], i + 1 );
+    for (int i = 0; i < genres.numberOfGenre; i++) {
+        printGenre( genres.genres[i], i + 1 );
     }
-
-}*/
+}
 
 void printVideo(VideoDocumentStructure video) {
+
+	printVideoIdentification(video.identification);
+	printKindOfVideo(video.kindOfVideo);
+	printName(video.name);
+	printDirectorName(video.directorName);
+	printDuration(video.durartion);
+	printNumberOfSeasons(video.numberOfSeasons);
+	printGenres(video.genres);
+}
+
+void printAllVideos (VetorOfVideos v) {
+	for (int i = 0; i < v.tam; i++) {
+		cout << "=================================\n";
+		cout << "| Video numero: " << i + 1 << " |\n";
+		cout << "=================================\n";
+		printVideo(v.vet[i]);
+		cout << "=================================\n";
+	}
 }

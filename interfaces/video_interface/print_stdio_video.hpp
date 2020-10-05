@@ -33,4 +33,5 @@ void printGenres(GenresStructure genres);
 
 void printVideo(VideoDocumentStructure video);
 
+void printAllVideos (VetorOfVideos v);
 #endif

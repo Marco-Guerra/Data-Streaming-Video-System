@@ -174,7 +174,7 @@ bool readFile(string file_name, VetorOfVideos &vetor) {
 	inputFile.open(file_name);
 
 	if( !inputFile.is_open() ) {
-		errorMessagesRead(7);
+		cout << "Falha ao abrir o arquivo, nome inválido\n";
 		return false;
 	}
 

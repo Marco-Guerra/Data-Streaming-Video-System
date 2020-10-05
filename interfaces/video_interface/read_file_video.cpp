@@ -1,79 +1,72 @@
 #include "read_file_video.hpp"
 
-void readVideoIdentification(ifstream &fn, string &identificator) {
+string readVideoIdentification(ifstream &fn) {
 	string aux;
 	getline(fn, aux);
-	//cout << "-- o identificador --\n";
-	//cout << "Leitura da linha = [" << aux << "]\n";
 	aux = removeStringDelimitator(aux);
-	//cout << "Tirando o espaço = [" << aux << "]\n";
 	aux = processInput(aux);
-	//cout << "Processando o dado = [" << aux << "]\n";
-	identificator = aux;
-	//cout << "Então ficou = " << identificator << endl;
+	cout << "Então ficou = " << aux << endl;
+	return aux;
 }
 
-void readKindOfVideo(ifstream &fn,  string &kindOfVideo) {
+string readKindOfVideo(ifstream &fn) {
 	string aux;
 	getline(fn, aux);
-	aux = removeStringDelimitator(aux);
-	kindOfVideo = processInput(aux);
-	//cout << "li o kindOfVideo " << kindOfVideo << endl;
+	aux = processInput(aux);
+	aux = removeEspaces(aux);
+	cout << "li o kindOfVideo [" << aux << "]\n";
+	return aux;
 }
 
-void readName(ifstream &fn,  string &name) {
+string readName(ifstream &fn) {
 	string aux;
 	getline(fn, aux);
-	aux = removeStringDelimitator(aux);
-	name = processInput(aux);
-	//cout << "li o nome " << name << endl;
+	//aux = removeStringDelimitator(aux);
+	aux = processInput(aux);
+	aux = removeEspaces(aux);
+	cout << "li o nome [" << aux << "]\n";
+	return aux;
 }
 
-void readDirectorName(ifstream &fn, string &directorName) {
+string readDirectorName(ifstream &fn) {
 	string aux;
 	getline(fn, aux);
-	aux = removeStringDelimitator(aux);
-	directorName = processInput(aux);
-	//cout << "li o diretor " << directorName << endl;
+	//aux = removeStringDelimitator(aux);
+	aux = processInput(aux);
+	aux = removeEspaces(aux);
+	cout << "li o diretor [" << aux << "]\n";
+	return aux;
 }
 
-//void readHours(ifstream &fn,  unsigned int &hours) {
-//}
-
-//void readMinutes(ifstream &fn, unsigned int &minutes) {
-//}
-
-//void readSeconds(ifstream &fn, unsigned int &seconds) {
-//}
-
-void readDuration(ifstream &fn, DurationStructure &duration) {
+DurationStructure readDuration(ifstream &fn) {
 	string aux;
 	char delimitator;
-	//getline(fn, aux);
-	//aux = removeStringDelimitator(aux);
-	//aux = processInput(aux);
-	//aux = removeStringDelimitator(aux, ':');
-	//duration.hours = 
-	//duration.minutes = 
-	//duration.seconds = 
+	DurationStructure duration;
 
 	// le duration
 	fn >> aux;
 	// le =
 	fn >> aux;
+
+
 	fn >> duration.hours;
+
 	fn >> delimitator;
 	fn >> duration.minutes;
+
+
 	fn >> delimitator;
 	fn >> duration.seconds;
 	while( delimitator != '\n') fn.get(delimitator);
 
-	//cout << "li a hora " << duration.hours << endl;
-	//cout << "li o minuto " << duration.minutes << endl;
-	//cout << "li o segundo " << duration.seconds << endl;
+	cout << "li a hora " << duration.hours << endl;
+	cout << "li o minuto " << duration.minutes << endl;
+	cout << "li o segundo " << duration.seconds << endl;
+	return duration;
 }
 
-void readNumberOfSeasons(ifstream &fn, int &numberOfSeasons) {
+int readNumberOfSeasons(ifstream &fn) {
+	int numberOfSeasons;
 	string aux;
 	char acha_fim_linha = 1;
 	fn >> aux;
@@ -81,19 +74,21 @@ void readNumberOfSeasons(ifstream &fn, int &numberOfSeasons) {
 	fn >> numberOfSeasons;
 
 	while( acha_fim_linha != '\n') fn.get(acha_fim_linha);
-	//cout << "li o numberOfSeasons " << numberOfSeasons << endl;
-
+	cout << "li o numberOfSeasons " << numberOfSeasons << endl;
+	return numberOfSeasons;
 }
 
-void readReleaseYear(ifstream &fn, int &releaseYear) {
+int readReleaseYear(ifstream &fn) {
 	string aux;
+	int releaseYear;
 	char acha_fim_linha = 1;
 
 	fn >> aux;
 	fn >> aux;
 	fn >> releaseYear;
 	while( acha_fim_linha != '\n') fn.get(acha_fim_linha);
-	//cout << "li o ReleaseYear " << releaseYear << endl;
+	cout << "li o ReleaseYear " << releaseYear << endl;
+	return releaseYear;
 }
 
 string processGenre(string s) {
@@ -110,40 +105,31 @@ bool readGenre(ifstream &fn, string &genre) {
 	return true;
 }
 
-void readGenres(ifstream &fn, GenresStructure &genres) {
+GenresStructure readGenres(ifstream &fn) {
 	string aux;
+	GenresStructure genres;
 	int i;
 	getline(fn, aux);
 	if (aux != "genres = {") {
-		//cout << "Não achei o inicio de genre bora mata isso\n";
-		//cout << "So achei:" << aux << endl;
-		return;
+		cout << "Não achei o inicio de genre bora mata isso\n";
+		cout << "So achei:" << aux << endl;
+		return genres;
 	}
 
 	for (i = 0; readGenre(fn, aux); i++) {
 		genres.genres[i] = processGenre(aux);
-		//cout << "li o genero numero " << i << " = [" << genres.genres[i] << "]\n";
+		cout << "li o genero numero " << i << " = [" << genres.genres[i] << "]\n";
 	}
 	genres.numberOfGenre = i;
-	//cout << "Acabei com os generos\n";
+	cout << "Acabei com os generos\n";
+	return genres;
 }
 
-void readVideo(ifstream &fn, VideoDocumentStructure &video) {
+void readVideo(ifstream &fn) {
 }
 
 bool findBeginOfStructureVideo(ifstream &fn) {
 	string aux;
-
-	//if (!getline(fn, aux)) {
-//		return false;
-//	}
-//	while(aux != "{") {
-//		if (!getline(fn, aux)) {
-//			return false;
-//		}
-//	}
-//	return true;
-
 
 	while(!fn.eof()) {
 		getline(fn, aux);
@@ -160,7 +146,7 @@ void findEndOfStructureVideo(ifstream &fn) {
 	while(aux != "}") {
 		getline(fn, aux);
 	}
-	//cout << "Achei o fim da structure\n";
+	cout << "Achei o fim da structure\n";
 	return;
 }
 
@@ -168,14 +154,14 @@ VideoDocumentStructure readStructure(ifstream &fn) {
 
 	VideoDocumentStructure aux;
 
-	readVideoIdentification(fn, aux.identification);
-	readKindOfVideo(fn, aux.kindOfVideo);
-	readName(fn, aux.name);
-	readDirectorName(fn, aux.directorName);
-	readDuration(fn, aux.durartion);
-	readNumberOfSeasons(fn, aux.numberOfSeasons);
-	readReleaseYear(fn, aux.releaseYear);
-	readGenres(fn, aux.genres);
+	aux.identification = readVideoIdentification(fn);
+	aux.kindOfVideo = readKindOfVideo(fn);
+	aux.name = readName(fn);
+	aux.directorName = readDirectorName(fn);
+	aux.durartion = readDuration(fn);
+	aux.numberOfSeasons = readNumberOfSeasons(fn);
+	aux.releaseYear = readReleaseYear(fn);
+	aux.genres = readGenres(fn);
 	findEndOfStructureVideo(fn);
 
 	return aux;
@@ -193,7 +179,6 @@ bool readFile(string file_name, VetorOfVideos &vetor) {
 	}
 
 	for (int i = 0; findBeginOfStructureVideo(inputFile); i++) {
-		//findBeginOfStructureVideo(inputFile);
 		vetor.vet[i] = readStructure(inputFile);
 	}
 	return true;

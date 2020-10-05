@@ -19,6 +19,24 @@ string removeStringDelimitator(string line, char delimitator) {
     return newLine;
 }
 
+string removeEspaces(string s) {
+	string aux;
+	int i = 0;
+	while(s[i] == ' ') {
+		i++;
+	}
+	for (; i < (int)s.size(); i++) {
+		if (s[i] != ' ' || s[i - 1] != ' ') {
+			aux += s[i];
+		}
+	}
+	for (i = s.size(); s[i] == ' '; i--) {
+		;
+	}
+	return aux.substr(0, i);
+}
+
+
 bool stringIsAlNum (string s) {
 	for (int i = 0; i < (int)s.size(); i++) {
 		if (!isalnum(s[i])) {

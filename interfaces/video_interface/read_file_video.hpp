@@ -12,37 +12,33 @@
 
 using namespace std;
 
-void readVideoIdentification(ifstream &fn, string &identificator);
+string readVideoIdentification(ifstream &fn);
 
-void readKindOfVideo(ifstream &fn,  string &kindOfVideo);
+string readKindOfVideo(ifstream &fn);
 
-void readName(ifstream &fn,  string &name);
+string readName(ifstream &fn);
 
-void readDirectorName(ifstream &fn, string &directorName);
+string readDirectorName(ifstream &fn);
 
-//void readHours(ifstream &fn,  unsigned int &hours);
+DurationStructure readDuration(ifstream &fn);
 
-//void readMinutes(ifstream &fn, unsigned int &minutes);
+int readNumberOfSeasons(ifstream &fn);
 
-//void readSeconds(ifstream &fn, unsigned int &seconds);
-
-void readDuration(ifstream &fn, DurationStructure &duration);
-
-void readNumberOfSeasons(ifstream &fn, int &numberOfSeasons);
-
-void readReleaseYear(ifstream &fn, int &releaseYear);
+int readReleaseYear(ifstream &fn);
 
 string processGenre(string s);
 
 bool readGenre(ifstream &fn, string &genre);
 
-void readGenres(ifstream &fn, GenresStructure &genres);
+GenresStructure readGenres(ifstream &fn);
 
-void readVideo(ifstream &fn, VideoDocumentStructure &video);
+void readVideo(ifstream &fn);
 
 bool findBeginOfStructureVideo(ifstream &fn);
 
-VideoDocumentStructure readStructure(ifstream &fn, VideoDocumentStructure &aux);
+void findEndOfStructureVideo(ifstream &fn);
+
+VideoDocumentStructure readStructure(ifstream &fn);
 
 bool readFile(string file_name, VetorOfVideos &vetor);
 

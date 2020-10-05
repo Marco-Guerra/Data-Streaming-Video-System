@@ -33,6 +33,7 @@ struct VideoDocumentStructure{
     GenresStructure genres;
 };
 
+// definição da estrutura para armazenar todos os vídeos
 struct VetorOfVideos {
 	VideoDocumentStructure vet[MAX_VIDEOS];
 	int tam;

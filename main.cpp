@@ -6,6 +6,7 @@
 
 #include "controllers/video_controller/video_controller.hpp"
 #include "controllers/video_controller/video_validator.hpp"
+#include "controllers/menu.hpp"
 
 #include "interfaces/user_interface/read_stdio_user.hpp"
 #include "interfaces/user_interface/print_stdio_user.hpp"
@@ -107,7 +108,13 @@ int main (int argc, char *argv[]) {
 		cout << "Falha na leitura\n";
 	}
 	
-	printUser(user);
+	//printUser(user);
+
+	int aux = menu();
+	cout << "vc escolheu a opção " << aux << endl;
+	
+
+
 
 	return 0;
 }

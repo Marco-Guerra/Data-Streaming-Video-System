@@ -178,8 +178,10 @@ bool readFile(string file_name, VetorOfVideos &vetor) {
 		return false;
 	}
 
-	for (int i = 0; findBeginOfStructureVideo(inputFile); i++) {
+	int i;
+	for (i = 0; findBeginOfStructureVideo(inputFile); i++) {
 		vetor.vet[i] = readStructure(inputFile);
 	}
+	vetor.tam = i;
 	return true;
 }

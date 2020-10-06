@@ -37,7 +37,9 @@ void printStdioVideoSeconds(int seconds) {
 
 // função que imprime na saída estandar a duração do vídeo
 void printStdioVideoDuration(DurationStructure durartion) {
-    
+
+    //cout << "Duração do vídeo: " << durartion.hours << "horas " << durartion.minutes << "minutos" << durartion.seconds << "segundos." << endl;
+	
 }
 
 // função que imprime na saída estandar o número de temporadas de um vídeo

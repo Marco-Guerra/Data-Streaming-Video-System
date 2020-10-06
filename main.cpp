@@ -108,6 +108,7 @@ int main (int argc, char *argv[]) {
 	}
 	
 	//printUser(user);
+	printAllVideos(vetor);
 
 	int aux = menu();
 	cout << "vc escolheu a opção " << aux << endl;

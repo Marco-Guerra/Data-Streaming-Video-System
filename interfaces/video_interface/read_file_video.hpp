@@ -4,42 +4,53 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include <cstdio>
-#include <cstdlib>
-#include <vector>
 #include "../../utilities/utilities.hpp"
 #include "../../structures/video_structure.hpp"
 
+#include <string>
+
 using namespace std;
 
-string readVideoIdentification(ifstream &fn);
+// função que faz a leitura no arquivo do vídeo a identificação de um vídeo
+string readFileVideoIdentificatio();
 
-string readKindOfVideo(ifstream &fn);
+// função que faz a leitura no arquivo do vídeo o tipo de vídeo
+string readFileVideoKindOfVideo();
 
-string readName(ifstream &fn);
+// função que faz a leitura no arquivo do vídeo o nome do vídeo
+string readFileVideoName();
 
-string readDirectorName(ifstream &fn);
+// função que faz a leitura no arquivo do vídeo o nome do diretor do vídeo
+string readFileVideoDirectorName();
 
-DurationStructure readDuration(ifstream &fn);
+// função que faz a leitura no arquivo do vídeo as horas de duração do vídeo
+int readFileVideoHours();
 
-int readNumberOfSeasons(ifstream &fn);
+// função que faz a leitura no arquivo do vídeo os minutos de duração do vídeo
+int readFileVideoMinutes();
 
-int readReleaseYear(ifstream &fn);
+// função que faz a leitura no arquivo do vídeo os segundos de duração do vídeo
+int readFileVideoSeconds();
 
-string processGenre(string s);
+// função que faz a leitura no arquivo do vídeo a duração do vídeo
+DurationStructure readFileVideoDuration();
 
-bool readGenre(ifstream &fn, string &genre);
+// função que faz a leitura no arquivo do vídeo o número de temporadas de um vídeo
+int readFileVideoNumberOfSeasons();
 
-GenresStructure readGenres(ifstream &fn);
+// função que faz a leitura no arquivo do vídeo do ano de lançamento
+int readFileVideoReleaseYear(int releaseYear);
 
-void readVideo(ifstream &fn);
+// função que faz a leitura no arquivo do vídeo os gêneros aos quais o vídeo pertence
+string readFileVideoGenres();
 
-bool findBeginOfStructureVideo(ifstream &fn);
+// função que faz a leitura no arquivo do vídeo o número de gêneros do vídeo
+int readFileVideoNumberOfGenres();
 
-void findEndOfStructureVideo(ifstream &fn);
+// função que faz a leitura no arquivo do vídeo um vídeo
+VideoDocumentStructure readFileVideo();
 
-VideoDocumentStructure readStructure(ifstream &fn);
-
-bool readFile(string file_name, VetorOfVideos &vetor);
+// função que faz a leitura no arquivo do vídeo todos os vídeos
+VideoDocumentStructure readFileVideoList();
 
 #endif

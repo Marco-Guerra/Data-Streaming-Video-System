@@ -10,9 +10,9 @@ using namespace std;
 
 // definição da estrutura para armazenar o tempo de duração de um vídeo
 struct DurationStructure{
-    unsigned int hours;
-    unsigned int minutes;
-    unsigned int seconds;
+    int hours;
+    int minutes;
+    int seconds;
 };
 
 // definição da estrutura para armazenar os gêneros ao qual um vídeo pertence

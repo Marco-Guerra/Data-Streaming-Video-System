@@ -17,7 +17,7 @@ void errorMessagesCodeUser(int code, string message) {
 			cout << "Erro de nome: o nome ingressado possui caráteres inválidos." << endl;
 			break;
         case 4:
-			cout << "Erro de data: dias incorretos." << endl;
+			cout << "Erro de data: dia incorretos." << endl;
 			break;
         case 5:
 			cout << "Erro de data: mes incorretos." << endl;
@@ -134,7 +134,7 @@ bool validateHistory(HistoryStructure historyStructure) {
 // função que valida um usuário
 bool validateUserDocumentStructure(UserDocumentStructure userDocumentStructure) {
 
-    if( validateUserIdentification(userDocumentStructure.identification) && validateUserName(userDocumentStructure.name) && validateDateOfBirth(userDocumentStructure.date) && validateHistory(userDocumentStructure.history) ) {
+    if( !( validateUserIdentification(userDocumentStructure.identification) && validateUserName(userDocumentStructure.name) && validateDateOfBirth(userDocumentStructure.date) && validateHistory(userDocumentStructure.history) ) ) {
         return 0;
     }
 

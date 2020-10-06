@@ -19,21 +19,9 @@ using namespace std;
 
 #define CIMA_VIM 'k'
 #define BAIXO_VIM 'j'
-#define DIREITA_VIM 'l'
-#define ESQUERDA_VIM 'h'
+#ifndef MENU_CONTROLLER
+#define MENU_CONTROLLER
 
-#define ENTER 10
 
-char getChar();
-
-void linha (int tam_linha);
-
-void preencheEspaco (int n);
-
-void opcoes (int escolha);
-
-void mensagemInicial ();
-
-int menu();
 
 #endif

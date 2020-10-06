@@ -1,36 +1,52 @@
 #ifndef PRINT_STDIO_VIDEO
 #define PRINT_STDIO_VIDEO
 
-#include <iostream>
-#include <string>
 #include "../../structures/video_structure.hpp"
+
+#include <string>
 
 using namespace std;
 
-void printVideoIdentification(string identification);
+// função que imprime na saída estandar a identificação de um vídeo
+void printStdioVideoIdentificatio(string identification);
 
-void printKindOfVideo(string kindOfVideo);
+// função que imprime na saída estandar o tipo de vídeo
+void printStdioVideoKindOfVideo(string kindOfVideo);
 
-void printName(string name);
+// função que imprime na saída estandar o nome do vídeo
+void printStdioVideoName(string name);
 
-void printDirectorName(string directorName);
+// função que imprime na saída estandar o nome do diretor do vídeo
+void printStdioVideoDirectorName(string directorName);
 
-void printHours(unsigned inthours);
+// função que imprime na saída estandar as horas de duração do vídeo
+void printStdioVideoHours(int hours);
 
-void printMinutes(unsigned int minutes);
+// função que imprime na saída estandar os minutos de duração do vídeo
+void printStdioVideoMinutes(int minutes);
 
-void printSeconds(unsigned int seconds);
+// função que imprime na saída estandar os segundos de duração do vídeo
+void printStdioVideoSeconds(int seconds);
 
-void printDuration(DurationStructure durartion);
+// função que imprime na saída estandar a duração do vídeo
+void printStdioVideoDuration(DurationStructure durartion);
 
-void printNumberOfSeasons(int numberOfSeasons);
+// função que imprime na saída estandar o número de temporadas de um vídeo
+void printStdioVideoNumberOfSeasons(int numberOfSeasons);
 
-void printReleaseYear(int releaseYear);
+// função que imprime na saída estandar o ano de lançamento
+void printFileVideoReleaseYear(int releaseYear);
 
-void printGenre(string genre);
+// função que imprime na saída estandar os gêneros aos quais o vídeo pertence
+void printStdioVideoGenres(string genres[MAX_GENRES]);
 
-void printGenres(GenresStructure genres);
+// função que imprime na saída estandar o número de gêneros do vídeo
+void printStdioVideoNumberOfGenres(int numberOfGenre);
 
-void printVideo(VideoDocumentStructure video);
+// função que imprime na saída estandar um vídeo
+void printStdioVideo(VideoDocumentStructure video);
+
+// função que imprime na saída estandar todos os vídeos
+void printStdioVideoList(VideoDocumentStructure videoList[]);
 
 #endif

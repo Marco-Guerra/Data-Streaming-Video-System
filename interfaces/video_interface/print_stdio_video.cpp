@@ -1,85 +1,71 @@
 #include "print_stdio_video.hpp"
 
-void printVideoIdentification(string identification) {
-
-    cout << "Identificação do vídeo: " << identification << endl;
-
-}
-
-void printKindOfVideo(string kindOfVideo) {
-
-    cout << "Tipo de vídeo: " << kindOfVideo << endl;
-}
-
-void printName(string name) {
-
-    cout << "Nome do vídeo: " << name << endl;
+// função que imprime na saída estandar a identificação de um vídeo
+void printStdioVideoIdentificatio(string identification) {
 
 }
 
-void printDirectorName(string directorName) {
-
-    cout << "Nome do diretor: " << directorName << endl;
-
-}
-
-void printHours(unsigned int hours) {
-
-    cout << "Horas: " << hours << endl;
+// função que imprime na saída estandar o tipo de vídeo
+void printStdioVideoKindOfVideo(string kindOfVideo) {
 
 }
 
-void printMinutes(unsigned int minutes) {
-
-    cout << "Minutos: " << minutes << endl;
-
-}
-
-void printSeconds(unsigned int seconds) {
-
-    cout << "Segundos: " << seconds << endl;
+// função que imprime na saída estandar o nome do vídeo
+void printStdioVideoName(string name) {
 
 }
 
-void printDuration(DurationStructure durartion) {
-
-    cout << "Duração do vídeo: " << durartion.hours << "horas " << durartion.minutes << "minutos" << durartion.seconds << "segundos." << endl;
-
-}
-
-void printNumberOfSeasons(int numberOfSeasons) {
-
-    cout << "Numero de temporadas: " << numberOfSeasons << endl;
+// função que imprime na saída estandar o nome do diretor do vídeo
+void printStdioVideoDirectorName(string directorName) {
 
 }
 
-void printReleaseYear(int releaseYear) {
-
-    cout << "Ano de lançamento: " << releaseYear << endl;
-
-}
-
-void printNumberOfVideoGenre(string genre) {
-
-    cout << "Gênero: " << genre << endl;
+// função que imprime na saída estandar as horas de duração do vídeo
+void printStdioVideoHours(int hours) {
 
 }
 
-void printGenre(string genre) {
-
-    cout << "Gênero: " << genre << endl;
-
+// função que imprime na saída estandar os minutos de duração do vídeo
+void printStdioVideoMinutes(int minutes) {
+    
 }
 
-/*void printGenres(GenresStructure genres) {
+// função que imprime na saída estandar os segundos de duração do vídeo
+void printStdioVideoSeconds(int seconds) {
+    
+}
 
-    printNumberOfVideoGenre(genres.numberOfGenre);
+// função que imprime na saída estandar a duração do vídeo
+void printStdioVideoDuration(DurationStructure durartion) {
+    
+}
 
-    for (int i = 0; i <.hppistory.hppistoryLen.hppt; i++) {
-        printGenre( genres[i], i + 1 );
-    }
+// função que imprime na saída estandar o número de temporadas de um vídeo
+void printStdioVideoNumberOfSeasons(int numberOfSeasons) {
+    
+}
 
-}*/
+// função que imprime na saída estandar o ano de lançamento
+void printFileVideoReleaseYear(int releaseYear) {
+    
+}
 
-void printVideo(VideoDocumentStructure video) {
+// função que imprime na saída estandar os gêneros aos quais o vídeo pertence
+void printStdioVideoGenres(string genres[MAX_GENRES]) {
+    
+}
+
+// função que imprime na saída estandar o número de gêneros do vídeo
+void printStdioVideoNumberOfGenres(int numberOfGenre) {
+    
+}
+
+// função que imprime na saída estandar um vídeo
+void printStdioVideo(VideoDocumentStructure video) {
+    
+}
+
+// função que imprime na saída estandar todos os vídeos
+void printStdioVideoList(VideoDocumentStructure videoList[]) {
+    
 }

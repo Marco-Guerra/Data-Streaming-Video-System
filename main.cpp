@@ -99,19 +99,10 @@ int main (int argc, char *argv[]) {
 	//video[4].genres.genres[1] = "Ficção";
 	//video[4].genres.numberOfGenre = 2;
 
-	bool teste;
-	teste = readFile("storage/video_storage", vetor);
-	if (teste) {
-		cout << "Leitura realizada com sucesso\n";
-	}else {
-		cout << "Falha na leitura\n";
-	}
+	vetor = readFileVideoList("storage/video_storage");
 	
 	//printUser(user);
-	printAllVideos(vetor);
-
-	int aux = menu();
-	cout << "vc escolheu a opção " << aux << endl;
+	printStdioVideoList(vetor);
 	
 
 

@@ -12,45 +12,56 @@
 using namespace std;
 
 // função que faz a leitura no arquivo do vídeo a identificação de um vídeo
-string readFileVideoIdentificatio();
+string readFileVideoIdentificatio(ifstream &fn);
 
 // função que faz a leitura no arquivo do vídeo o tipo de vídeo
-string readFileVideoKindOfVideo();
+string readFileVideoKindOfVideo(ifstream &fn);
 
 // função que faz a leitura no arquivo do vídeo o nome do vídeo
-string readFileVideoName();
+string readFileVideoName(ifstream &fn);
 
 // função que faz a leitura no arquivo do vídeo o nome do diretor do vídeo
-string readFileVideoDirectorName();
+string readFileVideoDirectorName(ifstream &fn);
 
 // função que faz a leitura no arquivo do vídeo as horas de duração do vídeo
-int readFileVideoHours();
+int readFileVideoHours(ifstream &fn);
 
 // função que faz a leitura no arquivo do vídeo os minutos de duração do vídeo
-int readFileVideoMinutes();
+int readFileVideoMinutes(ifstream &fn);
 
 // função que faz a leitura no arquivo do vídeo os segundos de duração do vídeo
-int readFileVideoSeconds();
+int readFileVideoSeconds(ifstream &fn);
 
 // função que faz a leitura no arquivo do vídeo a duração do vídeo
-DurationStructure readFileVideoDuration();
+DurationStructure readFileVideoDuration(ifstream &fn);
 
 // função que faz a leitura no arquivo do vídeo o número de temporadas de um vídeo
-int readFileVideoNumberOfSeasons();
+int readFileVideoNumberOfSeasons(ifstream &fn);
 
 // função que faz a leitura no arquivo do vídeo do ano de lançamento
-int readFileVideoReleaseYear(int releaseYear);
+int readFileVideoReleaseYear(ifstream &fn);
+
+// ler um genero de vìdeo
+bool readFileVideoGenre(ifstream &fn, string &genre);
 
 // função que faz a leitura no arquivo do vídeo os gêneros aos quais o vídeo pertence
-string readFileVideoGenres();
+GenresStructure readFileVideoGenres(ifstream &fn);
 
 // função que faz a leitura no arquivo do vídeo o número de gêneros do vídeo
-int readFileVideoNumberOfGenres();
+int readFileVideoNumberOfGenres(ifstream &fn);
 
 // função que faz a leitura no arquivo do vídeo um vídeo
-VideoDocumentStructure readFileVideo();
+VideoDocumentStructure readFileVideo(ifstream &fn);
 
 // função que faz a leitura no arquivo do vídeo todos os vídeos
-VideoDocumentStructure readFileVideoList();
+VetorOfVideos readFileVideoList(string file_name);
+
+// acha o fim da struct
+// true caso ache
+// false caso ache o fim do arquivo
+bool findBeginOfStructureVideo(ifstream &fn);
+
+// encontrar o ultimo fechamento de chaves
+void findEndOfStructureVideo(ifstream &fn);
 
 #endif

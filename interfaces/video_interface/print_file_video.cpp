@@ -46,9 +46,9 @@ void printFileVideoNumberOfSeasons(int numberOfSeasons) {
 }
 
 // função que imprime no arquivo do vídeo o ano de lançamento
-void printFileVideoReleaseYear(int releaseYear) {
-    
-}
+//void printFileVideoReleaseYear(int releaseYear) {
+    //
+//}
 
 // função que imprime no arquivo do vídeo os gêneros aos quais o vídeo pertence
 void printFileVideoGenres(string genres[MAX_GENRES]) {

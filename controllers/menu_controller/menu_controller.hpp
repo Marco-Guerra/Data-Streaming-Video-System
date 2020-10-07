@@ -1,5 +1,6 @@
-#ifndef MENU
-#define MENU
+#ifndef MENU_CONTROLLER
+#define MENU_CONTROLLER
+
 #include <iostream>
 #include <limits>
 #include <unistd.h>
@@ -19,9 +20,5 @@ using namespace std;
 
 #define CIMA_VIM 'k'
 #define BAIXO_VIM 'j'
-#ifndef MENU_CONTROLLER
-#define MENU_CONTROLLER
-
-
 
 #endif

@@ -1,10 +1,24 @@
 #include "user_controller.hpp"
+#include "user_validator.hpp"
+
+#include "../../structures/user_structure.hpp"
+
+#include "../../interfaces/user_interface/print_stdio_user.hpp"
+#include "../../interfaces/user_interface/read_stdio_user.hpp"
 
 // rotina para agregar um usuário
 void addUserController() {
+
+    UserDocumentStructure user;
+
     // realizar a leitura dos dados de um novo usuário
+    user = readStdioUser();
+
     // realizar a validação dos dados de um usuário
-    // adicionar o uauário à lista de usuários em memória
+    if( validateUser(user) ) {
+        // adicionar o uauário à lista de usuários em memória
+    }
+
     // retornar o controle ao menu do usuário 
 }
 
@@ -17,14 +31,24 @@ void accessUserController() {
 
 // rotina para eliminar um usuário
 void deleteUserController() {
+
+    string identification;
+
     // ler a identificação do usuário que vai ser eliminado
-    // eliminar o usuário da lista de usuários em memória
+    identification = readStdioUserIdentificatio();
+    
+    if( validateUserIdentification(identification) ) {
+        // eliminar o usuário da lista de usuários em memória
+    }
+    
     // retornar o controle ao menu do usuário 
 }
 
 // rotina para imprimir os dados de um usuário na saída estandar
 void printUserController() {
     // imprimir o usuário na saída estandar
+
+
     // retornar o controle ao menu do usuário logado
 }
 
@@ -61,7 +85,7 @@ void changeUserMonthController() {
 }
 
 // rotina para combiar o ano da data de nascimento do usuário
-void changeUserYearDateController() {
+void changeUserYearController() {
     // realizar a leitura do ano da data de nascimento do usuário
     // realizar a validação do ano da data de nascimento do usuário
     // adicionar a mudança do ano da data de nascimento do uauário na lista de usuários em memória
@@ -77,7 +101,7 @@ void changeUserDateController() {
 }
 
 // rotina para adicionar historico ao usuário
-void addVideoToHistoryUser() {
+void addVideoToHistoryUserController() {
     // realizar a leitura do video visto pelo usuário
     // realizar a validação do video visto pelo usuário
     // adicionar o vídeo do uauário na lista de usuários em memória

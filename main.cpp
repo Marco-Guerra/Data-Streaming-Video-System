@@ -1,23 +1,21 @@
 #include "structures/user_structure.hpp"
 #include "structures/video_structure.hpp"
 
-#include "controllers/user_controller/user_controller.hpp"
-#include "controllers/user_controller/user_validator.hpp"
+#include "interfaces/user_interface/print_file_user.hpp"
+#include "interfaces/user_interface/read_file_user.hpp"
 
-#include "controllers/video_controller/video_controller.hpp"
-#include "controllers/video_controller/video_validator.hpp"
-
-#include "interfaces/user_interface/read_stdio_user.hpp"
-#include "interfaces/user_interface/print_stdio_user.hpp"
-
-#include "interfaces/video_interface/read_stdio_video.hpp"
+#include "interfaces/video_interface/print_file_video.hpp"
 #include "interfaces/video_interface/read_file_video.hpp"
-#include "interfaces/video_interface/print_stdio_video.hpp"
 
-#include "utilities/utilities.hpp"
+#include "controllers/menu_controller/menu_controller.hpp"
 
 int main (int argc, char *argv[]) {
 	
+	// ler os aruivos de armazenamento
+	// boas vindas, explicar o programa
+	// entrar no menu
+	// escrever os arquivos de armazenamento
+
 	UserDocumentStructure user;
 	//VideoDocumentStructure video[5];
 	VetorOfVideos vetor;
@@ -99,6 +97,7 @@ int main (int argc, char *argv[]) {
 	//video[4].genres.genres[1] = "Ficção";
 	//video[4].genres.numberOfGenre = 2;
 
+	/*
 	bool teste;
 	teste = readFile("storage/video_storage", vetor);
 	if (teste) {
@@ -112,7 +111,7 @@ int main (int argc, char *argv[]) {
 
 	int aux = menu();
 	cout << "vc escolheu a opção " << aux << endl;
-	
+	*/
 
 
 

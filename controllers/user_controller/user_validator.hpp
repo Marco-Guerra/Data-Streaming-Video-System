@@ -27,6 +27,6 @@ bool validateNumberOfVideoIdentification(int numberOfVideoIdentification);
 
 bool validateHistory(HistoryStructure historyStructure);
 
-bool validateUserDocumentStructure(UserDocumentStructure userDocumentStructure);
+bool validateUser(UserDocumentStructure userDocumentStructure);
 
 #endif

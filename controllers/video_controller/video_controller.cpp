@@ -1,5 +1,10 @@
 #include "video_controller.hpp"
 
+#include "../../structures/video_structure.hpp"
+
+#include "../../interfaces/video_interface/print_stdio_video.hpp"
+#include "../../interfaces/video_interface/read_stdio_video.hpp"
+
 // rotina para agregar um video
 void addVideoController() {
     // realizar a leitura dos dados de um novo vídeo

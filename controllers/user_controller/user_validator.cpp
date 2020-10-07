@@ -132,7 +132,7 @@ bool validateHistory(HistoryStructure historyStructure) {
 }
 
 // função que valida um usuário
-bool validateUserDocumentStructure(UserDocumentStructure userDocumentStructure) {
+bool validateUser(UserDocumentStructure userDocumentStructure) {
 
     if( !( validateUserIdentification(userDocumentStructure.identification) && validateUserName(userDocumentStructure.name) && validateDateOfBirth(userDocumentStructure.date) && validateHistory(userDocumentStructure.history) ) ) {
         return 0;

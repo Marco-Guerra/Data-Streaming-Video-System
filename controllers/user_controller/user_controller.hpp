@@ -28,12 +28,12 @@ void changeUserDayController();
 void changeUserMonthController();
 
 // rotina para combiar o ano da data de nascimento do usuário
-void changeUserYearDateController();
+void changeUserYearController();
 
 // rotina para combiar data de nascimento do usuário
 void changeUserDateController();
 
 // rotina para adicionar historico ao usuário
-void addVideoToHistoryUser();
+void addVideoToHistoryUserController();
 
 #endif

@@ -119,7 +119,7 @@ string processGenre(string s) {
 }
 
 // ler um genero de vìdeo
-bool readGenre(ifstream &fn, string &genre) {
+bool readFileVideoGenre(ifstream &fn, string &genre) {
 	string aux;
 	getline(fn, aux);
 	if (aux == "}") {
@@ -142,7 +142,7 @@ GenresStructure readFileVideoGenres(ifstream &fn) {
 		return genres;
 	}
 
-	for (i = 0; readGenre(fn, aux); i++) {
+	for (i = 0; readFileVideoGenre(fn, aux); i++) {
 		genres.genres[i] = processGenre(aux);
 		cout << "li o genero numero " << i << " = [" << genres.genres[i] << "]\n";
 	}
@@ -185,23 +185,37 @@ VideoDocumentStructure readFileVideo(ifstream &fn) {
 	return aux;
 }
 
-// função que faz a leitura no arquivo do vídeo todos os vídeos
-VideoDocumentStructure readFileVideoList(ifstream &fn) {
-    /*ifstream inputFile;
+// acha o fim da struct
+// true caso ache
+// false caso ache o fim do arquivo
+bool findBeginOfStructureVideo(ifstream &fn) {
 	string aux;
+
+	while(!fn.eof()) {
+		getline(fn, aux);
+		if (aux == "{") {
+			return true;
+		}
+	}
+	return false;
+}
+
+// função que faz a leitura no arquivo do vídeo todos os vídeos
+VetorOfVideos readFileVideoList(string file_name) {
+	ifstream inputFile;
+	VetorOfVideos vetor;
 
 	inputFile.open(file_name);
 
 	if( !inputFile.is_open() ) {
 		cout << "Falha ao abrir o arquivo, nome inválido\n";
-		return false;
+		exit(0);
 	}
 
 	int i;
 	for (i = 0; findBeginOfStructureVideo(inputFile); i++) {
-		vetor.vet[i] = readStructure(inputFile);
+		vetor.vet[i] = readFileVideo(inputFile);
 	}
 	vetor.tam = i;
-	return true;
-    */
+	return vetor;
 }

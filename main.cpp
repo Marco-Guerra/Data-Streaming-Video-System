@@ -112,8 +112,11 @@ int main (int argc, char *argv[]) {
 	int aux = menu();
 	cout << "vc escolheu a opção " << aux << endl;
 	*/
-
-
+	//vetor = readFileVideoList("storage/video_storage");
+	
+	//printUser(user);
+	//printStdioVideoList(vetor);
+	
 
 	return 0;
 }

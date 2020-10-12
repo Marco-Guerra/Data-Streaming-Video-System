@@ -1,71 +1,126 @@
 #include "read_stdio_video.hpp"
 
-// função que faz a leitura na saída estandar da identificação de um vídeo
-string readStdioVideoIdentificatio() {
-
+// função que faz a leitura na saída estândar da identificação de um vídeo
+string readStdioVideoIdentification() {
+	cout << "Insira o ID: ";
+	string aux;
+	cin >> aux;
+	return aux;
 }
 
-// função que faz a leitura na saída estandar do tipo de vídeo
+// função que faz a leitura na saída estândar do tipo de vídeo
 string readStdioVideoKindOfVideo() {
-
+	cout << "Insira o tipo de vídeo: ";
+	string aux;
+	cin >> aux;
+	getline(cin, aux);
+	return aux;
 }
 
-// função que faz a leitura na saída estandar do nome do vídeo
+// função que faz a leitura na saída estândar do nome do vídeo
 string readStdioVideoName() {
-
+	cout << "Insira o nome de vídeo: ";
+	string aux;
+	getline(cin, aux);
+	return aux;
 }
 
-// função que faz a leitura na saída estandar do nome do diretor do vídeo
+// função que faz a leitura na saída estândar do nome do diretor do vídeo
 string readStdioVideoDirectorName() {
-
+	cout << "Insira o nome do Diretor: ";
+	string aux;
+	getline(cin, aux);
+	return aux;
 }
 
-// função que faz a leitura na saída estandar das horas de duração do vídeo
+// função que faz a leitura na saída estândar das horas de duração do vídeo
 int readStdioVideoHours() {
-
+	cout << "Insira quantas horas completas tem o vídeo: ";
+	int aux;
+	cin >> aux;
+	return aux;
 }
 
-// função que faz a leitura na saída estandar dos minutos de duração do vídeo
+// função que faz a leitura na saída estândar dos minutos de duração do vídeo
 int readStdioVideoMinutes() {
-    
+	cout << "Insira quantos minutos completos tem o vídeo: ";
+	int aux;
+	cin >> aux;
+	return aux;
 }
 
-// função que faz a leitura na saída estandar dos segundos de duração do vídeo
+// função que faz a leitura na saída estândar dos segundos de duração do vídeo
 int readStdioVideoSeconds() {
-    
+	cout << "Insira quantos segundos tem o vídeo: ";
+	int aux;
+	cin >> aux;
+	return aux;
 }
 
-// função que faz a leitura na saída estandar da duração do vídeo
+// função que faz a leitura na saída estândar da duração do vídeo
 DurationStructure readStdioVideoDuration() {
-    
+	DurationStructure aux;
+	aux.hours = readStdioVideoHours();
+	aux.minutes = readStdioVideoMinutes();
+	aux.seconds = readStdioVideoSeconds();
+	return aux;
 }
 
-// função que faz a leitura na saída estandar do número de temporadas de um vídeo
+// função que faz a leitura na saída estândar do número de temporadas de um vídeo
 int readStdioVideoNumberOfSeasons() {
-    
+	cout << "Insira quantas temporadas tem a série: ";
+	int aux;
+	cin >> aux;
+	return aux;
 }
 
-// função que faz a leitura na saída estandar do vídeo o ano de lançamento
+// função que faz a leitura na saída estândar do vídeo o ano de lançamento
 int readStdioVideoReleaseYear() {
-    
+	cout << "Insira o ano de lançamento do vídeo: ";
+	int aux;
+	cin >> aux;
+	return aux;
 }
 
-// função que faz a leitura na saída estandar dos gêneros aos quais o vídeo pertence
-string readStdioVideoGenres() {
-    
-}
-
-// função que faz a leitura na saída estandar do número de gêneros do vídeo
+// função que faz a leitura na saída estândar do número de gêneros do vídeo
 int readStdioVideoNumberOfGenres() {
-    
+	cout << "Insira quantos gêneros o vídeo possui: ";
+	int aux;
+	cin >> aux;
+	return aux;
 }
 
-// função que faz a leitura na saída estandar de um vídeo
+// função que faz a leitura na saída estândar dos gêneros aos quais o vídeo pertence
+GenresStructure readStdioVideoGenres() {
+
+	GenresStructure aux;
+	aux.numberOfGenre = readStdioVideoNumberOfGenres();
+	for (int i = 0; i < aux.numberOfGenre; i++) {
+		cout << "Genero " << i + 1 << ": ";
+		cin >> aux.genres[i];
+	}
+	return aux;
+}
+
+// função que faz a leitura na saída estândar de um vídeo
 VideoDocumentStructure readStdioVideo() {
-    
+	VideoDocumentStructure aux;
+	string leitura;
+	cout << "Você deseja entrar com mais um vídeo [y/n] ";
+	cin >> leitura;
+	if (leitura[0] == 'Y' || leitura[0] == 'y') {
+		aux.identification = readStdioVideoIdentification();
+		aux.kindOfVideo = readStdioVideoKindOfVideo();
+		aux.name = readStdioVideoName();
+		aux.directorName = readStdioVideoDirectorName();
+		aux.durartion = readStdioVideoDuration();
+		aux.numberOfSeasons = readStdioVideoNumberOfSeasons();
+		aux.releaseYear = readStdioVideoReleaseYear();
+		aux.genres = readStdioVideoGenres();
+	}
+	return aux;
 }
 
-// função que faz a leitura na saída estandar de todos os vídeos
-VideoDocumentStructure readStdioVideoList() {
-    
-}
+// função que faz a leitura na saída estândar de todos os vídeos
+//VideoDocumentStructure readStdioVideoList() {
+//}

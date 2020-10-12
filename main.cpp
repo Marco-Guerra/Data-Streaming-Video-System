@@ -6,116 +6,26 @@
 
 #include "interfaces/video_interface/print_file_video.hpp"
 #include "interfaces/video_interface/read_file_video.hpp"
+#include "interfaces/video_interface/print_stdio_video.hpp"
+#include "interfaces/video_interface/read_stdio_video.hpp"
 
 #include "controllers/menu_controller/menu_controller.hpp"
 
 int main (int argc, char *argv[]) {
 	
-	// ler os aruivos de armazenamento
+	// ler os arquivos de armazenamento
 	// boas vindas, explicar o programa
 	// entrar no menu
 	// escrever os arquivos de armazenamento
 
 	UserDocumentStructure user;
-	//VideoDocumentStructure video[5];
 	VetorOfVideos vetor;
 
-	//user.identification = "0000000000";
-	//user.name = "Nome do Usuário";
-	//user.date.day = 1;
-	//user.date.month = 1;
-	//user.date.year = 2000;
-	//user.history.videoIdentifications[0] = "1111111111";
-	//user.history.videoIdentifications[1] = "2222222222";
-	//user.history.videoIdentifications[2] = "3333333333";
-	//user.history.videoIdentifications[3] = "4444444444";
-	//user.history.videoIdentifications[4] = "5555555555";
-	//user.history.historyLenght = 5;
-	//
-	//video[0].identification = "1111111111";
-	//video[0].kindOfVideo = "Serie";
-	//video[0].name = "Uma serie";
-	//video[0].directorName = "Nome do diretor 0";
-	//video[0].durartion.hours = 1;
-	//video[0].durartion.minutes = 30;
-	//video[0].durartion.seconds = 30;
-	//video[0].numberOfSeasons = 10;
-	//video[0].releaseYear = 2010;
-	//video[0].genres.genres[0] = "Ação";
-	//video[0].genres.genres[1] = "Ficção";
-	//video[0].genres.numberOfGenre = 2;
-	//
-	//video[1].identification = "1111111111";
-	//video[1].kindOfVideo = "Serie";
-	//video[1].name = "Uma serie";
-	//video[1].directorName = "Nome do diretor 1";
-	//video[1].durartion.hours = 1;
-	//video[1].durartion.minutes = 30;
-	//video[1].durartion.seconds = 30;
-	//video[1].numberOfSeasons = 10;
-	//video[1].releaseYear = 2010;
-	//video[1].genres.genres[0] = "Ação";
-	//video[1].genres.genres[1] = "Ficção";
-	//video[1].genres.numberOfGenre = 2;
-	//
-	//video[2].identification = "2222222222";
-	//video[2].kindOfVideo = "Serie";
-	//video[2].name = "Uma serie";
-	//video[2].directorName = "Nome do diretor 2";
-	//video[2].durartion.hours = 1;
-	//video[2].durartion.minutes = 30;
-	//video[2].durartion.seconds = 30;
-	//video[2].numberOfSeasons = 10;
-	//video[2].releaseYear = 2010;
-	//video[2].genres.genres[0] = "Ação";
-	//video[2].genres.genres[1] = "Ficção";
-	//video[2].genres.numberOfGenre = 2;
-	//
-	//video[3].identification = "3333333333";
-	//video[3].kindOfVideo = "Serie";
-	//video[3].name = "Uma serie";
-	//video[3].directorName = "Nome do diretor 3";
-	//video[3].durartion.hours = 1;
-	//video[3].durartion.minutes = 30;
-	//video[3].durartion.seconds = 30;
-	//video[3].numberOfSeasons = 10;
-	//video[3].releaseYear = 2010;
-	//video[3].genres.genres[0] = "Ação";
-	//video[3].genres.genres[1] = "Ficção";
-	//video[3].genres.numberOfGenre = 2;
-	//
-	//video[4].identification = "4444444444";
-	//video[4].kindOfVideo = "Serie";
-	//video[4].name = "Uma serie";
-	//video[4].directorName = "Nome do diretor 4";
-	//video[4].durartion.hours = 1;
-	//video[4].durartion.minutes = 30;
-	//video[4].durartion.seconds = 30;
-	//video[4].numberOfSeasons = 10;
-	//video[4].releaseYear = 2010;
-	//video[4].genres.genres[0] = "Ação";
-	//video[4].genres.genres[1] = "Ficção";
-	//video[4].genres.numberOfGenre = 2;
-
-	/*
-	bool teste;
-	teste = readFile("storage/video_storage", vetor);
-	if (teste) {
-		cout << "Leitura realizada com sucesso\n";
-	}else {
-		cout << "Falha na leitura\n";
-	}
-	
-	//printUser(user);
-	printAllVideos(vetor);
-
-	int aux = menu();
-	cout << "vc escolheu a opção " << aux << endl;
-	*/
-	//vetor = readFileVideoList("storage/video_storage");
-	
-	//printUser(user);
-	//printStdioVideoList(vetor);
+	vetor = readFileVideoList(INPUT_FILE_VIDEO);
+	printStdioVideoList(vetor);
+	vetor.vet[vetor.tam] = readStdioVideo(); vetor.tam++;
+	printStdioVideoList(vetor);
+	printFileVideoList(vetor, OUTPUT_FILE_VIDEO);
 	
 
 	return 0;

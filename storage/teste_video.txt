@@ -1,0 +1,42 @@
+{
+identification = 342342342342;
+kindOfVideo = Tipo de video;
+name = Nome do video;
+directorName = Nome do director;
+duration = 1:30:15;
+numberOfSeasons = 12;
+releaseYear = 2001;
+genres = {
+genero 1,
+genero 2,
+genero 3,
+}
+}
+{
+identification = 10000000;
+kindOfVideo = Filme;
+name = World of Warcraft;
+directorName = Nome do director;
+duration = 2:10:25;
+numberOfSeasons = 0;
+releaseYear = 2018;
+genres = {
+genero acao,
+genero aventura,
+genero fantasia,
+}
+}
+{
+identification = 63;
+kindOfVideo = ;
+name = De volta para o futuro;
+directorName = Sla mano;
+duration = 50:13:47;
+numberOfSeasons = 0;
+releaseYear = 1985;
+genres = {
+genero acao,
+genero ficcao,
+genero comedia,
+}
+}

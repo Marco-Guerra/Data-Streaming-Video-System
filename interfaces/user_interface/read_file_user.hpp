@@ -10,7 +10,6 @@
 
 #define INPUT_FILE_USER "storage/user_storage"
 
-
 #include <string>
 
 using namespace std;

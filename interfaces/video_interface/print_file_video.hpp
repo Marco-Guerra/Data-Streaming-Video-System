@@ -6,7 +6,7 @@
 #include <string>
 #include <fstream>
 
-#define OUTPUT_FILE_VIDEO "storage/teste_video.txt"
+#define OUTPUT_FILE_VIDEO "storage/video_storage"
 
 using namespace std;
 

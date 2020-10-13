@@ -3,6 +3,8 @@
 
 #include "../../structures/user_structure.hpp"
 
+#define OUTPUT_FILE_USER "storage/user_storage"
+
 #include <string>
 #include <fstream>
 

@@ -3,6 +3,8 @@
 
 #include "interfaces/user_interface/print_file_user.hpp"
 #include "interfaces/user_interface/read_file_user.hpp"
+#include "interfaces/user_interface/print_stdio_user.hpp"
+#include "interfaces/user_interface/read_stdio_user.hpp"
 
 #include "interfaces/video_interface/print_file_video.hpp"
 #include "interfaces/video_interface/read_file_video.hpp"
@@ -18,14 +20,8 @@ int main (int argc, char *argv[]) {
 	VideoListDocumentStructure videoList;
 	
 	// ler os aruivos de armazenamento
-	//userList = readFileUserList(INPUT_FILE_USER); // abre o arquivo que contem a lista de usuários e realiza a leitura
+	userList = readFileUserList(INPUT_FILE_USER); // abre o arquivo que contem a lista de usuários e realiza a leitura
 	videoList = readFileVideoList(INPUT_FILE_VIDEO); // abre o arquivo que contem a lista de vídeos e realiza a leitura
-	
-	printStdioVideoList(videoList);
-
-	videoList.videosList[videoList.numberOfVideos] = readStdioVideo(); videoList.numberOfVideos++;
-
-	printStdioVideoList(videoList);
 
 	userList.usersList[0].identification = "0000000000";
 	userList.usersList[0].name = "Nome do Usuário";

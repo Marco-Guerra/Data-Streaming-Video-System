@@ -105,19 +105,16 @@ GenresStructure readStdioVideoGenres() {
 // função que faz a leitura na saída estândar de um vídeo
 VideoDocumentStructure readStdioVideo() {
 	VideoDocumentStructure aux;
-	string leitura;
-	cout << "Você deseja entrar com mais um vídeo [y/n] ";
-	cin >> leitura;
-	if (leitura[0] == 'Y' || leitura[0] == 'y') {
-		aux.identification = readStdioVideoIdentification();
-		aux.kindOfVideo = readStdioVideoKindOfVideo();
-		aux.name = readStdioVideoName();
-		aux.directorName = readStdioVideoDirectorName();
-		aux.durartion = readStdioVideoDuration();
-		aux.numberOfSeasons = readStdioVideoNumberOfSeasons();
-		aux.releaseYear = readStdioVideoReleaseYear();
-		aux.genres = readStdioVideoGenres();
-	}
+
+	aux.identification = readStdioVideoIdentification();
+	aux.kindOfVideo = readStdioVideoKindOfVideo();
+	aux.name = readStdioVideoName();
+	aux.directorName = readStdioVideoDirectorName();
+	aux.durartion = readStdioVideoDuration();
+	aux.numberOfSeasons = readStdioVideoNumberOfSeasons();
+	aux.releaseYear = readStdioVideoReleaseYear();
+	aux.genres = readStdioVideoGenres();
+
 	return aux;
 }
 

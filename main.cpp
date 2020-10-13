@@ -23,7 +23,12 @@ int main (int argc, char *argv[]) {
 
 	vetor = readFileVideoList(INPUT_FILE_VIDEO);
 	printStdioVideoList(vetor);
-	vetor.vet[vetor.tam] = readStdioVideo(); vetor.tam++;
+	string leitura;
+	cout << "Você deseja entrar com mais um vídeo [y/n] ";
+	cin >> leitura;
+	if (leitura[0] == 'Y' || leitura[0] == 'y') {
+		vetor.vet[vetor.tam] = readStdioVideo(); vetor.tam++;
+	}
 	printStdioVideoList(vetor);
 	printFileVideoList(vetor, OUTPUT_FILE_VIDEO);
 	

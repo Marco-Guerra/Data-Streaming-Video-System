@@ -26,17 +26,3 @@ genero aventura,
 genero fantasia,
 }
 }
-{
-identification = 63;
-kindOfVideo = ;
-name = De volta para o futuro;
-directorName = Sla mano;
-duration = 50:13:47;
-numberOfSeasons = 0;
-releaseYear = 1985;
-genres = {
-genero acao,
-genero ficcao,
-genero comedia,
-}
-}

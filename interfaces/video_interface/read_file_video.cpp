@@ -36,21 +36,6 @@ string readFileVideoDirectorName(ifstream &fn) {
 	return aux;
 }
 
-// função que faz a leitura no arquivo do vídeo as horas de duração do vídeo
-int readFileVideoHours(ifstream &fn) {
-	
-}
-
-// função que faz a leitura no arquivo do vídeo os minutos de duração do vídeo
-int readFileVideoMinutes(ifstream &fn) {
-    
-}
-
-// função que faz a leitura no arquivo do vídeo os segundos de duração do vídeo
-int readFileVideoSeconds(ifstream &fn) {
-    
-}
-
 // função que faz a leitura no arquivo do vídeo a duração do vídeo
 DurationStructure readFileVideoDuration(ifstream &fn) {
     string aux;
@@ -179,9 +164,9 @@ bool findBeginOfStructureVideo(ifstream &fn) {
 }
 
 // função que faz a leitura no arquivo do vídeo todos os vídeos
-/*VetorOfVideos readFileVideoList(string file_name) {
+VideoListDocumentStructure readFileVideoList(string file_name) {
 	ifstream inputFile;
-	VetorOfVideos vetor;
+	VideoListDocumentStructure videoList;
 
 	inputFile.open(file_name);
 
@@ -192,9 +177,8 @@ bool findBeginOfStructureVideo(ifstream &fn) {
 
 	int i;
 	for (i = 0; findBeginOfStructureVideo(inputFile); i++) {
-		vetor.vet[i] = readFileVideo(inputFile);
+		videoList.videosList[i] = readFileVideo(inputFile);
 	}
-	vetor.tam = i;
-	return vetor;
+	videoList.numberOfVideos = i;
+	return videoList;
 }
-*/

@@ -1,52 +1,155 @@
 #include "read_file_user.hpp"
 
-
 // função que faz a leitura do arquivo de usuários da identificação de um usuário
-string readFileUserIdentificatio() {
+string readFileUserIdentificatio(ifstream &fn) {
 
+    string aux;
+	getline(fn, aux);
+	aux = removeEspaces(aux);
+	aux = processInput(aux);
+	return aux;
 }
 
-// função que faz a leitura do arquivo de usuários do nome de um usuário
-string readFileUserName() {
 
+// função que faz a leitura do arquivo de usuários do nome de um usuário
+string readFileUserName(ifstream &fn) {
+
+    string aux;
+	getline(fn, aux);
+	aux = processInput(aux);
+	aux = removeEspaces(aux);
+	return aux;
 }
 
 // função que faz a leitura do arquivo de usuários do dia da data de aniversario de um usuário
-int readFileUserDay() {
+int readFileUserDay(string line) {
+
+return stoi(line.substr(line.find('='),line.find('/')));
 
 }
 
 // função que faz a leitura do arquivo de usuários do mes da data de aniversario de um usuário
-int readFileUserMonth() {
+int readFileUserMonth(string line) {
+
+return stoi(line.substr(line.find('/'),line.find_last_of('/'))); 
 
 }
 
 // função que faz a leitura do arquivo de usuários do ano da data de aniversario de um usuário
-int readFileUserYear() {
+int readFileUserYear(string line) {
+
+return stoi(line.substr(line.find_last_of("/"),line.find(";")));
 
 }
 
 // função que faz a leitura do arquivo de usuários da data de aniversario de um usuário
-DateOfBirthStructure readFileUserDateOfBirth() {
+DateOfBirthStructure readFileUserDateOfBirth(ifstream &fn) {
+
+string aux;
+DateOfBirthStructure data;
+getline(fn,aux);
+aux = removeEspaces(aux);
+data.day = readFileUserDay(aux);
+data.month = readFileUserMonth(aux);
+data.year = readFileUserYear(aux);
+
+return data;
+
+}
+
+string processHistory (string s) {
+	return s.substr( 0 , s.find(","));
+}
+
+bool readFileUserHistory(ifstream &fn, string &id) {
+
+	string aux;
+	getline(fn, aux);
+	if (aux == "}") {
+		return false;
+	}
+	id = aux.substr(aux.find(' ') + 1);
+	return true;
 
 }
 
 // função que faz a leitura do arquivo de usuários da identificação dos vídeos visto por um usuário
-string readFileUserVideosIdentifications() {
+HistoryStructure readFileUserVideosIdentifications(ifstream &fn) {
+
+string aux;
+	HistoryStructure history;
+	int i;
+	getline(fn, aux);
+	if (aux != "history = {") {
+		return history;
+	}
+
+	for (i = 0; readFileUserHistory(fn, aux); i++) {
+		history.videoIdentifications[i] = processHistory(aux);
+	}
+	history.historyLenght = i;
+	return history;
 
 }
 
-// função que faz a leitura do arquivo de usuários do tamanho do histórico de vídeos de um usuário
-int readFileUserHistoryLenght() {
+// encontrar o ultimo fechamento de chaves
+void findEndOfStructureUser (ifstream &fn) {
+	string aux;
+	getline(fn, aux);
+	while(aux != "}") {
+		getline(fn, aux);
+	}
 
+	return;
 }
 
 // função que faz a leitura do arquivo de usuários de um usuário
-UserDocumentStructure readFileUser() {
+UserDocumentStructure readFileUser(ifstream &fn) {
+    
+	UserDocumentStructure aux;
+
+	aux.identification = readFileUserIdentificatio(fn);
+	aux.name = readFileUserName(fn);
+	aux.history = readFileUserVideosIdentifications(fn);
+	aux.date = readFileUserDateOfBirth(fn);
+    findEndOfStructureUser(fn);
+
+	return aux;
 
 }
 
-// função que faz a leitura do arquivo de usuários de todos os usuário
-UserDocumentStructure readFileUserList() {
+// acha o fim da struct
+// true caso ache
+// false caso ache o fim do arquivo
+bool findBeginOfStructureUser(ifstream &fn) {
+	string aux;
 
+	while(!fn.eof()) {
+		getline(fn, aux);
+		if (aux == "{") {
+			return true;
+		}
+	}
+	return false;
+}
+
+
+// função que faz a leitura do arquivo de usuários de todos os usuário
+UserListDocumentStructure readFileUsuarioList(string file_name) {
+	ifstream inputFile;
+	UserListDocumentStructure vetor;
+
+	inputFile.open(file_name);
+
+	if( !inputFile.is_open() ) {
+		cout << "Falha ao abrir o arquivo, nome inválido\n";
+		exit(0);
+	}
+
+	int i;
+	for (i = 0; findBeginOfStructureUser(inputFile); i++) {
+		vetor.usersList[i] = readFileUser(inputFile);
+	}
+	vetor.numberOfUsers = i;
+	return vetor;
 }

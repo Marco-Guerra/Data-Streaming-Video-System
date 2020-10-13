@@ -12,7 +12,7 @@ string processInput(string line) {
 	return line.substr( position, (line.size() - position - 1));
 }
 
-// função que remove um determinado caracter de uma cadeia de caracteres
+// função que remove um determinado caractere de uma cadeia de caracteres
 string removeCharacter(string line, char character) {
 
     string newLine = "";
@@ -50,7 +50,7 @@ string removeEspaces(string line) {
 	return newLine.substr(0, i);
 }
 
-// funue que verifica se todos os caraceteres de uma cadeia são numeros ou letras
+// função que verifica se todos os caracteres de uma cadeia são números ou letras
 bool stringIsAlNum (string line) {
 	for (int i = 0; i < (int)line.size(); i++) {
 		if (!isalnum(line[i])) {
@@ -60,7 +60,7 @@ bool stringIsAlNum (string line) {
 	return true;
 }
 
-// função que verifica se todos os caraceteres de uma cadeia são letras
+// função que verifica se todos os caracteres de uma cadeia são letras
 bool stringIsAlpha (string line) {
 	for (int i = 0; i < (int)line.size(); i++) {
 		if (!isalpha(line[i])) {

@@ -1,7 +1,13 @@
 #ifndef READ_FILE_USER
 #define READ_FILE_USER
 
+
+#include <iostream>
+#include <string>
+#include <fstream>
+#include "../../utilities/utilities.hpp"
 #include "../../structures/user_structure.hpp"
+
 
 #include <string>
 
@@ -28,13 +34,18 @@ DateOfBirthStructure readFileUserDateOfBirth();
 // função que faz a leitura do arquivo de usuários da identificação dos vídeos visto por um usuário
 string readFileUserVideosIdentifications();
 
-// função que faz a leitura do arquivo de usuários do tamanho do histórico de vídeos de um usuário
-int readFileUserHistoryLenght();
-
 // função que faz a leitura do arquivo de usuários de um usuário
 UserDocumentStructure readFileUser();
 
 // função que faz a leitura do arquivo de usuários de todos os usuário
-UserDocumentStructure readFileUserList();
+UserDocumentStructure readFileUserList(string file_name);
+
+// acha o fim da struct
+// true caso ache
+// false caso ache o fim do arquivo
+bool findBeginOfStructureUser(ifstream &fn);
+
+// encontrar o ultimo fechamento de chaves
+void findEndOfStructureUser(ifstream &fn);
 
 #endif

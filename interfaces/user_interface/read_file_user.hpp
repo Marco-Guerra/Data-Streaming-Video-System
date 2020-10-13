@@ -39,7 +39,7 @@ string readFileUserVideosIdentifications();
 UserDocumentStructure readFileUser();
 
 // função que faz a leitura do arquivo de usuários de todos os usuário
-UserDocumentStructure readFileUserList(string file_name);
+UserListDocumentStructure readFileUserList(string file_name);
 
 // acha o fim da struct
 // true caso ache

@@ -135,7 +135,7 @@ bool findBeginOfStructureUser(ifstream &fn) {
 
 
 // função que faz a leitura do arquivo de usuários de todos os usuário
-UserListDocumentStructure readFileUsuarioList(string file_name) {
+UserListDocumentStructure readFileUserList(string file_name) {
 	ifstream inputFile;
 	UserListDocumentStructure vetor;
 

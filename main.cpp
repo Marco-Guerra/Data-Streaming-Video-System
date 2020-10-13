@@ -23,18 +23,6 @@ int main (int argc, char *argv[]) {
 	userList = readFileUserList(INPUT_FILE_USER); // abre o arquivo que contem a lista de usuários e realiza a leitura
 	videoList = readFileVideoList(INPUT_FILE_VIDEO); // abre o arquivo que contem a lista de vídeos e realiza a leitura
 
-	userList.usersList[0].identification = "0000000000";
-	userList.usersList[0].name = "Nome do Usuário";
-	userList.usersList[0].date.day = 1;
-	userList.usersList[0].date.month = 1;
-	userList.usersList[0].date.year = 2000;
-	userList.usersList[0].history.videoIdentifications[0] = "1111111111";
-	userList.usersList[0].history.videoIdentifications[1] = "2222222222";
-	userList.usersList[0].history.videoIdentifications[2] = "3333333333";
-	userList.usersList[0].history.videoIdentifications[3] = "4444444444";
-	userList.usersList[0].history.videoIdentifications[4] = "5555555555";
-	userList.usersList[0].history.historyLenght = 5;
-
 	// mensagem inicial e explicação das funcionalidades do programa
 	initMessage();
 
@@ -42,7 +30,7 @@ int main (int argc, char *argv[]) {
 	menuPrincipalController(userList, videoList);
 
 	// escrever os arquivos de armazenamento
-	//printFileUserList(userList); // abre o arquivo que contem a lista de usuários e realiza a escrita da nova lista
+	printFileUserList(userList, OUTPUT_FILE_USER); // abre o arquivo que contem a lista de usuários e realiza a escrita da nova lista
 	printFileVideoList(videoList, OUTPUT_FILE_VIDEO); // abre o arquivo que contem a lista de vídeos e realiza a escrita da nova lista
 
 	// mensagem final do programa

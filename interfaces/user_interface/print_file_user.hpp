@@ -8,6 +8,8 @@
 
 using namespace std;
 
+#define INPUT_FILE_VIDEO "storage/user_storage"
+
 // função que imprime no arquivo de usuários a identificação de um usuário
 void printFileUserIdentificatio(string identification, ofstream &file);
 
@@ -17,7 +19,7 @@ void printFileUserName(string name, ofstream &file);
 // função que imprime no arquivo de usuários o dia da data de aniversario de um usuário
 void printFileUserDay(int day, ofstream &file);
 
-// função que imprime no arquivo de usuários o mes da data de aniversario de um usuário
+// função que imprime no arquivo de usuários o mês da data de aniversario de um usuário
 void printFileUserMonth(int month, ofstream &file);
 
 // função que imprime no arquivo de usuários o ano da data de aniversario de um usuário

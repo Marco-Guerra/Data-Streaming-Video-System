@@ -1,8 +1,8 @@
 #ifndef VIDEO_STRUCTURE
 #define VIDEO_STRUCTURE
 
+#define MAX_VIDEOS 20
 #define MAX_GENRES 10
-#define MAX_VIDEOS 50
 
 #include <iostream>
 
@@ -34,9 +34,9 @@ struct VideoDocumentStructure{
 };
 
 // definição da estrutura para armazenar todos os vídeos
-struct VetorOfVideos {
-	VideoDocumentStructure vet[MAX_VIDEOS];
-	int tam;
+struct VideoListDocumentStructure {
+	VideoDocumentStructure videosList[MAX_VIDEOS];
+	int numberOfVideos;
 };
 
 #endif

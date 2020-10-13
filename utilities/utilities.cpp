@@ -1,17 +1,24 @@
 #include "utilities.hpp"
 
-string processInput(string s) {
-	int aux = ((s.find("=")) + 1);
+// função que processa linhas de entrada
+string processInput(string line) {
+	
+	int position;
+	
+	position = (line.find("=")) + 1;
+	
 	// substr((int) índice do inicio da substring, (int) tamanho da substring)
-	return s.substr( aux, (s.size() - aux - 1));
+	
+	return line.substr( position, (line.size() - position - 1));
 }
 
-string removeStringDelimitator(string line, char delimitator) {
+// função que remove um determinado caracter de uma cadeia de caracteres
+string removeCharacter(string line, char character) {
 
     string newLine = "";
 
     for (int i = 0; i < (int)line.size(); i++) {
-        if (line[i] != delimitator) {
+        if (line[i] != character) {
             newLine += line[i];
         }
     }
@@ -19,37 +26,44 @@ string removeStringDelimitator(string line, char delimitator) {
     return newLine;
 }
 
-string removeEspaces(string s) {
-	string aux;
+// 
+string removeEspaces(string line) {
+	
+	string newLine;
+
 	int i = 0;
-	while(s[i] == ' ') {
+
+	while(line[i] == ' ') {
 		i++;
 	}
-	for (; i < (int)s.size(); i++) {
-		if (s[i] != ' ' || s[i - 1] != ' ') {
-			aux += s[i];
+
+	for (; i < (int)line.size(); i++) {
+		if (line[i] != ' ' || line[i - 1] != ' ') {
+			newLine += line[i];
 		}
 	}
-	for (i = s.size(); s[i] == ' '; i--) {
+
+	for (i = line.size(); line[i] == ' '; i--) {
 		;
 	}
-	return aux.substr(0, i);
+
+	return newLine.substr(0, i);
 }
 
-
-bool stringIsAlNum (string s) {
-	for (int i = 0; i < (int)s.size(); i++) {
-		if (!isalnum(s[i])) {
+// funue que verifica se todos os caraceteres de uma cadeia são numeros ou letras
+bool stringIsAlNum (string line) {
+	for (int i = 0; i < (int)line.size(); i++) {
+		if (!isalnum(line[i])) {
 			return false;
 		}
 	}
 	return true;
 }
 
-
-bool stringIsAlpha (string s) {
-	for (int i = 0; i < (int)s.size(); i++) {
-		if (!isalpha(s[i])) {
+// função que verifica se todos os caraceteres de uma cadeia são letras
+bool stringIsAlpha (string line) {
+	for (int i = 0; i < (int)line.size(); i++) {
+		if (!isalpha(line[i])) {
 			return false;
 		}
 	}

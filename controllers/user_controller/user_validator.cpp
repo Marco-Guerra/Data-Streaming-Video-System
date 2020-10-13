@@ -1,6 +1,6 @@
 #include "user_validator.hpp"
 
-// função imprime as mensagens que encerram o arquivo
+// função imprime as mensagens que encerram de erra
 void errorMessagesCodeUser(int code, string message) {
 
 	switch(code) {

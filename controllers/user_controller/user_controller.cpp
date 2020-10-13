@@ -24,6 +24,7 @@ void addUserController() {
 
 // rotina para acessar um usuário
 void accessUserController() {
+    cout << "rotina para acessar um usuário" << endl;
     // ler a identificação do usuário
     // acessar todos os dados do usuário
     // passar o controle para o menu do usuário logado
@@ -46,6 +47,7 @@ void deleteUserController() {
 
 // rotina para imprimir os dados de um usuário na saída estandar
 void printUserController() {
+    cout << "rotina para imprimir os dados de um usuário na saída estandar" << endl;
     // imprimir o usuário na saída estandar
 
 
@@ -54,6 +56,7 @@ void printUserController() {
 
 // rotina para combiar todos os dados não sensiveis do usuário
 void changeUserDataController() {
+    cout << "rotina para combiar todos os dados não sensiveis do usuário" << endl;
     // realizar a leitura de todos os dados
     // realizar a validação de todos os dados inseridos pelo usuário
     // adicionar as mudanças ao uauário na lista de usuários em memória
@@ -62,6 +65,7 @@ void changeUserDataController() {
 
 // rotina para combiar name do usuário
 void changeUserNameController() {
+    cout << "rotina para combiar name do usuário" << endl;
     // realizar a leitura do nome do usuário
     // realizar a validação do nome do usuário
     // adicionar a mudança do nome ao uauário na lista de usuários em memória
@@ -70,6 +74,7 @@ void changeUserNameController() {
 
 // rotina para combiar o dia da data de nascimento do usuário
 void changeUserDayController() {
+    cout << "rotina para combiar o dia da data de nascimento do usuário" << endl;
     // realizar a leitura do dia da data de nascimento do usuário
     // realizar a validação do dia da data de nascimento do usuário
     // adicionar a mudança do dia da data de nascimento do uauário na lista de usuários em memória
@@ -78,6 +83,7 @@ void changeUserDayController() {
 
 // rotina para combiar o mes da data de nascimento do usuário
 void changeUserMonthController() {
+    cout << "rotina para combiar o mes da data de nascimento do usuário" << endl;
     // realizar a leitura do mes da data de nascimento do usuário
     // realizar a validação do mes da data de nascimento do usuário
     // adicionar a mudança do mes da data de nascimento do uauário na lista de usuários em memória
@@ -86,6 +92,7 @@ void changeUserMonthController() {
 
 // rotina para combiar o ano da data de nascimento do usuário
 void changeUserYearController() {
+    cout << "rotina para combiar o ano da data de nascimento do usuário" << endl;
     // realizar a leitura do ano da data de nascimento do usuário
     // realizar a validação do ano da data de nascimento do usuário
     // adicionar a mudança do ano da data de nascimento do uauário na lista de usuários em memória
@@ -94,6 +101,7 @@ void changeUserYearController() {
 
 // rotina para combiar data de nascimento do usuário
 void changeUserDateController() {
+    cout << "rotina para combiar data de nascimento do usuário" << endl;
     // realizar a leitura da data de nascimento do usuário
     // realizar a validação da data de nascimento do usuário
     // adicionar a mudança da data de nascimento do uauário na lista de usuários em memória
@@ -102,6 +110,7 @@ void changeUserDateController() {
 
 // rotina para adicionar historico ao usuário
 void addVideoToHistoryUserController() {
+    cout << "rotina para adicionar historico ao usuário" << endl;
     // realizar a leitura do video visto pelo usuário
     // realizar a validação do video visto pelo usuário
     // adicionar o vídeo do uauário na lista de usuários em memória

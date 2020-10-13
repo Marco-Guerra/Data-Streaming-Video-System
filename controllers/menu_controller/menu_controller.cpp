@@ -28,11 +28,11 @@ void menuPrincipalController(UserListDocumentStructure &userList, VideoListDocum
         if( selected == ENTER ) {
             // acessar menu de usuários
             if( option == 0 )
-                usersMenuController();
+                usersMenuController(userList);
             
             // acessar menu de vídeo
             if( option == 1 )
-                videosMenuController();
+                videosMenuController(videoList);
             
             // rotina para finalizar o programa
             if( option == 2 )
@@ -47,7 +47,7 @@ void menuPrincipalController(UserListDocumentStructure &userList, VideoListDocum
 }
 
 // controlador de opções do menu de usuários
-void usersMenuController() {
+void usersMenuController(UserListDocumentStructure &userList) {
 
     int option = 0;
     char selected;
@@ -180,7 +180,7 @@ void dataUserMenuController() {
 }
 
 // controlador de opções do menu de vídeos
-void videosMenuController() {
+void videosMenuController(VideoListDocumentStructure &videoList) {
 
     int option = 0;
     char selected;

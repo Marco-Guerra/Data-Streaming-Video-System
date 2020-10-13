@@ -1,96 +1,323 @@
 #include "menu_controller.hpp"
+#include "menu_utilities.hpp"
+
+#include "../../interfaces/menu_interface/menu_messages.hpp"
 
 #include "../user_controller/user_controller.hpp"
 #include "../video_controller/video_controller.hpp"
 
-// menu de dados do vídeo
-void dataVideoMenu() {
-    // mudar tipo do vídeo
-    changeKindOfVideoController();
-    // mudar nome do vídeo
-    changeVideoNameController();
-    // mudar nome do diretor do vídeo
-    changeVideoDirectorNameController();
-    // mudar as horas de duração do vídeo
-    changeVideoDurationHoursController();
-    // mudar as minutos de duração do vídeo
-    changeVideoDurationMinutesController();
-    // mudar as segundos de duração do vídeo
-    changeVideoDurationSecondsController();
-    // mudar a duração do vídeo
-    changeVideoDurationController();
-    // mudar o número de temporadas do vídeo
-    changeVideoNumberOfSeasonsController();
-    // mudar o ano de lançamento do vídeo
-    changeVideoReleaseYearController();
-    // adicionar um novo gênero aos gêneros do vídeo
-    addVideoGenreController();
-    // retornar o controle para o menu de vídeo
+// controlador de opções do menu principal
+void menuPrincipalController(UserListDocumentStructure &userList, VideoListDocumentStructure &videoList) {
+
+    int option = 0;
+    char selected;
+    
+    system("clear");
+    menuPrincipalMessage(option);
+
+    selected = getChar();
+
+    while( true ) {
+        
+        if( selected == UP_DEFAULT && option > 0 )
+            option--;
+        
+        if( selected == DOWN_DEFAULT && option < 2 )
+            option++;
+
+        if( selected == ENTER ) {
+            // acessar menu de usuários
+            if( option == 0 )
+                usersMenuController();
+            
+            // acessar menu de vídeo
+            if( option == 1 )
+                videosMenuController();
+            
+            // rotina para finalizar o programa
+            if( option == 2 )
+                return;
+        }
+
+        system("clear");
+        menuPrincipalMessage(option);
+
+        selected = getChar();
+    }
 }
 
-// menu de vídeo
-void videoMenu() {
-    // imprimir todos os dados de um vídeo
-    printVideoController();
-    // acessar menu de dados do vídeo
-    dataVideoMenu();
-    // retornar o controle para o menu de vídeos
+// controlador de opções do menu de usuários
+void usersMenuController() {
+
+    int option = 0;
+    char selected;
+    
+    system("clear");
+    usersMenuMessage(option);
+
+    selected = getChar();
+
+    while( true ) {
+        
+        if( selected == UP_DEFAULT && option > 0 )
+            option--;
+        
+        if( selected == DOWN_DEFAULT && option < 3 )
+            option++;
+
+        if( selected == ENTER ) {
+            // adiciona um novo usuário
+            if( option == 0 )
+                addUserController();
+
+            // acessar menu de usuário
+            if( option == 1 )
+                userMenuController();
+
+            // eliminar um usuário
+            if( option == 2 )
+                deleteUserController();
+                
+            // retornar o controle para o menu principal
+            if( option == 3 )
+                return;
+        }
+
+        system("clear");
+        usersMenuMessage(option);
+
+        selected = getChar();
+    }
 }
 
+// controlador de opções do menu de usuário
+void userMenuController() {
 
-// menu de vídeos
-void videosMenu() {
-    // adiciona um novo vídeo
-    addVideoController();
-    // acessar menu de vídeo
-    videoMenu();
-    // eliminar um vídeo
-    deleteVideoController();
-    // retornar o controle para o menu principal
+    int option = 0;
+    char selected;
+    
+    system("clear");
+    userMenuMessage(option);
+
+    selected = getChar();
+
+    while( true ) {
+        
+        if( selected == UP_DEFAULT && option > 0 )
+            option--;
+        
+        if( selected == DOWN_DEFAULT && option < 2 )
+            option++;
+
+        if( selected == ENTER ) {
+            // imprimir todos os dados de um usuário
+            if( option == 0 )
+                printUserController();
+            // acessar menu de dados do usuário
+            if( option == 1 )
+                dataUserMenuController();
+            // retornar o controle para o menu de usuários
+            if( option == 2 )
+                return;
+        }
+
+        system("clear");
+        userMenuMessage(option);
+
+        selected = getChar();
+    }
 }
 
-// menu de dados do usuário
-void dataUserMenu() {
-    // mudar nome do usuário
-    changeUserNameController();
-    // mudar data de nascimento do usuário
-    changeUserDateController();
-    // mudar o dia da data de nascimento do usuário
-    changeUserDayController();
-    // mudar o mês da data de nascimento do usuário
-    changeUserMonthController();
-    // mudar o ano da data de nascimento do usuário
-    changeUserYearController();
-    // adicionar um novo vídeo ao histórico de vídeos do usuário
-    addVideoToHistoryUserController();
-    // retornar o controle para o menu de usuário
+// controlador de opções do menu de dados do usuário
+void dataUserMenuController() {
+
+
+    int option = 0;
+    char selected;
+    
+    system("clear");
+    dataUserMenuMessage(option);
+
+    selected = getChar();
+
+    while( true ) {
+        
+        if( selected == UP_DEFAULT && option > 0 )
+            option--;
+        
+        if( selected == DOWN_DEFAULT && option < 6 )
+            option++;
+
+        if( selected == ENTER ) {
+            // mudar nome do usuário
+            if( option == 0 )
+                changeUserNameController();
+            // mudar data de nascimento do usuário
+            if( option == 1 )
+                changeUserDateController();
+            // mudar o dia da data de nascimento do usuário
+            if( option == 2 )
+                changeUserDayController();
+            // mudar o mes da data de nascimento do usuário
+            if( option == 3 )
+                changeUserMonthController();
+            // mudar o ano da data de nascimento do usuário
+            if( option == 4 )
+                changeUserYearController();
+            // adicionar um novo vídeo ao historico de vídeos do usuário
+            if( option == 5 )
+                addVideoToHistoryUserController();
+            // retornar o controle para o menu de usuário
+            if( option == 6 )
+                return;
+        }
+
+        system("clear");
+        dataUserMenuMessage(option);
+
+        selected = getChar();
+    }
 }
 
-// menu de usuário
-void UserMenu() {
-    // imprimir todos os dados de um usuário
-    printUserController();
-    // acessar menu de dados do usuário
-    dataUserMenu();
-    // retornar o controle para o menu de usuários
+// controlador de opções do menu de vídeos
+void videosMenuController() {
+
+    int option = 0;
+    char selected;
+    
+    system("clear");
+    videosMenuMessage(option);
+
+    selected = getChar();
+
+    while( true ) {
+        
+        if( selected == UP_DEFAULT && option > 0 )
+            option--;
+        
+        if( selected == DOWN_DEFAULT && option < 3 )
+            option++;
+
+        if( selected == ENTER ) {
+            // adiciona um novo vídeo
+            if( option == 0 )
+                //addVideoController();
+            // acessar menu de vídeo
+            if( option == 1 )
+                videoMenuController();
+            // eliminar um vídeo
+            if( option == 2 )
+                //deleteVideoController();
+            // retornar o controle para o menu principal
+            if( option == 3 )
+                return;
+        }
+
+        system("clear");
+        videosMenuMessage(option);
+
+        selected = getChar();
+    }
 }
 
-// menu de usuários
-void UsersMenu() {
-    // adiciona um novo usuário
-    addUserController();
-    // acessar menu de usuário
-    UserMenu();
-    // eliminar um usuário
-    deleteUserController();
-    // retornar o controle para o menu principal
+// controlador de opções do menu de vídeo
+void videoMenuController() {
+
+    int option = 0;
+    char selected;
+    
+    system("clear");
+    videoMenuMessage(option);
+
+    selected = getChar();
+
+    while( true ) {
+        
+        if( selected == UP_DEFAULT && option > 0 )
+            option--;
+        
+        if( selected == DOWN_DEFAULT && option < 2 )
+            option++;
+
+        if( selected == ENTER ) {
+            // imprimir todos os dados de um vídeo
+            if( option == 0 )
+                //printVideoController();
+            // acessar menu de dados do vídeo
+            if( option == 1 )
+                dataVideoMenuController();
+            // retornar o controle para o menu de vídeos
+            if( option == 2 )
+                return;
+        }
+
+        system("clear");
+        videoMenuMessage(option);
+
+        selected = getChar();
+    }
+
+    
 }
 
-// menu principal
-void menuPrincipal() {
-    // acessar menu de usuários
-    UsersMenu();
-    // acessar menu de vídeo
-    videosMenu();
-    // rotina para finalizar o programa
+// controlador de opções do menu de dados do vídeo
+void dataVideoMenuController() {
+
+    int option = 0;
+    char selected;
+    
+    system("clear");
+    dataVideoMenuMessage(option);
+
+    selected = getChar();
+
+    while( true ) {
+        
+        if( selected == UP_DEFAULT && option > 0 )
+            option--;
+        
+        if( selected == DOWN_DEFAULT && option < 10 )
+            option++;
+
+        if( selected == ENTER ) {
+            // mudar tipo do vídeo
+            if( option == 0 )
+                changeKindOfVideoController();
+            // mudar nome do vídeo
+            if( option == 1 )
+                changeVideoNameController();
+            // mudar nome do diretor do vídeo
+            if( option == 2 )
+                changeVideoDirectorNameController();
+            // mudar as horas de duração do vídeo
+            if( option == 3 )
+                changeVideoDurationHoursController();
+            // mudar as minutos de duração do vídeo
+            if( option == 4 )
+                changeVideoDurationMinutesController();
+            // mudar as segundos de duração do vídeo
+            if( option == 5 )
+                changeVideoDurationSecondsController();
+            // mudar a duração do vídeo
+            if( option == 6 )
+                changeVideoDurationController();
+            // mudar o número de temporadas do vídeo
+            if( option == 7 )
+                changeVideoNumberOfSeasonsController();
+            // mudar o ano de lançamento do vídeo
+            if( option == 8 )
+                changeVideoReleaseYearController();
+            // adicionar um novo genero aos generos do vídeo
+            if( option == 9 )
+                addVideoGenreController();
+            // retornar o controle para o menu de vídeo
+            if( option == 10 )
+                return;
+        }
+
+        system("clear");
+        dataVideoMenuMessage(option);
+
+        selected = getChar();
+    }
 }

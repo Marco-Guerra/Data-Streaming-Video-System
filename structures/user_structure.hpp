@@ -1,6 +1,7 @@
 #ifndef USER_STRUCTURES
 #define USER_STRUCTURES
 
+#define MAX_USERS 20
 #define MAX_HISTORY 100
 
 #include <iostream>
@@ -26,6 +27,12 @@ struct UserDocumentStructure{
     string name;
     DateOfBirthStructure date;
     HistoryStructure history;
+};
+
+// definição da estrutura para armazenar todos os usuários
+struct UserListDocumentStructure{
+    UserDocumentStructure usersList[MAX_USERS];
+    int numberOfUsers;
 };
 
 #endif

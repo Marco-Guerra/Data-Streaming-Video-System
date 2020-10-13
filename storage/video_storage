@@ -1,9 +1,9 @@
 {
-identification = 342342342342;
+identification =  342342342342;
 kindOfVideo = Tipo de video;
 name = Nome do video;
 directorName = Nome do director;
-durartion = 1:30:15;
+duration = 1:30:15;
 numberOfSeasons = 12;
 releaseYear = 2001;
 genres = {
@@ -13,11 +13,11 @@ genero 3,
 }
 }
 {
-identification = 10000000;
+identification =  10000000;
 kindOfVideo = Filme;
 name = World of Warcraft;
 directorName = Nome do director;
-durartion = 2:10:25;
+duration = 2:10:25;
 numberOfSeasons = 0;
 releaseYear = 2018;
 genres = {

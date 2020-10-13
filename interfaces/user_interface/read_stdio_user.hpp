@@ -34,7 +34,4 @@ HistoryStructure readStdioUserVideosIdentifications();
 // função que faz a leitura da saída estandar um usuário
 UserDocumentStructure readStdioUser();
 
-// função que faz a leitura da saída estandar todos os usuário
-UserDocumentStructure readStdioUserList();
-
 #endif

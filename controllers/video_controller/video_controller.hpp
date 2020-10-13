@@ -1,17 +1,23 @@
 #ifndef VIDEO_CONTROLLER
 #define VIDEO_CONTROLLER
 
+#include "../../structures/video_structure.hpp"
+
+int findIndiceOfId(VideoListDocumentStructure vet, string id);
+
+void swapVideo (VideoDocumentStructure &a, VideoDocumentStructure &b);
+
 // rotina para agregar um video
-void addVideoController();
+void addVideoController(VideoListDocumentStructure &vet);
 
 // rotina para acessar um video
-void accessVideoController();
+void accessVideoController(VideoListDocumentStructure &vet);
 
 // rotina para eliminar um video
-void deleteVideoController();
+void deleteVideoController(VideoListDocumentStructure &vet);
 
 // rotina para imprimir os dados de um video na saída estandar
-void printVideoController();
+void printVideoController(VideoListDocumentStructure vet);
 
 // rotina para combiar todos os dados não sensiveis do video
 void changeVideoDataController();

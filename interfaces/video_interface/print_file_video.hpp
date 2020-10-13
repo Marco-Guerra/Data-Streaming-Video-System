@@ -6,7 +6,7 @@
 #include <string>
 #include <fstream>
 
-#define OUTPUT_FILE_VIDEO "storage/teste_video.txt"
+#define OUTPUT_FILE_VIDEO "storage/video_storage"
 
 using namespace std;
 
@@ -38,6 +38,6 @@ void printFileVideoGenres(GenresStructure genres, ofstream &file);
 void printFileVideo(VideoDocumentStructure video, ofstream &file);
 
 // função que imprime no arquivo do vídeo todos os vídeos
-void printFileVideoList(VetorOfVideos vet, string file_path);
+void printFileVideoList(VideoListDocumentStructure vet, string file_path);
 
 #endif

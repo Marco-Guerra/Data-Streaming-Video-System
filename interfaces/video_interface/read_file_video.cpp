@@ -4,7 +4,7 @@
 string readFileVideoIdentificatio(ifstream &fn) {
     string aux;
 	getline(fn, aux);
-	aux = removeStringDelimitator(aux);
+	aux = removeEspaces(aux);
 	aux = processInput(aux);
 	return aux;
 }
@@ -164,9 +164,9 @@ bool findBeginOfStructureVideo(ifstream &fn) {
 }
 
 // função que faz a leitura no arquivo do vídeo todos os vídeos
-VetorOfVideos readFileVideoList(string file_name) {
+VideoListDocumentStructure readFileVideoList(string file_name) {
 	ifstream inputFile;
-	VetorOfVideos vetor;
+	VideoListDocumentStructure videoList;
 
 	inputFile.open(file_name);
 
@@ -177,8 +177,8 @@ VetorOfVideos readFileVideoList(string file_name) {
 
 	int i;
 	for (i = 0; findBeginOfStructureVideo(inputFile); i++) {
-		vetor.vet[i] = readFileVideo(inputFile);
+		videoList.videosList[i] = readFileVideo(inputFile);
 	}
-	vetor.tam = i;
-	return vetor;
+	videoList.numberOfVideos = i;
+	return videoList;
 }

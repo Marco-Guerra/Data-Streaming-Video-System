@@ -4,37 +4,40 @@
 #include "../../structures/user_structure.hpp"
 
 #include <string>
+#include <fstream>
 
 using namespace std;
 
+#define OUTPUT_FILE_USER "storage/user_storage"
+
 // função que imprime no arquivo de usuários a identificação de um usuário
-void printFileUserIdentificatio(string identification);
+void printFileUserIdentificatio(string identification, ofstream &file);
 
 // função que imprime no arquivo de usuários o nome de um usuário
-void printFileUserName(string name);
+void printFileUserName(string name, ofstream &file);
 
 // função que imprime no arquivo de usuários o dia da data de aniversario de um usuário
-void printFileUserDay(int day);
+void printFileUserDay(int day, ofstream &file);
 
-// função que imprime no arquivo de usuários o mes da data de aniversario de um usuário
-void printFileUserMonth(int month);
+// função que imprime no arquivo de usuários o mês da data de aniversario de um usuário
+void printFileUserMonth(int month, ofstream &file);
 
 // função que imprime no arquivo de usuários o ano da data de aniversario de um usuário
-void printFileUserYear(int year);
+void printFileUserYear(int year, ofstream &file);
 
 // função que imprime no arquivo de usuários a data de aniversario de um usuário
-void printFileUserDateOfBirth(DateOfBirthStructure date);
+void printFileUserDateOfBirth(DateOfBirthStructure date, ofstream &file);
 
 // função que imprime no arquivo de usuários a identificação dos vídeos visto por um usuário
-void printFileUserVideosIdentifications(string identification);
+void printFileUserVideosIdentifications(string identification, ofstream &file);
 
 // função que imprime no arquivo de usuários o tamanho do histórico de vídeos de um usuário
-void printFileUserHistoryLenght(int historyLenght);
+void printFileUserHistoryLenght(int historyLenght, ofstream &file);
 
 // função que imprime no arquivo de usuários um usuário
-void printFileUser(UserDocumentStructure user);
+void printFileUser(UserDocumentStructure user, ofstream &file);
 
 // função que imprime no arquivo de usuários todos os usuário
-void printFileUserList(UserDocumentStructure userList[]);
+void printFileUserList(UserListDocumentStructure vet, string file_path);
 
 #endif

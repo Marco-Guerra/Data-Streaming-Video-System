@@ -118,6 +118,10 @@ VideoDocumentStructure readStdioVideo() {
 	return aux;
 }
 
+// função que faz a leitura na saída estandar de todos os vídeos
+//VideoDocumentStructure readStdioVideoList() {
+//    
+//}
 // função que faz a leitura na saída estândar de todos os vídeos
 //VideoDocumentStructure readStdioVideoList() {
 //}

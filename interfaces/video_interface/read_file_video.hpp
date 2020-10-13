@@ -49,12 +49,15 @@ void findEndOfStructureVideo(ifstream &fn);
 // função que faz a leitura no arquivo do vídeo um vídeo
 VideoDocumentStructure readFileVideo(ifstream &fn);
 
+// função que faz a leitura no arquivo do vídeo todos os vídeos
+//VetorOfVideos readFileVideoList(string file_name);
+
 // acha o fim da struct
 // true caso ache
 // false caso ache o fim do arquivo
 bool findBeginOfStructureVideo(ifstream &fn);
 
 // função que faz a leitura no arquivo do vídeo todos os vídeos
-VetorOfVideos readFileVideoList(string file_name);
+VideoListDocumentStructure readFileVideoList(string file_name);
 
 #endif

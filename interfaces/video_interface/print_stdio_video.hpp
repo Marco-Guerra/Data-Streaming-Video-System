@@ -47,5 +47,6 @@ void printStdioVideoGenres(GenresStructure genres);
 void printStdioVideo(VideoDocumentStructure video);
 
 // função que imprime na saída estândar todos os vídeos
-void printStdioVideoList(VetorOfVideos vet);
+void printStdioVideoList(VideoListDocumentStructure vet);
+
 #endif

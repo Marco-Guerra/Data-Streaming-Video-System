@@ -6,7 +6,7 @@ string readStdioUserIdentificatio() {
     string identification;
 
     cout << "Entre com a identificação do usuário: ";
-    cin >> identification;
+    getline(cin, identification);
     
     return identification;
 
@@ -18,7 +18,7 @@ string readStdioUserName() {
     string name;
 
     cout << "Entre com o nome do usuário: ";
-    cin >> name;
+    getline(cin, name);
     
     return name;
 
@@ -79,7 +79,7 @@ string readStdioUserVideosIdentification() {
     string videoIdentification;
 
     cout << "Entre com a identificação de um vídeo visto pelo usuário: ";
-    cin >> videoIdentification;
+    getline(cin, videoIdentification);
     
     return videoIdentification;
 
@@ -90,7 +90,13 @@ HistoryStructure readStdioUserVideosIdentifications() {
 
     HistoryStructure videoIdentifications;
 
-    // realizar a leitura dos videos para uma lista, com valor maximo
+    cout << "Entre com quantidade de videos assistidos: ";
+	cin >> videoIdentifications.historyLenght;
+
+	for(int i = 0; i < videoIdentifications.historyLenght; i++) {
+		cout << "Entre com a identificação do vídeo " << i + 1 << ": ";
+		cin >> videoIdentifications.videoIdentifications[i]; 
+	}
 
     return videoIdentifications;
 
@@ -105,11 +111,6 @@ UserDocumentStructure readStdioUser() {
     user.name = readStdioUserName();
     user.date = readStdioUserDateOfBirth();
     user.history = readStdioUserVideosIdentifications();
-}
 
-// função que faz a leitura da saída estandar todos os usuário
-UserDocumentStructure readStdioUserList() {
-
-    // leitura de varios usuarios
-
+    return user;
 }

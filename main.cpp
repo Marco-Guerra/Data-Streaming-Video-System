@@ -3,6 +3,8 @@
 
 #include "interfaces/user_interface/print_file_user.hpp"
 #include "interfaces/user_interface/read_file_user.hpp"
+#include "interfaces/user_interface/print_stdio_user.hpp"
+#include "interfaces/user_interface/read_stdio_user.hpp"
 
 #include "interfaces/video_interface/print_file_video.hpp"
 #include "interfaces/video_interface/read_file_video.hpp"
@@ -10,28 +12,33 @@
 #include "interfaces/video_interface/read_stdio_video.hpp"
 
 #include "controllers/menu_controller/menu_controller.hpp"
+#include "interfaces/menu_interface/menu_messages.hpp"
 
 int main (int argc, char *argv[]) {
+ 
+	UserListDocumentStructure userList;
+	VideoListDocumentStructure videoList;
 	
-	// ler os arquivos de armazenamento
-	// boas vindas, explicar o programa
+	// ler os aruivos de armazenamento
+	userList = readFileUserList(INPUT_FILE_USER); // abre o arquivo que contem a lista de usuários e realiza a leitura
+	videoList = readFileVideoList(INPUT_FILE_VIDEO); // abre o arquivo que contem a lista de vídeos e realiza a leitura
+
+	// mensagem inicial e explicação das funcionalidades do programa
+	initMessage();
+
+	printStdioUserList(userList);
+	userList.usersList[userList.numberOfUsers] = readStdioUser();
+	userList.numberOfUsers++;
+
 	// entrar no menu
+	//menuPrincipalController(userList, videoList);
+
 	// escrever os arquivos de armazenamento
+	printFileUserList(userList, OUTPUT_FILE_USER); // abre o arquivo que contem a lista de usuários e realiza a escrita da nova lista
+	printFileVideoList(videoList, OUTPUT_FILE_VIDEO); // abre o arquivo que contem a lista de vídeos e realiza a escrita da nova lista
 
-	UserDocumentStructure user;
-	VetorOfVideos vetor;
-
-	vetor = readFileVideoList(INPUT_FILE_VIDEO);
-	printStdioVideoList(vetor);
-	string leitura;
-	cout << "Você deseja entrar com mais um vídeo [y/n] ";
-	cin >> leitura;
-	if (leitura[0] == 'Y' || leitura[0] == 'y') {
-		vetor.vet[vetor.tam] = readStdioVideo(); vetor.tam++;
-	}
-	printStdioVideoList(vetor);
-	printFileVideoList(vetor, OUTPUT_FILE_VIDEO);
-	
+	// mensagem final do programa
+	//endMessage();
 
 	return 0;
 }
@@ -72,6 +79,8 @@ int main (int argc, char *argv[]) {
 		- sem campos vazios
 		- valores inteiros serao positivos
 		-.hppora e minuto validos min [0-24] [0-59]
+		- criar id de usuario de forma automatica
+		- criar arquivo de logs
 
 	interface simples -> selecionar funcionalidades e rutinas
 

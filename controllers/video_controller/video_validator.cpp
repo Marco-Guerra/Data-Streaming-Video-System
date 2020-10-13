@@ -1,6 +1,6 @@
 #include "video_validator.hpp"
 
-// Imprime as mensagens que encerram o arquivo
+// imprime as mensagens que encerram o arquivo
 void errorMessagesCodeVideo(int code, string message) {
 
     switch(code) {

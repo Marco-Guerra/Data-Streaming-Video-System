@@ -7,6 +7,8 @@
 #include "../../utilities/utilities.hpp"
 #include "../../structures/video_structure.hpp"
 
+#define INPUT_FILE_VIDEO "storage/video_storage"
+
 #include <string>
 
 using namespace std;
@@ -23,15 +25,6 @@ string readFileVideoName(ifstream &fn);
 // função que faz a leitura no arquivo do vídeo o nome do diretor do vídeo
 string readFileVideoDirectorName(ifstream &fn);
 
-// função que faz a leitura no arquivo do vídeo as horas de duração do vídeo
-int readFileVideoHours(ifstream &fn);
-
-// função que faz a leitura no arquivo do vídeo os minutos de duração do vídeo
-int readFileVideoMinutes(ifstream &fn);
-
-// função que faz a leitura no arquivo do vídeo os segundos de duração do vídeo
-int readFileVideoSeconds(ifstream &fn);
-
 // função que faz a leitura no arquivo do vídeo a duração do vídeo
 DurationStructure readFileVideoDuration(ifstream &fn);
 
@@ -41,14 +34,17 @@ int readFileVideoNumberOfSeasons(ifstream &fn);
 // função que faz a leitura no arquivo do vídeo do ano de lançamento
 int readFileVideoReleaseYear(ifstream &fn);
 
-// ler um genero de vìdeo
+// retira vírgulas do final da cadeia de caracteres
+string processGenre(string s);
+
+// ler um gênero de vídeo
 bool readFileVideoGenre(ifstream &fn, string &genre);
 
 // função que faz a leitura no arquivo do vídeo os gêneros aos quais o vídeo pertence
 GenresStructure readFileVideoGenres(ifstream &fn);
 
-// função que faz a leitura no arquivo do vídeo o número de gêneros do vídeo
-int readFileVideoNumberOfGenres(ifstream &fn);
+// encontrar o ultimo fechamento de chaves
+void findEndOfStructureVideo(ifstream &fn);
 
 // função que faz a leitura no arquivo do vídeo um vídeo
 VideoDocumentStructure readFileVideo(ifstream &fn);
@@ -61,7 +57,7 @@ VideoDocumentStructure readFileVideo(ifstream &fn);
 // false caso ache o fim do arquivo
 bool findBeginOfStructureVideo(ifstream &fn);
 
-// encontrar o ultimo fechamento de chaves
-void findEndOfStructureVideo(ifstream &fn);
+// função que faz a leitura no arquivo do vídeo todos os vídeos
+VetorOfVideos readFileVideoList(string file_name);
 
 #endif

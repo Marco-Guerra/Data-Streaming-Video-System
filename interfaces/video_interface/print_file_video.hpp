@@ -4,49 +4,40 @@
 #include "../../structures/video_structure.hpp"
 
 #include <string>
+#include <fstream>
+
+#define OUTPUT_FILE_VIDEO "storage/teste_video.txt"
 
 using namespace std;
 
 // função que imprime no arquivo do vídeo a identificação de um vídeo
-void printFileVideoIdentificatio(string identification);
+void printFileVideoIdentification(string identification, ofstream &file);
 
 // função que imprime no arquivo do vídeo o tipo de vídeo
-void printFileVideoKindOfVideo(string kindOfVideo);
+void printFileVideoKindOfVideo(string kindOfVideo, ofstream &file);
 
 // função que imprime no arquivo do vídeo o nome do vídeo
-void printFileVideoName(string name);
+void printFileVideoName(string name, ofstream &file);
 
 // função que imprime no arquivo do vídeo o nome do diretor do vídeo
-void printFileVideoDirectorName(string directorName);
-
-// função que imprime no arquivo do vídeo as horas de duração do vídeo
-void printFileVideoHours(int hours);
-
-// função que imprime no arquivo do vídeo os minutos de duração do vídeo
-void printFileVideoMinutes(int minutes);
-
-// função que imprime no arquivo do vídeo os segundos de duração do vídeo
-void printFileVideoSeconds(int seconds);
+void printFileVideoDirectorName(string directorName, ofstream &file);
 
 // função que imprime no arquivo do vídeo a duração do vídeo
-void printFileVideoDuration(DurationStructure durartion);
+void printFileVideoDuration(DurationStructure durartion, ofstream &file);
 
 // função que imprime no arquivo do vídeo o número de temporadas de um vídeo
-void printFileVideoNumberOfSeasons(int numberOfSeasons);
+void printFileVideoNumberOfSeasons(int numberOfSeasons, ofstream &file);
 
 // função que imprime no arquivo do vídeo o ano de lançamento
-void printFileVideoReleaseYear(int releaseYear);
+void printFileVideoReleaseYear(int releaseYear, ofstream &file);
 
 // função que imprime no arquivo do vídeo os gêneros aos quais o vídeo pertence
-void printFileVideoGenres(string genres[MAX_GENRES]);
-
-// função que imprime no arquivo do vídeo o número de gêneros do vídeo
-void printFileVideoNumberOfGenres(int numberOfGenre);
+void printFileVideoGenres(GenresStructure genres, ofstream &file);
 
 // função que imprime no arquivo do vídeo um vídeo
-void printFileVideo(VideoDocumentStructure video);
+void printFileVideo(VideoDocumentStructure video, ofstream &file);
 
 // função que imprime no arquivo do vídeo todos os vídeos
-void printFileVideoList(VideoDocumentStructure videoList[]);
+void printFileVideoList(VetorOfVideos vet, string file_path);
 
 #endif

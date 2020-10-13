@@ -6,7 +6,6 @@ string readFileVideoIdentificatio(ifstream &fn) {
 	getline(fn, aux);
 	aux = removeEspaces(aux);
 	aux = processInput(aux);
-	cout << "Então ficou = " << aux << endl;
 	return aux;
 }
 
@@ -16,7 +15,6 @@ string readFileVideoKindOfVideo(ifstream &fn) {
 	getline(fn, aux);
 	aux = processInput(aux);
 	aux = removeEspaces(aux);
-	cout << "li o kindOfVideo [" << aux << "]\n";
 	return aux;
 }
 
@@ -24,10 +22,8 @@ string readFileVideoKindOfVideo(ifstream &fn) {
 string readFileVideoName(ifstream &fn) {
     string aux;
 	getline(fn, aux);
-	//aux = removeStringDelimitator(aux);
 	aux = processInput(aux);
 	aux = removeEspaces(aux);
-	cout << "li o nome [" << aux << "]\n";
 	return aux;
 }
 
@@ -35,10 +31,8 @@ string readFileVideoName(ifstream &fn) {
 string readFileVideoDirectorName(ifstream &fn) {
     string aux;
 	getline(fn, aux);
-	//aux = removeStringDelimitator(aux);
 	aux = processInput(aux);
 	aux = removeEspaces(aux);
-	cout << "li o diretor [" << aux << "]\n";
 	return aux;
 }
 
@@ -63,9 +57,9 @@ DurationStructure readFileVideoDuration(ifstream &fn) {
 	char delimitator;
 	DurationStructure duration;
 
-	// le duration
+	// lê duration
 	fn >> aux;
-	// le =
+	// lê =
 	fn >> aux;
 
 
@@ -74,14 +68,10 @@ DurationStructure readFileVideoDuration(ifstream &fn) {
 	fn >> delimitator;
 	fn >> duration.minutes;
 
-
 	fn >> delimitator;
 	fn >> duration.seconds;
 	while( delimitator != '\n') fn.get(delimitator);
 
-	cout << "li a hora " << duration.hours << endl;
-	cout << "li o minuto " << duration.minutes << endl;
-	cout << "li o segundo " << duration.seconds << endl;
 	return duration;
 }
 
@@ -95,7 +85,6 @@ int readFileVideoNumberOfSeasons(ifstream &fn) {
 	fn >> numberOfSeasons;
 
 	while( acha_fim_linha != '\n') fn.get(acha_fim_linha);
-	cout << "li o numberOfSeasons " << numberOfSeasons << endl;
 	return numberOfSeasons;
 }
 
@@ -109,23 +98,22 @@ int readFileVideoReleaseYear(ifstream &fn) {
 	fn >> aux;
 	fn >> releaseYear;
 	while( acha_fim_linha != '\n') fn.get(acha_fim_linha);
-	cout << "li o ReleaseYear " << releaseYear << endl;
 	return releaseYear;
 }
 
-// retira virgulas do final da cadeia de caracteres
+// retira vírgulas do final da cadeia de caracteres
 string processGenre(string s) {
 	return s.substr( 0 , s.find(","));
 }
 
-// ler um genero de vìdeo
+// ler um gênero de vídeo
 bool readFileVideoGenre(ifstream &fn, string &genre) {
 	string aux;
 	getline(fn, aux);
 	if (aux == "}") {
 		return false;
 	}
-	genre = aux;
+	genre = aux.substr(aux.find(' ') + 1);
 	return true;
 }
 
@@ -137,23 +125,14 @@ GenresStructure readFileVideoGenres(ifstream &fn) {
 	int i;
 	getline(fn, aux);
 	if (aux != "genres = {") {
-		cout << "Não achei o inicio de genre bora mata isso\n";
-		cout << "So achei:" << aux << endl;
 		return genres;
 	}
 
 	for (i = 0; readFileVideoGenre(fn, aux); i++) {
 		genres.genres[i] = processGenre(aux);
-		cout << "li o genero numero " << i << " = [" << genres.genres[i] << "]\n";
 	}
 	genres.numberOfGenre = i;
-	cout << "Acabei com os generos\n";
 	return genres;
-}
-
-// função que faz a leitura no arquivo do vídeo o número de gêneros do vídeo
-int readFileVideoNumberOfGenres(ifstream &fn) {
-    
 }
 
 // encontrar o ultimo fechamento de chaves
@@ -163,7 +142,6 @@ void findEndOfStructureVideo(ifstream &fn) {
 	while(aux != "}") {
 		getline(fn, aux);
 	}
-	cout << "Achei o fim da structure\n";
 	return;
 }
 

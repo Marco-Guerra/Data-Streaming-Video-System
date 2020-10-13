@@ -6,6 +6,8 @@
 
 #include "interfaces/video_interface/print_file_video.hpp"
 #include "interfaces/video_interface/read_file_video.hpp"
+#include "interfaces/video_interface/print_stdio_video.hpp"
+#include "interfaces/video_interface/read_stdio_video.hpp"
 
 #include "controllers/menu_controller/menu_controller.hpp"
 #include "interfaces/menu_interface/menu_messages.hpp"

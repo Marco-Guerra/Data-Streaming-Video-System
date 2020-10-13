@@ -28,7 +28,7 @@ int readFileUserDay() {
 	return aux;
 }
 
-// função que faz a leitura do arquivo de usuários do mes da data de aniversario de um usuário
+// função que faz a leitura do arquivo de usuários do mês da data de aniversario de um usuário
 int readFileUserMonth() {
 
     int aux;
@@ -53,15 +53,12 @@ DateOfBirthStructure readFileUserDateOfBirth() {
     aux.month = readFileUserMonth();
     aux.year = readFileUserYear();
 
+	return aux;
+
 }
 
 // função que faz a leitura do arquivo de usuários da identificação dos vídeos visto por um usuário
 HistoryStructure readFileUserVideosIdentifications() {
-
-}
-
-// função que faz a leitura do arquivo de usuários do tamanho do histórico de vídeos de um usuário
-int readFileUserHistoryLenght() {
 
 }
 

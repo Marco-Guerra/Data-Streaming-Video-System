@@ -15,38 +15,44 @@
 using namespace std;
 
 // função que faz a leitura do arquivo de usuários da identificação de um usuário
-string readFileUserIdentificatio();
+string readFileUserIdentificatio(ifstream &fn);
+
 
 // função que faz a leitura do arquivo de usuários do nome de um usuário
-string readFileUserName();
+string readFileUserName(ifstream &fn);
 
 // função que faz a leitura do arquivo de usuários do dia da data de aniversario de um usuário
-int readFileUserDay();
+int readFileUserDay(string line);
 
-// função que faz a leitura do arquivo de usuários do mes da data de aniversario de um usuário
-int readFileUserMonth();
+// função que faz a leitura do arquivo de usuários do mês da data de aniversario de um usuário
+int readFileUserMonth(string line);
 
 // função que faz a leitura do arquivo de usuários do ano da data de aniversario de um usuário
-int readFileUserYear();
+int readFileUserYear(string line);
 
 // função que faz a leitura do arquivo de usuários da data de aniversario de um usuário
-DateOfBirthStructure readFileUserDateOfBirth();
+DateOfBirthStructure readFileUserDateOfBirth(ifstream &fn);
+
+string processHistory (string s);
+
+bool readFileUserHistory(ifstream &fn, string &id);
 
 // função que faz a leitura do arquivo de usuários da identificação dos vídeos visto por um usuário
-string readFileUserVideosIdentifications();
+HistoryStructure readFileUserVideosIdentifications(ifstream &fn);
+
+// encontrar o ultimo fechamento de chaves
+void findEndOfStructureUser (ifstream &fn);
 
 // função que faz a leitura do arquivo de usuários de um usuário
-UserDocumentStructure readFileUser();
-
-// função que faz a leitura do arquivo de usuários de todos os usuário
-UserListDocumentStructure readFileUserList(string file_name);
+UserDocumentStructure readFileUser(ifstream &fn);
 
 // acha o fim da struct
 // true caso ache
 // false caso ache o fim do arquivo
 bool findBeginOfStructureUser(ifstream &fn);
 
-// encontrar o ultimo fechamento de chaves
-void findEndOfStructureUser(ifstream &fn);
+
+// função que faz a leitura do arquivo de usuários de todos os usuário
+UserListDocumentStructure readFileUserList(string file_name);
 
 #endif

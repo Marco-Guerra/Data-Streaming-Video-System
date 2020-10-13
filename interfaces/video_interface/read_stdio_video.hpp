@@ -8,7 +8,7 @@
 using namespace std;
 
 // função que faz a leitura na saída estandar da identificação de um vídeo
-string readStdioVideoIdentificatio();
+string readStdioVideoIdentification();
 
 // função que faz a leitura na saída estandar do tipo de vídeo
 string readStdioVideoKindOfVideo();

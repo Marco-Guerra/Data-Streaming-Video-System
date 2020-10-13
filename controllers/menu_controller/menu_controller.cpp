@@ -201,13 +201,13 @@ void videosMenuController() {
         if( selected == ENTER ) {
             // adiciona um novo vídeo
             if( option == 0 )
-                addVideoController();
+                //addVideoController();
             // acessar menu de vídeo
             if( option == 1 )
                 videoMenuController();
             // eliminar um vídeo
             if( option == 2 )
-                deleteVideoController();
+                //deleteVideoController();
             // retornar o controle para o menu principal
             if( option == 3 )
                 return;
@@ -242,7 +242,7 @@ void videoMenuController() {
         if( selected == ENTER ) {
             // imprimir todos os dados de um vídeo
             if( option == 0 )
-                printVideoController();
+                //printVideoController();
             // acessar menu de dados do vídeo
             if( option == 1 )
                 dataVideoMenuController();

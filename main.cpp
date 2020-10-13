@@ -26,15 +26,19 @@ int main (int argc, char *argv[]) {
 	// mensagem inicial e explicação das funcionalidades do programa
 	initMessage();
 
+	printStdioUserList(userList);
+	userList.usersList[userList.numberOfUsers] = readStdioUser();
+	userList.numberOfUsers++;
+
 	// entrar no menu
-	menuPrincipalController(userList, videoList);
+	//menuPrincipalController(userList, videoList);
 
 	// escrever os arquivos de armazenamento
 	printFileUserList(userList, OUTPUT_FILE_USER); // abre o arquivo que contem a lista de usuários e realiza a escrita da nova lista
 	printFileVideoList(videoList, OUTPUT_FILE_VIDEO); // abre o arquivo que contem a lista de vídeos e realiza a escrita da nova lista
 
 	// mensagem final do programa
-	endMessage();
+	//endMessage();
 
 	return 0;
 }

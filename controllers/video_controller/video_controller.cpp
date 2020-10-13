@@ -39,7 +39,7 @@ void addVideoController(VideoListDocumentStructure &vet) {
 void deleteVideoController(VideoListDocumentStructure &vet) {
     cout << "rotina para eliminar um vídeo" << endl;
     // ler a identificação do vídeo que vai ser eliminado
-	string id = readStdioVideoIdentificatio();
+	string id = readStdioVideoIdentification();
     // eliminar o vídeo da lista de vídeos em memória
 	if (validateVideoIdentification(id)) {
 		swapVideo(vet.videosList[findIndiceOfId(vet, id)], vet.videosList[vet.numberOfVideos - 1]);
@@ -52,7 +52,7 @@ void deleteVideoController(VideoListDocumentStructure &vet) {
 void printVideoController(VideoListDocumentStructure vet) {
     cout << "rotina para imprimir os dados de um vídeo na saída estândar" << endl;
     // imprimir o vídeo na saída estândar
-	printStdioVideoList(vet);
+	//printStdioVideoList(vet);
     // retornar o controle ao menu do vídeo logado
 }
 

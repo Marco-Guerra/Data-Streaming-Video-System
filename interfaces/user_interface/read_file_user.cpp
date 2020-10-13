@@ -2,7 +2,6 @@
 
 // função que faz a leitura do arquivo de usuários da identificação de um usuário
 string readFileUserIdentificatio(ifstream &fn) {
-
     string aux;
 	getline(fn, aux);
 	aux = removeEspaces(aux);
@@ -13,7 +12,6 @@ string readFileUserIdentificatio(ifstream &fn) {
 
 // função que faz a leitura do arquivo de usuários do nome de um usuário
 string readFileUserName(ifstream &fn) {
-
     string aux;
 	getline(fn, aux);
 	aux = processInput(aux);
@@ -24,27 +22,55 @@ string readFileUserName(ifstream &fn) {
 // função que faz a leitura do arquivo de usuários do dia da data de aniversario de um usuário
 int readFileUserDay(string line) {
 
-return stoi(line.substr(line.find('='),line.find('/')));
+	int init, length;
+
+	init = (int) line.find('=') + 1;
+	length = (int) line.find('/') - init;
+
+	string substring = line.substr(init, length);
+
+	init = stoi(substring, nullptr, 10);
+
+	return init;
 
 }
 
 // função que faz a leitura do arquivo de usuários do mes da data de aniversario de um usuário
 int readFileUserMonth(string line) {
 
-	return stoi(line.substr(line.find('/'),line.find_last_of('/'))); 
+	int init, length;
+
+	init = (int) line.find('/') + 1;
+
+	length = (int) line.find_last_of('/') - init;
+
+	string substring = line.substr(init, length);
+
+	init = stoi(substring, nullptr, 10);
+	
+	return init;
 
 }
 
 // função que faz a leitura do arquivo de usuários do ano da data de aniversario de um usuário
 int readFileUserYear(string line) {
 
-	return stoi(line.substr(line.find_last_of("/"),line.find(";")));
+	int init, length;
+
+	init = (int) line.find_last_of('/') + 1;
+
+	length = (int) line.find(';') - init;
+
+	string substring = line.substr(init, length);
+
+	init = stoi(substring, nullptr, 10);
+
+	return init;
 
 }
 
 // função que faz a leitura do arquivo de usuários da data de aniversario de um usuário
 DateOfBirthStructure readFileUserDateOfBirth(ifstream &fn) {
-
 	string aux;
 	DateOfBirthStructure data;
 	getline(fn,aux);
@@ -54,7 +80,6 @@ DateOfBirthStructure readFileUserDateOfBirth(ifstream &fn) {
 	data.year = readFileUserYear(aux);
 
 	return data;
-
 }
 
 // função que retorna apenas o ID, sem caracteres desnecessários
@@ -64,7 +89,6 @@ string processHistory (string s) {
 
 // acha um ID no histórico, caso contrario retorna falso
 bool readFileUserHistory(ifstream &fn, string &id) {
-
 	string aux;
 	getline(fn, aux);
 	if (aux == "}") {
@@ -72,13 +96,11 @@ bool readFileUserHistory(ifstream &fn, string &id) {
 	}
 	id = aux.substr(aux.find(' ') + 1);
 	return true;
-
 }
 
 // função que faz a leitura do arquivo de usuários da identificação dos vídeos visto por um usuário
 HistoryStructure readFileUserVideosIdentifications(ifstream &fn) {
-
-string aux;
+	string aux;
 	HistoryStructure history;
 	int i;
 	getline(fn, aux);
@@ -89,7 +111,9 @@ string aux;
 	for (i = 0; readFileUserHistory(fn, aux); i++) {
 		history.videoIdentifications[i] = processHistory(aux);
 	}
+
 	history.historyLenght = i;
+
 	return history;
 
 }
@@ -107,13 +131,12 @@ void findEndOfStructureUser (ifstream &fn) {
 
 // função que faz a leitura do arquivo de usuários de um usuário
 UserDocumentStructure readFileUser(ifstream &fn) {
-    
 	UserDocumentStructure aux;
 
 	aux.identification = readFileUserIdentificatio(fn);
 	aux.name = readFileUserName(fn);
-	aux.history = readFileUserVideosIdentifications(fn);
 	aux.date = readFileUserDateOfBirth(fn);
+	aux.history = readFileUserVideosIdentifications(fn);
     findEndOfStructureUser(fn);
 
 	return aux;
@@ -149,6 +172,7 @@ UserListDocumentStructure readFileUserList(string file_name) {
 	}
 
 	int i;
+
 	for (i = 0; findBeginOfStructureUser(inputFile); i++) {
 		vetor.usersList[i] = readFileUser(inputFile);
 	}

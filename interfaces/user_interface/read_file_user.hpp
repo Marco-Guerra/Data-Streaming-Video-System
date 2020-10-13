@@ -17,17 +17,6 @@ using namespace std;
 // função que faz a leitura do arquivo de usuários da identificação de um usuário
 string readFileUserIdentificatio(ifstream &fn);
 
-
-// função que faz a leitura do arquivo de usuários do nome de um usuário
-string readFileUserName(ifstream &fn);
-
-// função que faz a leitura do arquivo de usuários do dia da data de aniversario de um usuário
-int readFileUserDay(string line);
-
-// função que faz a leitura do arquivo de usuários do mes da data de aniversario de um usuário
-int readFileUserMonth(string line);
-
-// função que faz a leitura do arquivo de usuários do ano da data de aniversario de um usuário
 int readFileUserYear(string line);
 
 // função que faz a leitura do arquivo de usuários da data de aniversario de um usuário
@@ -52,7 +41,6 @@ UserDocumentStructure readFileUser(ifstream &fn);
 // true caso ache
 // false caso ache o fim do arquivo
 bool findBeginOfStructureUser(ifstream &fn);
-
 
 // função que faz a leitura do arquivo de usuários de todos os usuário
 UserListDocumentStructure readFileUserList(string file_name);

@@ -1,67 +1,116 @@
-#include "read_file_user.hpp"
+#include "read_stdio_user.hpp"
 
-// função que faz a leitura do arquivo de usuários da identificação de um usuário
-string readFileUserIdentificatio() {
-	cout << "Insira o ID: ";
-	string aux;
-	cin >> aux;
-	return aux;
-}
+// função que faz a leitura da saída estandar a identificação de um usuário
+string readStdioUserIdentificatio() {
 
+    string identification;
 
-// função que faz a leitura do arquivo de usuários do nome de um usuário
-string readFileUserName() {
- 	cout << "Insira o nome de usuário: ";
-	string aux;
-	getline(cin, aux);
-	return aux;
-}
-
-// função que faz a leitura do arquivo de usuários do dia da data de aniversario de um usuário
-int readFileUserDay() {
-    cout << "Insira sua Data de Nascimento: ";
-	int aux;
-	cin >> aux;
-	return aux;
-}
-
-// função que faz a leitura do arquivo de usuários do mes da data de aniversario de um usuário
-int readFileUserMonth() {
-    int aux;
-	cin >> aux;
-	return aux;
-}
-
-// função que faz a leitura do arquivo de usuários do ano da data de aniversario de um usuário
-int readFileUserYear() {
-    int aux;
-	cin >> aux;
-	return aux;
-}
-
-// função que faz a leitura do arquivo de usuários da data de aniversario de um usuário
-DateOfBirthStructure readFileUserDateOfBirth() {
-    DateOfBirthStructure aux;
-    aux.day = readFileUserDay();
-    aux.month = readFileUserMonth();
-    aux.year = readFileUserYear();
-	return aux;
-}
-
-// função que faz a leitura do arquivo de usuários da identificação dos vídeos visto por um usuário
-HistoryStructure readFileUserVideosIdentifications() {
-
-}
-
-// função que faz a leitura do arquivo de usuários de um usuário
-UserDocumentStructure readFileUser() {
+    cout << "Entre com a identificação do usuário: ";
+    getline(cin, identification);
     
-	UserDocumentStructure aux;
+    return identification;
 
-	aux.identification = readFileUserIdentificatio();
-	aux.name = readFileUserName();
-	aux.history = readFileUserVideosIdentifications();
-	aux.date = readFileUserDateOfBirth();
+}
 
-	return aux;
+// função que faz a leitura da saída estandar o nome de um usuário
+string readStdioUserName() {
+
+    string name;
+
+    cout << "Entre com o nome do usuário: ";
+    getline(cin, name);
+    
+    return name;
+
+}
+
+// função que faz a leitura da saída estandar o dia da data de aniversario de um usuário
+int readStdioUserDay() {
+
+    int day;
+
+    cout << "Entre com o dia de nascimento do usuário: ";
+    cin >> day;
+    
+    return day;
+
+}
+
+// função que faz a leitura da saída estandar o mes da data de aniversario de um usuário
+int readStdioUserMonth() {
+
+    int month;
+
+    cout << "Entre com o mes de nascimento do usuário: ";
+    cin >> month;
+    
+    return month;
+
+}
+
+// função que faz a leitura da saída estandar o ano da data de aniversario de um usuário
+int readStdioUserYear() {
+
+    int year;
+
+    cout << "Entre com o ano de nascimento do usuário: ";
+    cin >> year;
+    
+    return year;
+
+}
+
+// função que faz a leitura da saída estandar a data de aniversario de um usuário
+DateOfBirthStructure readStdioUserDateOfBirth() {
+
+    DateOfBirthStructure dateOfBirth;
+
+    dateOfBirth.day = readStdioUserDay();
+    dateOfBirth.month = readStdioUserMonth();
+    dateOfBirth.year = readStdioUserYear();
+
+    return dateOfBirth;
+
+}
+
+// função que faz a leitura da saída estandar a identificação de um vídeo visto por um usuário
+string readStdioUserVideosIdentification() {
+
+    string videoIdentification;
+
+    cout << "Entre com a identificação de um vídeo visto pelo usuário: ";
+    getline(cin, videoIdentification);
+    
+    return videoIdentification;
+
+}
+
+// função que faz a leitura da saída estandar a identificação dos vídeos visto por um usuário
+HistoryStructure readStdioUserVideosIdentifications() {
+
+    HistoryStructure videoIdentifications;
+
+    cout << "Entre com quantidade de videos assistidos: ";
+	cin >> videoIdentifications.historyLenght;
+
+	for(int i = 0; i < videoIdentifications.historyLenght; i++) {
+		cout << "Entre com a identificação do vídeo " << i + 1 << ": ";
+		cin >> videoIdentifications.videoIdentifications[i]; 
+	}
+
+    return videoIdentifications;
+
+}
+
+// função que faz a leitura da saída estandar um usuário
+UserDocumentStructure readStdioUser() {
+
+    UserDocumentStructure user;
+
+    user.identification = readStdioUserIdentificatio();
+    user.name = readStdioUserName();
+    user.date = readStdioUserDateOfBirth();
+    user.history = readStdioUserVideosIdentifications();
+
+    return user;
 }

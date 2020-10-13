@@ -1,84 +1,80 @@
-#include "print_stdio_user.hpp"
+#include "read_file_user.hpp"
 
-// função que imprime na saída estandar a identificação de um usuário
-void printStdioUserIdentificatio(string identification) {
+// função que faz a leitura do arquivo de usuários da identificação de um usuário
+string readFileUserIdentificatio() {
 
-    cout << "Identificação do usuário: " << identification << endl;
-
-}
-
-// função que imprime na saída estandar o nome de um usuário
-void printStdioUserName(string name) {
-
-    cout << "Nome do usuário: " << name << endl;
-
-}
-
-// função que imprime na saída estandar o dia da data de aniversario de um usuário
-void printStdioUserDay(int day) {
-
-    cout << "Dia de nascimento do usuário: " << day << endl;
-
-}
-
-// função que imprime na saída estandar o mes da data de aniversario de um usuário
-void printStdioUserMonth(int month) {
-
-    cout << "Mes de nascimento do usuário: " << month << endl;
-
-}
-
-// função que imprime na saída estandar o ano da data de aniversario de um usuário
-void printStdioUserYear(int year) {
-
-    cout << "Ano de nascimento do usuário: " << year << endl;
-
-}
-
-// função que imprime na saída estandar a data de aniversario de um usuário
-void printStdioUserDateOfBirth(DateOfBirthStructure dateOfBirth) {
-
-    cout << "Data de nascimento do usuário: " << dateOfBirth.day << " / " << dateOfBirth.month << " / " << dateOfBirth.year << "." << endl;
-
-}
-
-// função que imprime na saída estandar a identificação de um vídeo visto por um usuário
-void printStdioUserVideosIdentification(string videoIdentification, int videoNumber) {
-
-    cout << "Identificação do vídeo " << videoNumber << ": " << videoIdentification << "." << endl;
-
+	cout << "Insira o ID: ";
+	string aux;
+	cin >> aux;
+	return aux;
 }
 
 
-// função que imprime na saída estandar a identificação dos vídeos visto por um usuário
-void printStdioUserVideosIdentifications(HistoryStructure history) {
+// função que faz a leitura do arquivo de usuários do nome de um usuário
+string readFileUserName() {
 
-    for(int i = 0; i < history.historyLenght; i++) {
-        printStdioUserVideosIdentification( history.videoIdentifications[i], i + 1);
-    }
+ 	cout << "Insira o nome de usuário: ";
+	string aux;
+	getline(cin, aux);
+	return aux;
+}
+
+// função que faz a leitura do arquivo de usuários do dia da data de aniversario de um usuário
+int readFileUserDay() {
+    cout << "Insira sua Data de Nascimento: ";
+
+	int aux;
+	cin >> aux;
+	return aux;
+}
+
+// função que faz a leitura do arquivo de usuários do mes da data de aniversario de um usuário
+int readFileUserMonth() {
+
+    int aux;
+	cin >> aux;
+	return aux;
+}
+
+// função que faz a leitura do arquivo de usuários do ano da data de aniversario de um usuário
+int readFileUserYear() {
+
+    int aux;
+	cin >> aux;
+	return aux;
 
 }
 
-// função que imprime na saída estandar o tamanho do histórico de vídeos de um usuário
-void printStdioUserHistoryLenght(int historyLenght) {
+// função que faz a leitura do arquivo de usuários da data de aniversario de um usuário
+DateOfBirthStructure readFileUserDateOfBirth() {
+   
+    DateOfBirthStructure aux;
+    aux.day = readFileUserDay();
+    aux.month = readFileUserMonth();
+    aux.year = readFileUserYear();
+
+}
+
+// função que faz a leitura do arquivo de usuários da identificação dos vídeos visto por um usuário
+HistoryStructure readFileUserVideosIdentifications() {
+
+}
+
+// função que faz a leitura do arquivo de usuários do tamanho do histórico de vídeos de um usuário
+int readFileUserHistoryLenght() {
+
+}
+
+// função que faz a leitura do arquivo de usuários de um usuário
+UserDocumentStructure readFileUser() {
     
-    cout << "Quantidade de vídeos no histórico do usuário: " << historyLenght << endl;
+	UserDocumentStructure aux;
 
-}
+	aux.identification = readFileUserIdentificatio();
+	aux.name = readFileUserName();
+	aux.history = readFileUserVideosIdentifications();
+	aux.date = readFileUserDateOfBirth();
 
-// função que imprime na saída estandar um usuário
-void printStdioUser(UserDocumentStructure user) {
-
-    printStdioUserIdentificatio(user.identification);
-    printStdioUserName(user.name);
-    printStdioUserDateOfBirth(user.date);
-    printStdioUserHistoryLenght(user.history.historyLenght);
-    printStdioUserVideosIdentifications(user.history);
-}
-
-// função que imprime na saída estandar todos os usuário
-void printStdioUserList(UserDocumentStructure userList[]) {
-
-    //for(int i = 0; i < )
+	return aux;
 
 }

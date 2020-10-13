@@ -7,29 +7,38 @@
 
 using namespace std;
 
-// função que faz a leitura do arquivo de usuários da identificação de um usuário
-string readFileUserIdentificatio();
+// função que imprime na saída estândar a identificação de um usuário
+void printStdioUserIdentificatio(string identification);
+
+// função que imprime na saída estândar o nome de um usuário
+void printStdioUserName(string name);
+
+// função que imprime na saída estândar o dia da data de aniversario de um usuário
+void printStdioUserDay(int day);
+
+// função que imprime na saída estândar o mês da data de aniversario de um usuário
+void printStdioUserMonth(int month);
+
+// função que imprime na saída estândar o ano da data de aniversario de um usuário
+void printStdioUserYear(int year);
+
+// função que imprime na saída estândar a data de aniversario de um usuário
+void printStdioUserDateOfBirth(DateOfBirthStructure dateOfBirth);
+
+// função que imprime na saída estândar a identificação de um vídeo visto por um usuário
+void printStdioUserVideosIdentification(string videoIdentification, int videoNumber);
 
 
-// função que faz a leitura do arquivo de usuários do nome de um usuário
-string readFileUserName();
+// função que imprime na saída estândar a identificação dos vídeos visto por um usuário
+void printStdioUserVideosIdentifications(HistoryStructure history);
 
-// função que faz a leitura do arquivo de usuários do dia da data de aniversario de um usuário
-int readFileUserDay();
+// função que imprime na saída estândar o tamanho do histórico de vídeos de um usuário
+void printStdioUserHistoryLenght(int historyLenght);
 
-// função que faz a leitura do arquivo de usuários do mês da data de aniversario de um usuário
-int readFileUserMonth();
+// função que imprime na saída estândar um usuário
+void printStdioUser(UserDocumentStructure user);
 
-// função que faz a leitura do arquivo de usuários do ano da data de aniversario de um usuário
-int readFileUserYear();
-
-// função que faz a leitura do arquivo de usuários da data de aniversario de um usuário
-DateOfBirthStructure readFileUserDateOfBirth();
-
-// função que faz a leitura do arquivo de usuários da identificação dos vídeos visto por um usuário
-HistoryStructure readFileUserVideosIdentifications();
-
-// função que faz a leitura do arquivo de usuários de um usuário
-UserDocumentStructure readFileUser();
+// função que imprime na saída estândar todos os usuário
+void printStdioUserList(UserListDocumentStructure userList);
 
 #endif

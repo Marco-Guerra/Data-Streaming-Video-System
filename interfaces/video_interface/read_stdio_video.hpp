@@ -47,6 +47,6 @@ int readStdioVideoNumberOfGenres();
 VideoDocumentStructure readStdioVideo();
 
 // função que faz a leitura na saída estandar de todos os vídeos
-VideoDocumentStructure readStdioVideoList();
+//ideoDocumentStructure readStdioVideoList();
 
 #endif

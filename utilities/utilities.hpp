@@ -6,14 +6,20 @@
 
 using namespace std;
 
-string processInput(string s);
+// função que processa linhas de entrada
+string processInput(string line);
 
-string removeStringDelimitator(string line, char delimitator = ' ');
+// função que remove um determinado caracter de uma cadeia de caracteres
+string removeCharacter(string line, char character);
 
-bool stringIsAlNum (string s);
+// 
+string removeEspaces(string line);
 
-bool stringIsAlpha (string s);
+// funue que verifica se todos os caraceteres de uma cadeia são numeros ou letras
+bool stringIsAlNum (string line);
 
-string removeEspaces(string s);
+// função que verifica se todos os caraceteres de uma cadeia são letras
+bool stringIsAlpha (string line);
+
 
 #endif

@@ -54,7 +54,7 @@ int readFileVideoNumberOfGenres(ifstream &fn);
 VideoDocumentStructure readFileVideo(ifstream &fn);
 
 // função que faz a leitura no arquivo do vídeo todos os vídeos
-VetorOfVideos readFileVideoList(string file_name);
+//VetorOfVideos readFileVideoList(string file_name);
 
 // acha o fim da struct
 // true caso ache

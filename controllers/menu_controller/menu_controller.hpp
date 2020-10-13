@@ -1,24 +1,33 @@
 #ifndef MENU_CONTROLLER
 #define MENU_CONTROLLER
 
-#include <iostream>
-#include <limits>
-#include <unistd.h>
-#include <termios.h>
+#include "menu_controller.hpp"
 
-using namespace std;
+#include "../../structures/user_structure.hpp"
+#include "../../structures/video_structure.hpp"
 
-//#define cima 65
-//#define baixo 66
-//#define direita 67
-//#define esquerda 68
+#include "../user_controller/user_controller.hpp"
+#include "../video_controller/video_controller.hpp"
 
-#define CIMA_PADRAO 'w'
-#define BAIXO_PADRAO 's'
-#define DIREITA_PADRAO 'd'
-#define ESQUERDA_PADRAO 'a'
+// controlador de opções do menu principal
+void menuPrincipalController(UserListDocumentStructure &userList, VideoListDocumentStructure &videoList);
 
-#define CIMA_VIM 'k'
-#define BAIXO_VIM 'j'
+// controlador de opções do menu de usuários
+void usersMenuController();
+
+// controlador de opções do menu de usuário
+void userMenuController();
+
+// controlador de opções do menu de dados do usuário
+void dataUserMenuController();
+
+// controlador de opções do menu de vídeos
+void videosMenuController();
+
+// controlador de opções do menu de vídeo
+void videoMenuController();
+
+// controlador de opções do menu de dados do vídeo
+void dataVideoMenuController();
 
 #endif

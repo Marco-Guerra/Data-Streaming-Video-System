@@ -66,6 +66,6 @@ VideoDocumentStructure readStdioVideo() {
 }
 
 // função que faz a leitura na saída estandar de todos os vídeos
-VideoDocumentStructure readStdioVideoList() {
-    
-}
+//VideoDocumentStructure readStdioVideoList() {
+//    
+//}

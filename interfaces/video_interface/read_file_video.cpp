@@ -4,7 +4,7 @@
 string readFileVideoIdentificatio(ifstream &fn) {
     string aux;
 	getline(fn, aux);
-	aux = removeStringDelimitator(aux);
+	aux = removeEspaces(aux);
 	aux = processInput(aux);
 	cout << "Então ficou = " << aux << endl;
 	return aux;
@@ -44,7 +44,7 @@ string readFileVideoDirectorName(ifstream &fn) {
 
 // função que faz a leitura no arquivo do vídeo as horas de duração do vídeo
 int readFileVideoHours(ifstream &fn) {
-
+	
 }
 
 // função que faz a leitura no arquivo do vídeo os minutos de duração do vídeo
@@ -201,7 +201,7 @@ bool findBeginOfStructureVideo(ifstream &fn) {
 }
 
 // função que faz a leitura no arquivo do vídeo todos os vídeos
-VetorOfVideos readFileVideoList(string file_name) {
+/*VetorOfVideos readFileVideoList(string file_name) {
 	ifstream inputFile;
 	VetorOfVideos vetor;
 
@@ -219,3 +219,4 @@ VetorOfVideos readFileVideoList(string file_name) {
 	vetor.tam = i;
 	return vetor;
 }
+*/

@@ -68,6 +68,6 @@ void printStdioVideo(VideoDocumentStructure video) {
 }
 
 // função que imprime na saída estandar todos os vídeos
-void printStdioVideoList(VetorOfVideos vet) {
+/*void printStdioVideoList(VetorOfVideos vet) {
     
-}
+}*/

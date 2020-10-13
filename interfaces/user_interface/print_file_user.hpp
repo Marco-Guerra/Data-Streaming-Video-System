@@ -3,14 +3,12 @@
 
 #include "../../structures/user_structure.hpp"
 
-#define OUTPUT_FILE_USER "storage/user_storage"
-
 #include <string>
 #include <fstream>
 
 using namespace std;
 
-#define INPUT_FILE_VIDEO "storage/user_storage"
+#define OUTPUT_FILE_USER "storage/user_storage"
 
 // função que imprime no arquivo de usuários a identificação de um usuário
 void printFileUserIdentificatio(string identification, ofstream &file);

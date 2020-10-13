@@ -58,13 +58,13 @@ void printFileVideo(VideoDocumentStructure video, ofstream &file) {
 }
 
 // função que imprime no arquivo do vídeo todos os vídeos
-void printFileVideoList(VetorOfVideos vet, string file_path) {
+void printFileVideoList(VideoListDocumentStructure vet, string file_path) {
 	ofstream output_file;
 	output_file.open(file_path);
 
-	for (int i = 0; i < vet.tam; i++) {
+	for (int i = 0; i < vet.numberOfVideos; i++) {
 		output_file << "{\n";
-		printFileVideo(vet.vet[i] , output_file);
+		printFileVideo(vet.videosList[i] , output_file);
 		output_file << "}\n";
 	}
 

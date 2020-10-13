@@ -18,8 +18,14 @@ int main (int argc, char *argv[]) {
 	VideoListDocumentStructure videoList;
 	
 	// ler os aruivos de armazenamento
-	//readFileUserList(userList); // abre o arquivo que contem a lista de usuários e realiza a leitura
-	//readFileVideoList(videoList); // abre o arquivo que contem a lista de vídeos e realiza a leitura
+	//userList = readFileUserList(INPUT_FILE_USER); // abre o arquivo que contem a lista de usuários e realiza a leitura
+	videoList = readFileVideoList(INPUT_FILE_VIDEO); // abre o arquivo que contem a lista de vídeos e realiza a leitura
+	
+	printStdioVideoList(videoList);
+
+	videoList.videosList[videoList.numberOfVideos] = readStdioVideo(); videoList.numberOfVideos++;
+
+	printStdioVideoList(videoList);
 
 	userList.usersList[0].identification = "0000000000";
 	userList.usersList[0].name = "Nome do Usuário";
@@ -32,71 +38,6 @@ int main (int argc, char *argv[]) {
 	userList.usersList[0].history.videoIdentifications[3] = "4444444444";
 	userList.usersList[0].history.videoIdentifications[4] = "5555555555";
 	userList.usersList[0].history.historyLenght = 5;
-	
-	videoList.videosList[0].identification = "1111111111";
-	videoList.videosList[0].kindOfVideo = "Serie";
-	videoList.videosList[0].name = "Uma serie";
-	videoList.videosList[0].directorName = "Nome do diretor 0";
-	videoList.videosList[0].durartion.hours = 1;
-	videoList.videosList[0].durartion.minutes = 30;
-	videoList.videosList[0].durartion.seconds = 30;
-	videoList.videosList[0].numberOfSeasons = 10;
-	videoList.videosList[0].releaseYear = 2010;
-	videoList.videosList[0].genres.genres[0] = "Ação";
-	videoList.videosList[0].genres.genres[1] = "Ficção";
-	videoList.videosList[0].genres.numberOfGenre = 2;
-	
-	videoList.videosList[1].identification = "1111111111";
-	videoList.videosList[1].kindOfVideo = "Serie";
-	videoList.videosList[1].name = "Uma serie";
-	videoList.videosList[1].directorName = "Nome do diretor 1";
-	videoList.videosList[1].durartion.hours = 1;
-	videoList.videosList[1].durartion.minutes = 30;
-	videoList.videosList[1].durartion.seconds = 30;
-	videoList.videosList[1].numberOfSeasons = 10;
-	videoList.videosList[1].releaseYear = 2010;
-	videoList.videosList[1].genres.genres[0] = "Ação";
-	videoList.videosList[1].genres.genres[1] = "Ficção";
-	videoList.videosList[1].genres.numberOfGenre = 2;
-	
-	videoList.videosList[2].identification = "2222222222";
-	videoList.videosList[2].kindOfVideo = "Serie";
-	videoList.videosList[2].name = "Uma serie";
-	videoList.videosList[2].directorName = "Nome do diretor 2";
-	videoList.videosList[2].durartion.hours = 1;
-	videoList.videosList[2].durartion.minutes = 30;
-	videoList.videosList[2].durartion.seconds = 30;
-	videoList.videosList[2].numberOfSeasons = 10;
-	videoList.videosList[2].releaseYear = 2010;
-	videoList.videosList[2].genres.genres[0] = "Ação";
-	videoList.videosList[2].genres.genres[1] = "Ficção";
-	videoList.videosList[2].genres.numberOfGenre = 2;
-	
-	videoList.videosList[3].identification = "3333333333";
-	videoList.videosList[3].kindOfVideo = "Serie";
-	videoList.videosList[3].name = "Uma serie";
-	videoList.videosList[3].directorName = "Nome do diretor 3";
-	videoList.videosList[3].durartion.hours = 1;
-	videoList.videosList[3].durartion.minutes = 30;
-	videoList.videosList[3].durartion.seconds = 30;
-	videoList.videosList[3].numberOfSeasons = 10;
-	videoList.videosList[3].releaseYear = 2010;
-	videoList.videosList[3].genres.genres[0] = "Ação";
-	videoList.videosList[3].genres.genres[1] = "Ficção";
-	videoList.videosList[3].genres.numberOfGenre = 2;
-	
-	videoList.videosList[4].identification = "4444444444";
-	videoList.videosList[4].kindOfVideo = "Serie";
-	videoList.videosList[4].name = "Uma serie";
-	videoList.videosList[4].directorName = "Nome do diretor 4";
-	videoList.videosList[4].durartion.hours = 1;
-	videoList.videosList[4].durartion.minutes = 30;
-	videoList.videosList[4].durartion.seconds = 30;
-	videoList.videosList[4].numberOfSeasons = 10;
-	videoList.videosList[4].releaseYear = 2010;
-	videoList.videosList[4].genres.genres[0] = "Ação";
-	videoList.videosList[4].genres.genres[1] = "Ficção";
-	videoList.videosList[4].genres.numberOfGenre = 2;
 
 	// mensagem inicial e explicação das funcionalidades do programa
 	initMessage();
@@ -106,7 +47,7 @@ int main (int argc, char *argv[]) {
 
 	// escrever os arquivos de armazenamento
 	//printFileUserList(userList); // abre o arquivo que contem a lista de usuários e realiza a escrita da nova lista
-	//printFileVideoList(videoList); // abre o arquivo que contem a lista de vídeos e realiza a escrita da nova lista
+	printFileVideoList(videoList, OUTPUT_FILE_VIDEO); // abre o arquivo que contem a lista de vídeos e realiza a escrita da nova lista
 
 	// mensagem final do programa
 	endMessage();

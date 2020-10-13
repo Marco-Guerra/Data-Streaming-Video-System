@@ -60,16 +60,12 @@ void printStdioVideo(VideoDocumentStructure video) {
 	printStdioVideoGenres(video.genres);
 }
 
-// função que imprime na saída estandar todos os vídeos
-/*void printStdioVideoList(VetorOfVideos vet) {
-    
-}*/
 // função que imprime na saída estândar todos os vídeos
-void printStdioVideoList(VetorOfVideos vet) {
-    for (int i = 0; i < vet.tam; i++) {
+void printStdioVideoList(VideoListDocumentStructure vet) {
+    for (int i = 0; i < vet.numberOfVideos; i++) {
 		cout << "Video num: " << i + 1 << endl;
 		cout << "==============================================\n";
-    	printStdioVideo(vet.vet[i]);
+    	printStdioVideo(vet.videosList[i]);
 		cout << "==============================================\n";
     }
 }

@@ -58,6 +58,6 @@ VideoDocumentStructure readFileVideo(ifstream &fn);
 bool findBeginOfStructureVideo(ifstream &fn);
 
 // função que faz a leitura no arquivo do vídeo todos os vídeos
-VetorOfVideos readFileVideoList(string file_name);
+VideoListDocumentStructure readFileVideoList(string file_name);
 
 #endif

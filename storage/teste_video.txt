@@ -1,5 +1,5 @@
 {
-identification = 342342342342;
+identification =  342342342342;
 kindOfVideo = Tipo de video;
 name = Nome do video;
 directorName = Nome do director;
@@ -13,7 +13,7 @@ genero 3,
 }
 }
 {
-identification = 10000000;
+identification =  10000000;
 kindOfVideo = Filme;
 name = World of Warcraft;
 directorName = Nome do director;
@@ -24,5 +24,18 @@ genres = {
 genero acao,
 genero aventura,
 genero fantasia,
+}
+}
+{
+identification = 12345678901234567890;
+kindOfVideo = ;
+name = Merda;
+directorName = Coco;
+duration = 1000:59:59;
+numberOfSeasons = 10;
+releaseYear = 2000;
+genres = {
+genero Porcaria,
+genero Ninguem,
 }
 }

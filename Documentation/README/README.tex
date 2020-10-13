@@ -1,0 +1,63 @@
+%% Incluindo os pacotes necessários
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{enumitem}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+%%\graphicspath{{images/}}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{fancyhdr}
+\usepackage{colortbl}
+\usepackage{framed}
+
+%% Definindo o Autor e o título
+\author{Gustavo Juliano Borges \and Victor Emanuel Almeida \and Marco Aurélio Guerra Pedroso}
+\title{Documentação do Projeto I~-~IES}
+
+%% Estilo da página
+\pagestyle{fancy}
+\fancyhead[L]{Documentação~-~Projeto I}
+\fancyhead[R]{Introdução Engenharia de Software}
+\fancyfoot[L]{Outubro~-~2020}
+\fancyfoot[C]{}
+\fancyfoot[R]{-~\thepage~-}
+\renewcommand{\headrulewidth}{0.7pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+%% Definindo espaçamento
+\titlespacing{\section}{0pt}{*2}{*1.1}
+%%\titlespacing{\subsection}{}{}{}
+
+\titleformat{\section}
+{\Large\bfseries}
+{\thesection}
+{.5cm}
+{}
+
+\pretitle{\vfill\begin{center}\LARGE}
+\postdate{\end{center}\vfill}
+
+\begin{document}
+\begin{titlepage}
+\maketitle\thispagestyle{empty}
+\end{titlepage}
+\section{Introdução}
+
+Foi proposto pelo professor a elaboração de um programa que simula um streaming de vídeo.
+
+Sendo assim criamos uma equipe formada por~\textbf{\theauthor}, e nomeamos nosso software de \textbf{Data Streaming Video System} \textbf{(DSVS)}
+
+\section{Casos de uso}
+\subsection{Cadastrar um vídeo}
+\begin{enumerate}
+	\item Entrar no menu Principal do DSVS
+\end{enumerate}
+
+\section{Diagrama UML}
+
+\section{Funcionamento do software}
+\end{document}

@@ -2,7 +2,6 @@
 
 // função que faz a leitura do arquivo de usuários da identificação de um usuário
 string readFileUserIdentificatio() {
-
 	cout << "Insira o ID: ";
 	string aux;
 	cin >> aux;
@@ -12,7 +11,6 @@ string readFileUserIdentificatio() {
 
 // função que faz a leitura do arquivo de usuários do nome de um usuário
 string readFileUserName() {
-
  	cout << "Insira o nome de usuário: ";
 	string aux;
 	getline(cin, aux);
@@ -22,7 +20,6 @@ string readFileUserName() {
 // função que faz a leitura do arquivo de usuários do dia da data de aniversario de um usuário
 int readFileUserDay() {
     cout << "Insira sua Data de Nascimento: ";
-
 	int aux;
 	cin >> aux;
 	return aux;
@@ -30,7 +27,6 @@ int readFileUserDay() {
 
 // função que faz a leitura do arquivo de usuários do mes da data de aniversario de um usuário
 int readFileUserMonth() {
-
     int aux;
 	cin >> aux;
 	return aux;
@@ -38,30 +34,22 @@ int readFileUserMonth() {
 
 // função que faz a leitura do arquivo de usuários do ano da data de aniversario de um usuário
 int readFileUserYear() {
-
     int aux;
 	cin >> aux;
 	return aux;
-
 }
 
 // função que faz a leitura do arquivo de usuários da data de aniversario de um usuário
 DateOfBirthStructure readFileUserDateOfBirth() {
-   
     DateOfBirthStructure aux;
     aux.day = readFileUserDay();
     aux.month = readFileUserMonth();
     aux.year = readFileUserYear();
-
+	return aux;
 }
 
 // função que faz a leitura do arquivo de usuários da identificação dos vídeos visto por um usuário
 HistoryStructure readFileUserVideosIdentifications() {
-
-}
-
-// função que faz a leitura do arquivo de usuários do tamanho do histórico de vídeos de um usuário
-int readFileUserHistoryLenght() {
 
 }
 
@@ -76,5 +64,4 @@ UserDocumentStructure readFileUser() {
 	aux.date = readFileUserDateOfBirth();
 
 	return aux;
-
 }

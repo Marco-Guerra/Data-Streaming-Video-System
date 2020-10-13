@@ -24,7 +24,7 @@ string readFileUserName(ifstream &fn);
 // função que faz a leitura do arquivo de usuários do dia da data de aniversario de um usuário
 int readFileUserDay(string line);
 
-// função que faz a leitura do arquivo de usuários do mês da data de aniversario de um usuário
+// função que faz a leitura do arquivo de usuários do mes da data de aniversario de um usuário
 int readFileUserMonth(string line);
 
 // função que faz a leitura do arquivo de usuários do ano da data de aniversario de um usuário
@@ -33,8 +33,10 @@ int readFileUserYear(string line);
 // função que faz a leitura do arquivo de usuários da data de aniversario de um usuário
 DateOfBirthStructure readFileUserDateOfBirth(ifstream &fn);
 
+// função que retorna apenas o ID, sem caracteres desnecessários
 string processHistory (string s);
 
+// acha um ID no histórico, caso contrario retorna falso
 bool readFileUserHistory(ifstream &fn, string &id);
 
 // função que faz a leitura do arquivo de usuários da identificação dos vídeos visto por um usuário

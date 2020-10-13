@@ -31,36 +31,38 @@ return stoi(line.substr(line.find('='),line.find('/')));
 // função que faz a leitura do arquivo de usuários do mes da data de aniversario de um usuário
 int readFileUserMonth(string line) {
 
-return stoi(line.substr(line.find('/'),line.find_last_of('/'))); 
+	return stoi(line.substr(line.find('/'),line.find_last_of('/'))); 
 
 }
 
 // função que faz a leitura do arquivo de usuários do ano da data de aniversario de um usuário
 int readFileUserYear(string line) {
 
-return stoi(line.substr(line.find_last_of("/"),line.find(";")));
+	return stoi(line.substr(line.find_last_of("/"),line.find(";")));
 
 }
 
 // função que faz a leitura do arquivo de usuários da data de aniversario de um usuário
 DateOfBirthStructure readFileUserDateOfBirth(ifstream &fn) {
 
-string aux;
-DateOfBirthStructure data;
-getline(fn,aux);
-aux = removeEspaces(aux);
-data.day = readFileUserDay(aux);
-data.month = readFileUserMonth(aux);
-data.year = readFileUserYear(aux);
+	string aux;
+	DateOfBirthStructure data;
+	getline(fn,aux);
+	aux = removeEspaces(aux);
+	data.day = readFileUserDay(aux);
+	data.month = readFileUserMonth(aux);
+	data.year = readFileUserYear(aux);
 
-return data;
+	return data;
 
 }
 
+// função que retorna apenas o ID, sem caracteres desnecessários
 string processHistory (string s) {
 	return s.substr( 0 , s.find(","));
 }
 
+// acha um ID no histórico, caso contrario retorna falso
 bool readFileUserHistory(ifstream &fn, string &id) {
 
 	string aux;

@@ -1,40 +1,35 @@
-    #ifndef READ_STDIO_USER
-    #define READ_STDIO_USER
+#ifndef READ_STDIO_USER
+#define READ_STDIO_USER
 
-    #include "../../structures/user_structure.hpp"
+#include "../../structures/user_structure.hpp"
 
-    #include <string>
+#include <string>
 
-    using namespace std;
+using namespace std;
 
-    // função que faz a leitura da saída estandar a identificação de um usuário
-    string readStdioUserIdentificatio();
+// função que faz a leitura do arquivo de usuários da identificação de um usuário
+string readFileUserIdentificatio();
 
-    // função que faz a leitura da saída estandar o nome de um usuário
-    string readStdioUserName();
 
-    // função que faz a leitura da saída estandar o dia da data de aniversario de um usuário
-    int readStdioUserDay();
+// função que faz a leitura do arquivo de usuários do nome de um usuário
+string readFileUserName();
 
-    // função que faz a leitura da saída estandar o mes da data de aniversario de um usuário
-    int readStdioUserMonth();
+// função que faz a leitura do arquivo de usuários do dia da data de aniversario de um usuário
+int readFileUserDay();
 
-    // função que faz a leitura da saída estandar o ano da data de aniversario de um usuário
-    int readStdioUserYear();
+// função que faz a leitura do arquivo de usuários do mês da data de aniversario de um usuário
+int readFileUserMonth();
 
-    // função que faz a leitura da saída estandar a data de aniversario de um usuário
-    DateOfBirthStructure readStdioUserDateOfBirth();
+// função que faz a leitura do arquivo de usuários do ano da data de aniversario de um usuário
+int readFileUserYear();
 
-    // função que faz a leitura da saída estandar a identificação de um vídeo visto por um usuário
-    string readStdioUserVideosIdentification();
+// função que faz a leitura do arquivo de usuários da data de aniversario de um usuário
+DateOfBirthStructure readFileUserDateOfBirth();
 
-    // função que faz a leitura da saída estandar a identificação dos vídeos visto por um usuário
-    HistoryStructure readStdioUserVideosIdentifications();
+// função que faz a leitura do arquivo de usuários da identificação dos vídeos visto por um usuário
+HistoryStructure readFileUserVideosIdentifications();
 
-    // função que faz a leitura da saída estandar um usuário
-    UserDocumentStructure readStdioUser();
+// função que faz a leitura do arquivo de usuários de um usuário
+UserDocumentStructure readFileUser();
 
-    // função que faz a leitura da saída estandar todos os usuário
-    UserDocumentStructure readStdioUserList();
-
-    #endif
+#endif

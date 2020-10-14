@@ -1,10 +1,4 @@
 #include "menu_controller.hpp"
-#include "menu_utilities.hpp"
-
-#include "../../interfaces/menu_interface/menu_messages.hpp"
-
-#include "../user_controller/user_controller.hpp"
-#include "../video_controller/video_controller.hpp"
 
 // controlador de opções do menu principal
 void menuPrincipalController(UserListDocumentStructure &userList, VideoListDocumentStructure &videoList) {
@@ -28,11 +22,11 @@ void menuPrincipalController(UserListDocumentStructure &userList, VideoListDocum
         if( selected == ENTER ) {
             // acessar menu de usuários
             if( option == 0 )
-                usersMenuController();
+                usersMenuController(userList);
             
             // acessar menu de vídeo
             if( option == 1 )
-                videosMenuController();
+                videosMenuController(videoList);
             
             // rotina para finalizar o programa
             if( option == 2 )
@@ -47,7 +41,7 @@ void menuPrincipalController(UserListDocumentStructure &userList, VideoListDocum
 }
 
 // controlador de opções do menu de usuários
-void usersMenuController() {
+void usersMenuController(UserListDocumentStructure &userVet) {
 
     int option = 0;
     char selected;
@@ -67,20 +61,22 @@ void usersMenuController() {
 
         if( selected == ENTER ) {
             // adiciona um novo usuário
-            if( option == 0 )
+            if( option == 0 ) {
                 addUserController();
-
+			}
             // acessar menu de usuário
-            if( option == 1 )
-                userMenuController();
-
+            if( option == 1 ) {
+				string aux = readStdioUserIdentificatio();
+                //userMenuController(userVet.usersList[findIndiceOfId()]);
+			}
             // eliminar um usuário
-            if( option == 2 )
+            if( option == 2 ) {
                 deleteUserController();
-                
+			}
             // retornar o controle para o menu principal
-            if( option == 3 )
+            if( option == 3 ) {
                 return;
+			}
         }
 
         system("clear");
@@ -91,7 +87,7 @@ void usersMenuController() {
 }
 
 // controlador de opções do menu de usuário
-void userMenuController() {
+void userMenuController(UserDocumentStructure aux) {
 
     int option = 0;
     char selected;
@@ -115,7 +111,7 @@ void userMenuController() {
                 printUserController();
             // acessar menu de dados do usuário
             if( option == 1 )
-                dataUserMenuController();
+                //dataUserMenuController();
             // retornar o controle para o menu de usuários
             if( option == 2 )
                 return;
@@ -129,8 +125,7 @@ void userMenuController() {
 }
 
 // controlador de opções do menu de dados do usuário
-void dataUserMenuController() {
-
+UserDocumentStructure dataUserMenuController(UserDocumentStructure) {
 
     int option = 0;
     char selected;
@@ -158,18 +153,20 @@ void dataUserMenuController() {
             // mudar o dia da data de nascimento do usuário
             if( option == 2 )
                 changeUserDayController();
-            // mudar o mes da data de nascimento do usuário
+            // mudar o mês da data de nascimento do usuário
             if( option == 3 )
                 changeUserMonthController();
             // mudar o ano da data de nascimento do usuário
             if( option == 4 )
                 changeUserYearController();
-            // adicionar um novo vídeo ao historico de vídeos do usuário
+            // adicionar um novo vídeo ao histórico de vídeos do usuário
             if( option == 5 )
                 addVideoToHistoryUserController();
             // retornar o controle para o menu de usuário
-            if( option == 6 )
-                return;
+            if( option == 6 ) {
+
+			}
+                //return;
         }
 
         system("clear");
@@ -180,7 +177,7 @@ void dataUserMenuController() {
 }
 
 // controlador de opções do menu de vídeos
-void videosMenuController() {
+void videosMenuController(VideoListDocumentStructure &vet) {
 
     int option = 0;
     char selected;
@@ -201,13 +198,13 @@ void videosMenuController() {
         if( selected == ENTER ) {
             // adiciona um novo vídeo
             if( option == 0 )
-                //addVideoController();
+                addVideoController(vet);
             // acessar menu de vídeo
             if( option == 1 )
-                videoMenuController();
+                //videoMenuController();
             // eliminar um vídeo
             if( option == 2 )
-                //deleteVideoController();
+                deleteVideoController(vet);
             // retornar o controle para o menu principal
             if( option == 3 )
                 return;
@@ -221,7 +218,7 @@ void videosMenuController() {
 }
 
 // controlador de opções do menu de vídeo
-void videoMenuController() {
+void videoMenuController(VideoDocumentStructure &video) {
 
     int option = 0;
     char selected;
@@ -245,7 +242,7 @@ void videoMenuController() {
                 //printVideoController();
             // acessar menu de dados do vídeo
             if( option == 1 )
-                dataVideoMenuController();
+                //dataVideoMenuController();
             // retornar o controle para o menu de vídeos
             if( option == 2 )
                 return;
@@ -261,7 +258,7 @@ void videoMenuController() {
 }
 
 // controlador de opções do menu de dados do vídeo
-void dataVideoMenuController() {
+VideoDocumentStructure dataVideoMenuController(VideoDocumentStructure aux) {
 
     int option = 0;
     char selected;
@@ -307,12 +304,14 @@ void dataVideoMenuController() {
             // mudar o ano de lançamento do vídeo
             if( option == 8 )
                 changeVideoReleaseYearController();
-            // adicionar um novo genero aos generos do vídeo
+            // adicionar um novo gênero aos gêneros do vídeo
             if( option == 9 )
                 addVideoGenreController();
             // retornar o controle para o menu de vídeo
-            if( option == 10 )
-                return;
+            if( option == 10 ) {
+
+			}
+                //return;
         }
 
         system("clear");

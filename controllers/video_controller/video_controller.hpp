@@ -2,6 +2,10 @@
 #define VIDEO_CONTROLLER
 
 #include "../../structures/video_structure.hpp"
+//#include "../../interfaces/menu_interface/menu_messages.hpp"
+#include "../menu_controller/menu_utilities.hpp"
+#include "../user_controller/user_controller.hpp"
+
 
 int findIndiceOfId(VideoListDocumentStructure vet, string id);
 

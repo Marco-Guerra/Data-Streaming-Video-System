@@ -38,14 +38,14 @@ void printStdioUserYear(int year) {
 // função que imprime na saída estândar a data de aniversario de um usuário
 void printStdioUserDateOfBirth(DateOfBirthStructure dateOfBirth) {
 
-    cout << "Data de nascimento do usuário: " << dateOfBirth.day << " / " << dateOfBirth.month << " / " << dateOfBirth.year << "." << endl;
+    cout << "Data de nascimento do usuário: " << dateOfBirth.day << " / " << dateOfBirth.month << " / " << dateOfBirth.year << endl;
 
 }
 
 // função que imprime na saída estândar a identificação de um vídeo visto por um usuário
 void printStdioUserVideosIdentification(string videoIdentification, int videoNumber) {
 
-    cout << "Identificação do vídeo " << videoNumber << ": " << videoIdentification << "." << endl;
+    cout << "Identificação do vídeo " << videoNumber << ": " << videoIdentification << endl;
 
 }
 

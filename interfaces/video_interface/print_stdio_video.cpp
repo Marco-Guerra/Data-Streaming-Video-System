@@ -22,7 +22,7 @@ void printStdioVideoDirectorName(string directorName) {
 
 // função que imprime na saída estândar a duração do vídeo
 void printStdioVideoDuration(DurationStructure durartion) {
-    cout << "Duração do vídeo: " << durartion.hours << " horas " << durartion.minutes << " minutos " << durartion.seconds << " segundos." << endl;
+    cout << "Duração do vídeo: " << durartion.hours << " horas(s) " << durartion.minutes << " minutos(s) " << durartion.seconds << " segundos(s)." << endl;
 	
 }
 
@@ -54,6 +54,7 @@ void printStdioVideo(VideoDocumentStructure video) {
 	printStdioVideoIdentification(video.identification);
 	printStdioVideoKindOfVideo(video.kindOfVideo);
 	printStdioVideoName(video.name);
+	printStdioVideoDirectorName(video.directorName);
 	printStdioVideoDuration(video.durartion);
 	printStdioVideoNumberOfSeasons(video.numberOfSeasons);
 	printStdioVideoReleaseYear(video.releaseYear);

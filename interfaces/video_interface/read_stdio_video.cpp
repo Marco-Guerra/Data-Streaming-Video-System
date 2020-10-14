@@ -1,10 +1,13 @@
 #include "read_stdio_video.hpp"
 
-// função que faz a leitura na saída estândar da identificação de um vídeo
+// função que gera um ID automaticamente
 string readStdioVideoIdentification() {
-	cout << "Insira o ID: ";
 	string aux;
-	cin >> aux;
+	auto timenow = chrono::system_clock::to_time_t(chrono::system_clock::now());
+	aux = ctime(&timenow);
+	aux = removeCharacter(aux, ' ');
+	aux = removeCharacter(aux, ':');
+	aux = removeCharacter(aux, '\n');
 	return aux;
 }
 
@@ -12,7 +15,6 @@ string readStdioVideoIdentification() {
 string readStdioVideoKindOfVideo() {
 	cout << "Insira o tipo de vídeo: ";
 	string aux;
-	cin >> aux;
 	getline(cin, aux);
 	return aux;
 }

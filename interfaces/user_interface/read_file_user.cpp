@@ -2,10 +2,12 @@
 
 // função que faz a leitura do arquivo de usuários da identificação de um usuário
 string readFileUserIdentificatio(ifstream &fn) {
-    string aux;
-	getline(fn, aux);
-	aux = removeEspaces(aux);
-	aux = processInput(aux);
+	string aux;
+	auto timenow = chrono::system_clock::to_time_t(chrono::system_clock::now());
+	aux = ctime(&timenow);
+	aux = removeCharacter(aux, ' ');
+	aux = removeCharacter(aux, ':');
+	aux = removeCharacter(aux, '\n');
 	return aux;
 }
 

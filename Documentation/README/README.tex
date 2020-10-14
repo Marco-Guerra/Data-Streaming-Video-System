@@ -52,12 +52,61 @@ Foi proposto pelo professor a elaboração de um programa que simula um streamin
 Sendo assim criamos uma equipe formada por~\textbf{\theauthor}, e nomeamos nosso software de \textbf{Data Streaming Video System} \textbf{(DSVS)}
 
 \section{Casos de uso}
+
 \subsection{Cadastrar um vídeo}
+Caso de Uso no qual o usuário final cadastra um novo vídeo a base de dados de vídeos.
 \begin{enumerate}
+	\item Ter q logar com seu user (Talvez)
 	\item Entrar no menu Principal do DSVS
+	\item Entrar no Menu de vídeos
+	\item Entrar no menu de adicionar vídeos
+	\item Entrar com os dados do vídeo
+		\begin{enumerate}
+			\item Entrar com ID (Talvez)
+			\item Entrar com o tipo de vídeo
+			\item Entrar com o nome do vídeo
+			\item Entrar com o nome do diretor
+			\item Entrar com a duração do vídeo
+				\begin{itemize}
+					\item quantidade total de horas
+					\item quantidade total de minutos
+					\item quantidade total de segundos
+				\end{itemize}
+			\item Entrar com o número de temporadas
+			\item Entrar com o número de gêneros
+			\item Entrar com os gêneros
+		\end{enumerate}
+	\item Voltar ao menu de vídeos
+	\item Voltar ao menu principal
+	\item Encerrar o programa
+\end{enumerate}
+\subsection{Cadastrar um novo usuário}
+	Caso de Uso, no qual ocorre um erro no qual o usuário, já existente ou novo, cadastra-se.
+\begin{enumerate}
+	\item Ter q logar com seu user (Talvez)
+	\item Entrar no Menu de usuário
+	\item Entrar no Menu de adicionar usuário
+	\item Entrar com os dados do usuário
+		\begin{enumerate}
+			\item Entrar com o ID (Talvez)
+			\item Entrar com o nome
+			\item Entrar com a data de nascimento (Ano $>$ Ano-Atual)
+			\item FALHA
+		\end{enumerate}
+	\item Mensagem de falha
+	\item Encerrar programa
+	
 \end{enumerate}
 
 \section{Diagrama UML}
 
 \section{Funcionamento do software}
 \end{document}
+
+
+
+
+% Menu principal
+	%menu de video
+		% aqui ainda recebe &
+	%menu de user

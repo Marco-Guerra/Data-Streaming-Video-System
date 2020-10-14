@@ -1,13 +1,14 @@
 #ifndef READ_STDIO_VIDEO
 #define READ_STDIO_VIDEO
 
-#include "../../structures/video_structure.hpp"
-#include "../../utilities/utilities.hpp"
-
 #include <string>
 #include <time.h> 
 #include <chrono> 
 #include <ctime>
+
+#include "../../structures/video_structure.hpp"
+
+#include "../../utilities/utilities.hpp"
 
 using namespace std;
 

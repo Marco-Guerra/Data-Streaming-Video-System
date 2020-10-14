@@ -95,3 +95,7 @@ int main (int argc, char *argv[]) {
 
 	nome = read_st(file*);
 */
+
+/**
+ *  
+ */

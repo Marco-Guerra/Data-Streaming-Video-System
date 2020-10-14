@@ -1,9 +1,9 @@
 #ifndef PRINT_STDIO_VIDEO
 #define PRINT_STDIO_VIDEO
 
-#include "../../structures/video_structure.hpp"
-
 #include <string>
+
+#include "../../structures/video_structure.hpp"
 
 using namespace std;
 
@@ -28,6 +28,9 @@ void printStdioVideoNumberOfSeasons(int numberOfSeasons);
 // função que imprime na saída estândar o ano de lançamento
 void printStdioVideoReleaseYear(int releaseYear);
 
+// função que imprime na saída estândar os gêneros aos quais o vídeo pertence
+void printStdioVideoGenre(string genre, int genreNumber);
+
 // função que imprime na saída estândar o número de gêneros do vídeo
 void printStdioVideoNumberOfGenres(int numberOfGenre);
 
@@ -38,6 +41,6 @@ void printStdioVideoGenres(GenresStructure genres);
 void printStdioVideo(VideoDocumentStructure video);
 
 // função que imprime na saída estândar todos os vídeos
-void printStdioVideoList(VideoListDocumentStructure vet);
+void printStdioVideoList(VideoListDocumentStructure videoList);
 
 #endif

@@ -1,22 +1,30 @@
 #include "read_file_user.hpp"
 
 // função que faz a leitura do arquivo de usuários da identificação de um usuário
-string readFileUserIdentification(ifstream &fn) {
-	string aux;
-	getline(fn, aux);
-	aux = removeCharacter(aux, ' ');
-	aux = processInput(aux);
-	return aux;
+string readFileUserIdentification(ifstream &storageUserFile) {
+
+	string line;
+
+	getline(storageUserFile, line);
+
+	line = removeCharacter(line, ' ');
+	line = processInput(line);
+
+	return line;
 }
 
 
 // função que faz a leitura do arquivo de usuários do nome de um usuário
-string readFileUserName(ifstream &fn) {
-    string aux;
-	getline(fn, aux);
-	aux = processInput(aux);
-	aux = removeEspaces(aux);
-	return aux;
+string readFileUserName(ifstream &storageUserFile) {
+
+    string line;
+
+	getline(storageUserFile, line);
+
+	line = processInput(line);
+	line = removeEspaces(line);
+
+	return line;
 }
 
 // função que faz a leitura do arquivo de usuários do dia da data de aniversario de um usuário
@@ -41,7 +49,6 @@ int readFileUserMonth(string line) {
 	int init, length;
 
 	init = (int) line.find('/') + 1;
-
 	length = (int) line.find_last_of('/') - init;
 
 	string substring = line.substr(init, length);
@@ -58,7 +65,6 @@ int readFileUserYear(string line) {
 	int init, length;
 
 	init = (int) line.find_last_of('/') + 1;
-
 	length = (int) line.find(';') - init;
 
 	string substring = line.substr(init, length);
@@ -70,46 +76,63 @@ int readFileUserYear(string line) {
 }
 
 // função que faz a leitura do arquivo de usuários da data de aniversario de um usuário
-DateOfBirthStructure readFileUserDateOfBirth(ifstream &fn) {
-	string aux;
+DateOfBirthStructure readFileUserDateOfBirth(ifstream &storageUserFile) {
+
+	string line;
 	DateOfBirthStructure data;
-	getline(fn,aux);
-	aux = removeEspaces(aux);
-	data.day = readFileUserDay(aux);
-	data.month = readFileUserMonth(aux);
-	data.year = readFileUserYear(aux);
+
+	getline(storageUserFile,line);
+
+	line = removeEspaces(line);
+
+	data.day = readFileUserDay(line);
+	data.month = readFileUserMonth(line);
+	data.year = readFileUserYear(line);
 
 	return data;
 }
 
 // função que retorna apenas o ID, sem caracteres desnecessários
-string processHistory (string s) {
-	return s.substr( 0 , s.find(","));
+string processHistory (string line) {
+
+	string subString = line.substr( 0 , line.find(","));
+
+	return subString;
+
 }
 
 // acha um ID no histórico, caso contrario retorna falso
-bool readFileUserHistory(ifstream &fn, string &id) {
-	string aux;
-	getline(fn, aux);
-	if (aux == "}") {
+bool readFileUserHistory(ifstream &storageUserFile, string &line) {
+
+	string auxiliaryLine;
+
+	getline(storageUserFile, auxiliaryLine);
+
+	if (auxiliaryLine == "}") {
 		return false;
 	}
-	id = aux.substr(aux.find(' ') + 1);
+
+	line = auxiliaryLine.substr(auxiliaryLine.find(' ') + 1);
+
 	return true;
 }
 
 // função que faz a leitura do arquivo de usuários da identificação dos vídeos visto por um usuário
-HistoryStructure readFileUserVideosIdentifications(ifstream &fn) {
-	string aux;
+HistoryStructure readFileUserVideosIdentifications(ifstream &storageUserFile) {
+
+	string line;
 	HistoryStructure history;
+
 	int i;
-	getline(fn, aux);
-	if (aux != "history = {") {
+
+	getline(storageUserFile, line);
+
+	if (line != "history = {") {
 		return history;
 	}
 
-	for (i = 0; readFileUserHistory(fn, aux); i++) {
-		history.videoIdentifications[i] = processHistory(aux);
+	for (i = 0; readFileUserHistory(storageUserFile, line); i++) {
+		history.videoIdentifications[i] = processHistory(line);
 	}
 
 	history.historyLenght = i;
@@ -119,39 +142,47 @@ HistoryStructure readFileUserVideosIdentifications(ifstream &fn) {
 }
 
 // encontrar o ultimo fechamento de chaves
-void findEndOfStructureUser (ifstream &fn) {
-	string aux;
-	getline(fn, aux);
-	while(aux != "}") {
-		getline(fn, aux);
+void findEndOfStructureUser (ifstream &storageUserFile) {
+
+	string line;
+
+	getline(storageUserFile, line);
+
+	while(line != "}") {
+		getline(storageUserFile, line);
 	}
 
 	return;
 }
 
 // função que faz a leitura do arquivo de usuários de um usuário
-UserDocumentStructure readFileUser(ifstream &fn) {
-	UserDocumentStructure aux;
+UserDocumentStructure readFileUser(ifstream &storageUserFile) {
+	
+	UserDocumentStructure user;
 
-	aux.identification = readFileUserIdentification(fn);
-	aux.name = readFileUserName(fn);
-	aux.date = readFileUserDateOfBirth(fn);
-	aux.history = readFileUserVideosIdentifications(fn);
-    findEndOfStructureUser(fn);
+	user.identification = readFileUserIdentification(storageUserFile);
+	user.name = readFileUserName(storageUserFile);
+	user.date = readFileUserDateOfBirth(storageUserFile);
+	user.history = readFileUserVideosIdentifications(storageUserFile);
 
-	return aux;
+    findEndOfStructureUser(storageUserFile);
+
+	return user;
 
 }
 
 // acha o fim da struct
 // true caso ache
 // false caso ache o fim do arquivo
-bool findBeginOfStructureUser(ifstream &fn) {
-	string aux;
+bool findBeginOfStructureUser(ifstream &storageUserFile) {
+	
+	string line;
 
-	while(!fn.eof()) {
-		getline(fn, aux);
-		if (aux == "{") {
+	while(!storageUserFile.eof()) {
+
+		getline(storageUserFile, line);
+
+		if (line == "{") {
 			return true;
 		}
 	}
@@ -160,22 +191,24 @@ bool findBeginOfStructureUser(ifstream &fn) {
 
 
 // função que faz a leitura do arquivo de usuários de todos os usuário
-UserListDocumentStructure readFileUserList(string file_name) {
-	ifstream inputFile;
-	UserListDocumentStructure vetor;
+UserListDocumentStructure readFileUserList(string storageUserFileName) {
 
-	inputFile.open(file_name);
+	ifstream storageUserFile;
+	UserListDocumentStructure userList;
+	int i;
 
-	if( !inputFile.is_open() ) {
+	storageUserFile.open(storageUserFileName);
+
+	if( !storageUserFile.is_open() ) {
 		cout << "Falha ao abrir o arquivo, nome inválido\n";
 		exit(0);
 	}
 
-	int i;
-
-	for (i = 0; findBeginOfStructureUser(inputFile); i++) {
-		vetor.usersList[i] = readFileUser(inputFile);
+	for (i = 0; findBeginOfStructureUser(storageUserFile); i++) {
+		userList.usersList[i] = readFileUser(storageUserFile);
 	}
-	vetor.numberOfUsers = i;
-	return vetor;
+
+	userList.numberOfUsers = i;
+	
+	return userList;
 }

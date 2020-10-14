@@ -1,6 +1,15 @@
 #include "menu_controller.hpp"
 
 // função que marca com 'x' a opção em que o usuário se encontra
+/**
+* Funtion: 
+* @param {} - 
+* @param {} - 
+* @returns {} - 
+* 
+* @precondition: 
+* @postcondition: 
+*/
 void selectedOption(bool selected) {
     
     cout << " [";
@@ -15,43 +24,83 @@ void selectedOption(bool selected) {
 }
 
 // realizar a leitura de um ùnico carater, retorna o carater lido
+/**
+* Funtion: 
+* @param {} - 
+* @param {} - 
+* @returns {} - 
+* 
+* @precondition: 
+* @postcondition: 
+*/
 char getChar() {
-	char buf=0;
-	struct termios old={0};
+
+	char character = 0;
+	struct termios old = {0};
+
 	fflush(stdout);
+
 	if(tcgetattr(0, &old)<0) {
 		perror("tcsetattr()");
 	}
+
 	old.c_lflag&=~ICANON;
 	old.c_lflag&=~ECHO;
 	old.c_cc[VMIN]=1;
 	old.c_cc[VTIME]=0;
+
 	if(tcsetattr(0, TCSANOW, &old)<0) {
 		perror("tcsetattr ICANON");
 	}
-	if(read(0,&buf,1)<0) {
+
+	if(read(0,&character,1)<0) {
 		perror("read()");
 	}
+
 	old.c_lflag|=ICANON;
 	old.c_lflag|=ECHO;
+
 	if(tcsetattr(0, TCSADRAIN, &old)<0) {
 		perror ("tcsetattr ~ICANON");
 	}
-	return buf;
+
+	return character;
 }
 
 // imprimir linha de delimitação do menu
-void line (int tam_linha) {
+/**
+* Funtion: 
+* @param {} - 
+* @param {} - 
+* @returns {} - 
+* 
+* @precondition: 
+* @postcondition: 
+*/
+void line (int lineLength) {
+
 	cout << "|";
-	for (int i = 0; i < tam_linha; i++) {
+
+	for (int i = 0; i < lineLength; i++) {
 		cout << "-";
 	}
+
 	cout << "|\n";
 }
 
 // realizar o prenchimento de espaços em branco
-void fillSpaces (int n) {
-	for (int i = 0; i < n; i++) {
+/**
+* Funtion: 
+* @param {} - 
+* @param {} - 
+* @returns {} - 
+* 
+* @precondition: 
+* @postcondition: 
+*/
+void fillSpaces (int numberOfSpaces) {
+	
+	for (int i = 0; i < numberOfSpaces; i++) {
 		cout << ' ';
 	}
 }

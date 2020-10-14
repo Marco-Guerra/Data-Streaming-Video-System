@@ -11,7 +11,7 @@ void initMessage() {
          << " ----- Data Streaming Video System -----" << endl
          << " ---------------------------------------" << endl
          << " --------------------------- Since 2020." << endl 
-         << " Press enter to continue ...            " << endl << endl;
+         << " Press enter to continue ...            " << endl << endl << endl;
 
     getChar();
 }
@@ -33,7 +33,7 @@ void menuPrincipalMessage(int option) {
 
     // rotina para finalizar o programa
     selectedOption( option == 2 );
-    cout << "Finalizar o programa" << endl;
+    cout << "Finalizar o programa" << endl << endl;
 }
 
 // formato e texto do menu de usuários
@@ -57,7 +57,7 @@ void usersMenuMessage(int option) {
 
     // retornar o controle para o menu principal
     selectedOption( option == 3 );
-    cout << "Retornar para o menu principal" << endl;
+    cout << "Retornar para o menu principal" << endl << endl;
 
 }
 
@@ -78,7 +78,7 @@ void userMenuMessage(int option) {
 
     // retornar o controle para o menu de usuários
     selectedOption( option == 2 );
-    cout << "Retornar para o menu de usuários" << endl;
+    cout << "Retornar para o menu de usuários" << endl << endl;
 
 }
 
@@ -115,7 +115,7 @@ void dataUserMenuMessage(int option) {
 
     // retornar o controle para o menu de usuário
     selectedOption( option == 6 );
-    cout << "Retornar para o menu do usuário" << endl;
+    cout << "Retornar para o menu do usuário" << endl << endl;
 
 }
 
@@ -140,7 +140,7 @@ void videosMenuMessage(int option) {
 
     // retornar o controle para o menu principal
     selectedOption( option == 3 );
-    cout << "Retornar para o menu principal" << endl;
+    cout << "Retornar para o menu principal" << endl << endl;
 
 }
 
@@ -161,7 +161,7 @@ void videoMenuMessage(int option) {
 
     // retornar o controle para o menu de vídeos
     selectedOption( option == 2 );
-    cout << "Retornar para o menu de vídeos" << endl;
+    cout << "Retornar para o menu de vídeos" << endl << endl;
 
 }
 
@@ -214,7 +214,7 @@ void dataVideoMenuMessage(int option) {
 
     // retornar o controle para o menu de vídeo
     selectedOption( option == 10 );
-    cout << "Retornar para o menu do vídeo" << endl;
+    cout << "Retornar para o menu do vídeo" << endl << endl;
 
 }
 
@@ -226,5 +226,5 @@ void endMessage() {
     cout << endl 
          << "------------------------------------------" << endl 
          << "----- Programa encerrado com sucesso -----" << endl
-         << "------------------------------------- Fim." << endl << endl;
+         << "------------------------------------- Fim." << endl << endl << endl;
 }

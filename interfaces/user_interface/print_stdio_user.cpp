@@ -3,49 +3,52 @@
 // função que imprime na saída estândar a identificação de um usuário
 void printStdioUserIdentification(string identification) {
 
-    cout << "Identificação do usuário: " << identification << endl;
+    cout << "   Identificação do usuário: " << identification << endl << endl;
 
 }
 
 // função que imprime na saída estândar o nome de um usuário
 void printStdioUserName(string name) {
 
-    cout << "Nome do usuário: " << name << endl;
+    cout << "   Nome do usuário: " << name << endl << endl;
 
 }
 
 // função que imprime na saída estândar o dia da data de aniversario de um usuário
 void printStdioUserDay(int day) {
 
-    cout << "Dia de nascimento do usuário: " << day << endl;
+    cout << "   Dia de nascimento do usuário: " << day << endl << endl;
 
 }
 
 // função que imprime na saída estândar o mês da data de aniversario de um usuário
 void printStdioUserMonth(int month) {
 
-    cout << "Mês de nascimento do usuário: " << month << endl;
+    cout << "   Mês de nascimento do usuário: " << month << endl << endl;
 
 }
 
 // função que imprime na saída estândar o ano da data de aniversario de um usuário
 void printStdioUserYear(int year) {
 
-    cout << "Ano de nascimento do usuário: " << year << endl;
+    cout << "   Ano de nascimento do usuário: " << year << endl << endl;
 
 }
 
 // função que imprime na saída estândar a data de aniversario de um usuário
 void printStdioUserDateOfBirth(DateOfBirthStructure dateOfBirth) {
 
-    cout << "Data de nascimento do usuário: " << dateOfBirth.day << " / " << dateOfBirth.month << " / " << dateOfBirth.year << endl;
+    cout << "   Data de nascimento do usuário: " 
+         << dateOfBirth.day << " / " 
+         << dateOfBirth.month << " / " 
+         << dateOfBirth.year << endl << endl;
 
 }
 
 // função que imprime na saída estândar a identificação de um vídeo visto por um usuário
 void printStdioUserVideosIdentification(string videoIdentification, int videoNumber) {
 
-    cout << "Identificação do vídeo " << videoNumber << ": " << videoIdentification << endl;
+    cout << "       Identificação do vídeo " << videoNumber << ": " << videoIdentification << endl << endl;
 
 }
 
@@ -62,17 +65,23 @@ void printStdioUserVideosIdentifications(HistoryStructure history) {
 // função que imprime na saída estândar o tamanho do histórico de vídeos de um usuário
 void printStdioUserHistoryLenght(int historyLenght) {
     
-    cout << "Quantidade de vídeos no histórico do usuário: " << historyLenght << endl;
+    cout << "   Quantidade de vídeos no histórico do usuário: " << historyLenght << endl << endl;
 
 }
 
 // função que imprime na saída estândar um usuário
 void printStdioUser(UserDocumentStructure user) {
 
+    cout << endl
+		 << "----------------------------------------" << endl << endl;
+
     printStdioUserIdentification(user.identification);
     printStdioUserName(user.name);
     printStdioUserDateOfBirth(user.date);
     printStdioUserVideosIdentifications(user.history);
+
+    cout << endl
+		 << "----------------------------------------" << endl << endl;
 }
 
 // função que imprime na saída estândar todos os usuário
@@ -81,10 +90,8 @@ void printStdioUserList(UserListDocumentStructure userList) {
     for(int i = 0; i < userList.numberOfUsers; i++){
 
         cout << "User num: " << i + 1 << endl;
-		cout << "==============================================\n";
-    	printStdioUser (userList.usersList[i]);
-		cout << "==============================================\n";
 
+    	printStdioUser (userList.usersList[i]);
     }
 
 }

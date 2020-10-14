@@ -1,14 +1,14 @@
 #ifndef READ_STDIO_USER
 #define READ_STDIO_USER
 
-#include "../../structures/user_structure.hpp"
-#include "../../utilities/utilities.hpp"
-
 #include <time.h> 
 #include <chrono> 
 #include <ctime>
-
 #include <string>
+
+#include "../../structures/user_structure.hpp"
+
+#include "../../utilities/utilities.hpp"
 
 using namespace std;
 
@@ -31,7 +31,7 @@ int readStdioUserYear();
 DateOfBirthStructure readStdioUserDateOfBirth();
 
 // função que faz a leitura da saída estandar a identificação de um vídeo visto por um usuário
-string readStdioUserVideosIdentification();
+string readStdioUserVideoIdentification(int videoNmeber);
 
 // função que faz a leitura da saída estandar a identificação dos vídeos visto por um usuário
 HistoryStructure readStdioUserVideosIdentifications();

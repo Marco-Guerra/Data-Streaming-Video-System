@@ -1,14 +1,13 @@
 #ifndef MENU_CONTROLLER
 #define MENU_CONTROLLER
 
-#include "../../interfaces/menu_interface/menu_messages.hpp"
-
 #include "../../structures/user_structure.hpp"
 #include "../../structures/video_structure.hpp"
 
 #include "../user_controller/user_controller.hpp"
 #include "../video_controller/video_controller.hpp"
 
+#include "../../interfaces/menu_interface/menu_messages.hpp"
 #include "../../interfaces/video_interface/read_stdio_video.hpp"
 #include "../../interfaces/user_interface/read_stdio_user.hpp"
 

@@ -27,9 +27,9 @@ void selectedOption(bool selected);
 char getChar();
 
 // imprimir linha de delimitação do menu
-void line (int tam_linha);
+void line (int lineLength);
 
 // realizar o prenchimento de espaços em branco
-void fillSpaces (int n);
+void fillSpaces (int numberOfSpaces);
 
 #endif

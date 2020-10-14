@@ -2,20 +2,34 @@
 #define USER_CONTROLLER
 
 #include "user_validator.hpp"
+
 #include "../../structures/user_structure.hpp"
+
+#include "../menu_controller/menu_utilities.hpp"
 
 #include "../../interfaces/user_interface/print_stdio_user.hpp"
 #include "../../interfaces/user_interface/read_stdio_user.hpp"
 
-int findUserById(UserListDocumentStructure vet, string id);
+//
+void swapUser (UserDocumentStructure &userA, UserDocumentStructure &userB);
 
-void swapUser (UserDocumentStructure &a, UserDocumentStructure &b);
+//
+int findUserByIdentification(UserListDocumentStructure &userList, string identification);
+
+//
+int findUSerByName(UserListDocumentStructure &userList, string name);
+
+// função que gera um ID automaticamente
+string gerateUserIdentification();
+
+//
+int selectUserByIdentification(UserListDocumentStructure &userList);
+
+//
+int selectUserByName(UserListDocumentStructure &userList);
 
 // rotina para agregar um usuário
 void addUserController(UserListDocumentStructure &userList);
-
-// rotina para acessar um usuário
-void accessUserController();
 
 // rotina para eliminar um usuário
 void deleteUserController(UserListDocumentStructure &userList);
@@ -39,6 +53,6 @@ int changeUserYearController();
 DateOfBirthStructure changeUserDateController();
 
 // rotina para adicionar historico ao usuário
-string addVideoToHistoryUserController();
+HistoryStructure addVideoToHistoryUserController(HistoryStructure history);
 
 #endif

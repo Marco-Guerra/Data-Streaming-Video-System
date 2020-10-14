@@ -1,184 +1,225 @@
 #include "read_file_video.hpp"
 
 // função que faz a leitura no arquivo do vídeo a identificação de um vídeo
-string readFileVideoIdentificatio(ifstream &fn) {
-    string aux;
-	getline(fn, aux);
-	aux = removeEspaces(aux);
-	aux = processInput(aux);
-	return aux;
+string readFileVideoIdentificatio(ifstream &storageVideoFile) {
+
+    string line;
+
+	getline(storageVideoFile, line);
+
+	line = removeCharacter(line, ' ');
+	line = processInput(line);
+
+	return line;
 }
 
 // função que faz a leitura no arquivo do vídeo o tipo de vídeo
-string readFileVideoKindOfVideo(ifstream &fn) {
-    string aux;
-	getline(fn, aux);
-	aux = processInput(aux);
-	aux = removeEspaces(aux);
-	return aux;
+string readFileVideoKindOfVideo(ifstream &storageVideoFile) {
+
+    string line;
+
+	getline(storageVideoFile, line);
+
+	line = processInput(line);
+	line = removeEspaces(line);
+
+	return line;
 }
 
 // função que faz a leitura no arquivo do vídeo o nome do vídeo
-string readFileVideoName(ifstream &fn) {
-    string aux;
-	getline(fn, aux);
-	aux = processInput(aux);
-	aux = removeEspaces(aux);
-	return aux;
+string readFileVideoName(ifstream &storageVideoFile) {
+
+    string line;
+
+	getline(storageVideoFile, line);
+
+	line = processInput(line);
+	line = removeEspaces(line);
+
+	return line;
 }
 
 // função que faz a leitura no arquivo do vídeo o nome do diretor do vídeo
-string readFileVideoDirectorName(ifstream &fn) {
-    string aux;
-	getline(fn, aux);
-	aux = processInput(aux);
-	aux = removeEspaces(aux);
-	return aux;
+string readFileVideoDirectorName(ifstream &storageVideoFile) {
+
+    string line;
+
+	getline(storageVideoFile, line);
+
+	line = processInput(line);
+	line = removeEspaces(line);
+
+	return line;
 }
 
 // função que faz a leitura no arquivo do vídeo a duração do vídeo
-DurationStructure readFileVideoDuration(ifstream &fn) {
-    string aux;
+DurationStructure readFileVideoDuration(ifstream &storageVideoFile) {
+
+    string discard;
 	char delimitator;
 	DurationStructure duration;
 
-	// lê duration
-	fn >> aux;
-	// lê =
-	fn >> aux;
+	storageVideoFile >> discard;
+	storageVideoFile >> discard;
+	storageVideoFile >> duration.hours;
+	storageVideoFile >> delimitator;
+	storageVideoFile >> duration.minutes;
+	storageVideoFile >> delimitator;
+	storageVideoFile >> duration.seconds;
 
-
-	fn >> duration.hours;
-
-	fn >> delimitator;
-	fn >> duration.minutes;
-
-	fn >> delimitator;
-	fn >> duration.seconds;
-	while( delimitator != '\n') fn.get(delimitator);
+	while( delimitator != '\n') storageVideoFile.get(delimitator);
 
 	return duration;
 }
 
 // função que faz a leitura no arquivo do vídeo o número de temporadas de um vídeo
-int readFileVideoNumberOfSeasons(ifstream &fn) {
-    int numberOfSeasons;
-	string aux;
-	char acha_fim_linha = 1;
-	fn >> aux;
-	fn >> aux;
-	fn >> numberOfSeasons;
+int readFileVideoNumberOfSeasons(ifstream &storageVideoFile) {
 
-	while( acha_fim_linha != '\n') fn.get(acha_fim_linha);
+	string discard;
+    int numberOfSeasons;
+	char acha_fim_linha = 1;
+
+	storageVideoFile >> discard;
+	storageVideoFile >> discard;
+	storageVideoFile >> numberOfSeasons;
+
+	while( acha_fim_linha != '\n') storageVideoFile.get(acha_fim_linha);
+
 	return numberOfSeasons;
 }
 
 // função que faz a leitura no arquivo do vídeo do ano de lançamento
-int readFileVideoReleaseYear(ifstream &fn) {
-    string aux;
+int readFileVideoReleaseYear(ifstream &storageVideoFile) {
+
+    string discard;
 	int releaseYear;
 	char acha_fim_linha = 1;
 
-	fn >> aux;
-	fn >> aux;
-	fn >> releaseYear;
-	while( acha_fim_linha != '\n') fn.get(acha_fim_linha);
+	storageVideoFile >> discard;
+	storageVideoFile >> discard;
+	storageVideoFile >> releaseYear;
+
+	while( acha_fim_linha != '\n') storageVideoFile.get(acha_fim_linha);
+
 	return releaseYear;
 }
 
 // retira vírgulas do final da cadeia de caracteres
-string processGenre(string s) {
-	return s.substr( 0 , s.find(","));
+string processGenre(string line) {
+
+	return line.substr( 0 , line.find(","));
+
 }
 
 // ler um gênero de vídeo
-bool readFileVideoGenre(ifstream &fn, string &genre) {
-	string aux;
-	getline(fn, aux);
-	if (aux == "}") {
+bool readFileVideoGenre(ifstream &storageVideoFile, string &genre) {
+
+	string line;
+
+	getline(storageVideoFile, line);
+
+	if (line == "}") {
 		return false;
 	}
-	genre = aux.substr(aux.find(' ') + 1);
+
+	genre = line.substr(line.find(' ') + 1);
+
 	return true;
 }
 
 
 // função que faz a leitura no arquivo do vídeo os gêneros aos quais o vídeo pertence
-GenresStructure readFileVideoGenres(ifstream &fn) {
-    string aux;
+GenresStructure readFileVideoGenres(ifstream &storageVideoFile) {
+
+    string line;
 	GenresStructure genres;
 	int i;
-	getline(fn, aux);
-	if (aux != "genres = {") {
+
+	getline(storageVideoFile, line);
+
+	if (line != "genres = {") {
 		return genres;
 	}
 
-	for (i = 0; readFileVideoGenre(fn, aux); i++) {
-		genres.genres[i] = processGenre(aux);
+	for (i = 0; readFileVideoGenre(storageVideoFile, line); i++) {
+		genres.genres[i] = processGenre(line);
 	}
+
 	genres.numberOfGenre = i;
+
 	return genres;
 }
 
 // encontrar o ultimo fechamento de chaves
-void findEndOfStructureVideo(ifstream &fn) {
-	string aux;
-	getline(fn, aux);
-	while(aux != "}") {
-		getline(fn, aux);
+void findEndOfStructureVideo(ifstream &storageVideoFile) {
+
+	string line;
+
+	getline(storageVideoFile, line);
+
+	while(line != "}") {
+		getline(storageVideoFile, line);
 	}
+
 	return;
 }
 
 // função que faz a leitura no arquivo do vídeo um vídeo
-VideoDocumentStructure readFileVideo(ifstream &fn) {
+VideoDocumentStructure readFileVideo(ifstream &storageVideoFile) {
     
-	VideoDocumentStructure aux;
+	VideoDocumentStructure video;
 
-	aux.identification = readFileVideoIdentificatio(fn);
-	aux.kindOfVideo = readFileVideoKindOfVideo(fn);
-	aux.name = readFileVideoName(fn);
-	aux.directorName = readFileVideoDirectorName(fn);
-	aux.durartion = readFileVideoDuration(fn);
-	aux.numberOfSeasons = readFileVideoNumberOfSeasons(fn);
-	aux.releaseYear = readFileVideoReleaseYear(fn);
-	aux.genres = readFileVideoGenres(fn);
-	findEndOfStructureVideo(fn);
+	video.identification = readFileVideoIdentificatio(storageVideoFile);
+	video.kindOfVideo = readFileVideoKindOfVideo(storageVideoFile);
+	video.name = readFileVideoName(storageVideoFile);
+	video.directorName = readFileVideoDirectorName(storageVideoFile);
+	video.durartion = readFileVideoDuration(storageVideoFile);
+	video.numberOfSeasons = readFileVideoNumberOfSeasons(storageVideoFile);
+	video.releaseYear = readFileVideoReleaseYear(storageVideoFile);
+	video.genres = readFileVideoGenres(storageVideoFile);
+	findEndOfStructureVideo(storageVideoFile);
 
-	return aux;
+	return video;
 }
 
 // acha o fim da struct
 // true caso ache
 // false caso ache o fim do arquivo
-bool findBeginOfStructureVideo(ifstream &fn) {
-	string aux;
+bool findBeginOfStructureVideo(ifstream &storageVideoFile) {
 
-	while(!fn.eof()) {
-		getline(fn, aux);
-		if (aux == "{") {
+	string line;
+
+	while(!storageVideoFile.eof()) {
+
+		getline(storageVideoFile, line);
+
+		if (line == "{") {
 			return true;
 		}
 	}
+
 	return false;
 }
 
 // função que faz a leitura no arquivo do vídeo todos os vídeos
-VideoListDocumentStructure readFileVideoList(string file_name) {
-	ifstream inputFile;
+VideoListDocumentStructure readFileVideoList(string storageVideoFileName) {
+
+	ifstream storageVideoFile;
 	VideoListDocumentStructure videoList;
+	int i;
 
-	inputFile.open(file_name);
+	storageVideoFile.open(storageVideoFileName);
 
-	if( !inputFile.is_open() ) {
+	if( !storageVideoFile.is_open() ) {
 		cout << "Falha ao abrir o arquivo, nome inválido\n";
 		exit(0);
 	}
 
-	int i;
-	for (i = 0; findBeginOfStructureVideo(inputFile); i++) {
-		videoList.videosList[i] = readFileVideo(inputFile);
+	for (i = 0; findBeginOfStructureVideo(storageVideoFile); i++) {
+		videoList.videosList[i] = readFileVideo(storageVideoFile);
 	}
+
 	videoList.numberOfVideos = i;
+
 	return videoList;
 }

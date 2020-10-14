@@ -2,13 +2,18 @@
 #define READ_STDIO_USER
 
 #include "../../structures/user_structure.hpp"
+#include "../../utilities/utilities.hpp"
+
+#include <time.h> 
+#include <chrono> 
+#include <ctime>
 
 #include <string>
 
 using namespace std;
 
 // função que faz a leitura da saída estandar a identificação de um usuário
-string readStdioUserIdentificatio();
+string readStdioUserIdentification();
 
 // função que faz a leitura da saída estandar o nome de um usuário
 string readStdioUserName();

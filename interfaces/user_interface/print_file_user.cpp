@@ -24,8 +24,6 @@ void printFileUserVideosIdentifications(HistoryStructure history, ofstream &file
 		file << history.videoIdentifications[i] << "," << endl;
 	}
 	file << "}\n";
-
-
 }
 
 // função que imprime no arquivo de usuários um usuário
@@ -51,4 +49,4 @@ void printFileUserList(UserListDocumentStructure vetor, string file_path) {
 
 	output_file.close();
 
-   }
+}

@@ -1,14 +1,15 @@
 #include "read_stdio_user.hpp"
 
 // função que faz a leitura da saída estandar a identificação de um usuário
-string readStdioUserIdentificatio() {
+string readStdioUserIdentification() {
 
-    string identification;
+    string name;
 
     cout << "Entre com a identificação do usuário: ";
-    getline(cin, identification);
+    getline(cin, name);
     
-    return identification;
+    return name;
+
 
 }
 
@@ -107,7 +108,6 @@ UserDocumentStructure readStdioUser() {
 
     UserDocumentStructure user;
 
-    user.identification = readStdioUserIdentificatio();
     user.name = readStdioUserName();
     user.date = readStdioUserDateOfBirth();
     user.history = readStdioUserVideosIdentifications();

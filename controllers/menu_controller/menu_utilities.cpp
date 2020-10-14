@@ -1,5 +1,3 @@
-#include "menu_utilities.hpp"
-
 #include "menu_controller.hpp"
 
 // função que marca com 'x' a opção em que o usuário se encontra

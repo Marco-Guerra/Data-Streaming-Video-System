@@ -1,39 +1,44 @@
 #ifndef USER_CONTROLLER
 #define USER_CONTROLLER
 
-#include "user_controller.hpp"
+#include "user_validator.hpp"
+#include "../../structures/user_structure.hpp"
+
+#include "../../interfaces/user_interface/print_stdio_user.hpp"
+#include "../../interfaces/user_interface/read_stdio_user.hpp"
+
+int findUserById(UserListDocumentStructure vet, string id);
+
+void swapUser (UserDocumentStructure &a, UserDocumentStructure &b);
 
 // rotina para agregar um usuário
-void addUserController();
+void addUserController(UserListDocumentStructure &userList);
 
 // rotina para acessar um usuário
 void accessUserController();
 
 // rotina para eliminar um usuário
-void deleteUserController();
+void deleteUserController(UserListDocumentStructure &userList);
 
 // rotina para imprimir um usuário na tela
-void printUserController();
-
-// rotina para combiar todos os dados não sensiveis do usuário
-void changeUserDataController();
+void printUserController(UserDocumentStructure user);
 
 // rotina para combiar name do usuário
-void changeUserNameController();
+string changeUserNameController();
 
 // rotina para combiar o dia da data de nascimento do usuário
-void changeUserDayController();
+int changeUserDayController();
 
 // rotina para combiar o mes da data de nascimento do usuário
-void changeUserMonthController();
+int changeUserMonthController();
 
 // rotina para combiar o ano da data de nascimento do usuário
-void changeUserYearController();
+int changeUserYearController();
 
 // rotina para combiar data de nascimento do usuário
-void changeUserDateController();
+DateOfBirthStructure changeUserDateController();
 
 // rotina para adicionar historico ao usuário
-void addVideoToHistoryUserController();
+string addVideoToHistoryUserController();
 
 #endif

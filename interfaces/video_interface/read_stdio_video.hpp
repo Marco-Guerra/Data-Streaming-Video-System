@@ -41,11 +41,11 @@ int readStdioVideoNumberOfSeasons();
 // função que faz a leitura na saída estândar do vídeo o ano de lançamento
 int readStdioVideoReleaseYear();
 
-// função que faz a leitura na saída estândar dos gêneros aos quais o vídeo pertence
-GenresStructure readStdioVideoGenres();
-
 // função que faz a leitura na saída estândar do número de gêneros do vídeo
 int readStdioVideoNumberOfGenres();
+
+// função que faz a leitura na saída estândar dos gêneros aos quais o vídeo pertence
+GenresStructure readStdioVideoGenres();
 
 // função que faz a leitura na saída estândar de um vídeo
 VideoDocumentStructure readStdioVideo();

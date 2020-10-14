@@ -41,7 +41,7 @@ void menuPrincipalController(UserListDocumentStructure &userList, VideoListDocum
 }
 
 // controlador de opções do menu de usuários
-void usersMenuController(UserListDocumentStructure &userVet) {
+void usersMenuController(UserListDocumentStructure &userList) {
 
     int option = 0;
     char selected;
@@ -62,16 +62,15 @@ void usersMenuController(UserListDocumentStructure &userVet) {
         if( selected == ENTER ) {
             // adiciona um novo usuário
             if( option == 0 ) {
-                addUserController();
+                addUserController(userList);
 			}
             // acessar menu de usuário
             if( option == 1 ) {
-				string aux = readStdioUserIdentificatio();
-                //userMenuController(userVet.usersList[findIndiceOfId()]);
+				userMenuController(userList);
 			}
             // eliminar um usuário
             if( option == 2 ) {
-                deleteUserController();
+                deleteUserController(userList);
 			}
             // retornar o controle para o menu principal
             if( option == 3 ) {
@@ -87,8 +86,20 @@ void usersMenuController(UserListDocumentStructure &userVet) {
 }
 
 // controlador de opções do menu de usuário
-void userMenuController(UserDocumentStructure aux) {
+void userMenuController(UserListDocumentStructure &userList) {
+    UserDocumentStructure user;
 
+    string identification;
+    int position;
+
+    identification = readStdioUserIdentification();
+
+    position = findUserById(userList, identification);
+
+    if( position >= 0 ){
+        user = userList.usersList[position];
+    }
+        
     int option = 0;
     char selected;
     
@@ -108,13 +119,15 @@ void userMenuController(UserDocumentStructure aux) {
         if( selected == ENTER ) {
             // imprimir todos os dados de um usuário
             if( option == 0 )
-                printUserController();
+                printUserController(user);
             // acessar menu de dados do usuário
             if( option == 1 )
-                //dataUserMenuController();
+                user = dataUserMenuController(user);
             // retornar o controle para o menu de usuários
-            if( option == 2 )
+            if( option == 2 ){
+                userList.usersList[position] = user;
                 return;
+            }
         }
 
         system("clear");
@@ -125,7 +138,7 @@ void userMenuController(UserDocumentStructure aux) {
 }
 
 // controlador de opções do menu de dados do usuário
-UserDocumentStructure dataUserMenuController(UserDocumentStructure) {
+UserDocumentStructure dataUserMenuController(UserDocumentStructure user) {
 
     int option = 0;
     char selected;
@@ -146,27 +159,26 @@ UserDocumentStructure dataUserMenuController(UserDocumentStructure) {
         if( selected == ENTER ) {
             // mudar nome do usuário
             if( option == 0 )
-                changeUserNameController();
+                user.name = changeUserNameController();
             // mudar data de nascimento do usuário
             if( option == 1 )
-                changeUserDateController();
+                user.date = changeUserDateController();
             // mudar o dia da data de nascimento do usuário
             if( option == 2 )
-                changeUserDayController();
+                user.date.day = changeUserDayController();
             // mudar o mês da data de nascimento do usuário
             if( option == 3 )
-                changeUserMonthController();
+                user.date.month = changeUserMonthController();
             // mudar o ano da data de nascimento do usuário
             if( option == 4 )
-                changeUserYearController();
+                user.date.year = changeUserYearController();
             // adicionar um novo vídeo ao histórico de vídeos do usuário
             if( option == 5 )
-                addVideoToHistoryUserController();
+                user.history.videoIdentifications[user.history.historyLenght++] = addVideoToHistoryUserController();
             // retornar o controle para o menu de usuário
             if( option == 6 ) {
-
+                return user;
 			}
-                //return;
         }
 
         system("clear");
@@ -177,7 +189,7 @@ UserDocumentStructure dataUserMenuController(UserDocumentStructure) {
 }
 
 // controlador de opções do menu de vídeos
-void videosMenuController(VideoListDocumentStructure &vet) {
+void videosMenuController(VideoListDocumentStructure &videoList) {
 
     int option = 0;
     char selected;
@@ -198,13 +210,13 @@ void videosMenuController(VideoListDocumentStructure &vet) {
         if( selected == ENTER ) {
             // adiciona um novo vídeo
             if( option == 0 )
-                addVideoController(vet);
+                addVideoController();
             // acessar menu de vídeo
             if( option == 1 )
                 //videoMenuController();
             // eliminar um vídeo
             if( option == 2 )
-                deleteVideoController(vet);
+                deleteVideoController();
             // retornar o controle para o menu principal
             if( option == 3 )
                 return;
@@ -218,7 +230,7 @@ void videosMenuController(VideoListDocumentStructure &vet) {
 }
 
 // controlador de opções do menu de vídeo
-void videoMenuController(VideoDocumentStructure &video) {
+void videoMenuController() {
 
     int option = 0;
     char selected;
@@ -258,7 +270,7 @@ void videoMenuController(VideoDocumentStructure &video) {
 }
 
 // controlador de opções do menu de dados do vídeo
-VideoDocumentStructure dataVideoMenuController(VideoDocumentStructure aux) {
+void dataVideoMenuController() {
 
     int option = 0;
     char selected;

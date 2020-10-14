@@ -16,6 +16,8 @@
 #include <unistd.h>
 #include <termios.h>
 
+#include "menu_utilities.hpp"
+
 using namespace std;
 
 // função que marca com 'x' a opção em que o usuário se encontra

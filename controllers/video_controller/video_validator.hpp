@@ -17,7 +17,7 @@ bool validateName(string name);
 
 bool validateDirectorName(string directorName);
 
-bool validateHours(unsigned inthours);
+bool validateHours(unsigned int hours);
 
 bool validateMinutes(unsigned int minutes);
 

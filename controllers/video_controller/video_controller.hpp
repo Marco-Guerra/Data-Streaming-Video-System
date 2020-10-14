@@ -2,26 +2,30 @@
 #define VIDEO_CONTROLLER
 
 #include "../../structures/video_structure.hpp"
-//#include "../../interfaces/menu_interface/menu_messages.hpp"
 #include "../menu_controller/menu_utilities.hpp"
 #include "../user_controller/user_controller.hpp"
+#include "../../interfaces/video_interface/print_stdio_video.hpp"
+#include "../../interfaces/video_interface/read_stdio_video.hpp"
+#include "video_validator.hpp"
 
+// função que gera um ID automaticamente
+string gerateVideoIdentification();
 
-int findIndiceOfId(VideoListDocumentStructure vet, string id);
+int findVideoById(VideoListDocumentStructure vet, string id);
 
 void swapVideo (VideoDocumentStructure &a, VideoDocumentStructure &b);
 
 // rotina para agregar um video
-void addVideoController(VideoListDocumentStructure &vet);
+void addVideoController();
 
 // rotina para acessar um video
-void accessVideoController(VideoListDocumentStructure &vet);
+void accessVideoController();
 
 // rotina para eliminar um video
-void deleteVideoController(VideoListDocumentStructure &vet);
+void deleteVideoController();
 
 // rotina para imprimir os dados de um video na saída estandar
-void printVideoController(VideoListDocumentStructure vet);
+void printVideoController();
 
 // rotina para combiar todos os dados não sensiveis do video
 void changeVideoDataController();

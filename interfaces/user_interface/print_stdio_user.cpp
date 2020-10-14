@@ -1,7 +1,7 @@
 #include "print_stdio_user.hpp"
 
 // função que imprime na saída estândar a identificação de um usuário
-void printStdioUserIdentificatio(string identification) {
+void printStdioUserIdentification(string identification) {
 
     cout << "Identificação do usuário: " << identification << endl;
 
@@ -69,7 +69,7 @@ void printStdioUserHistoryLenght(int historyLenght) {
 // função que imprime na saída estândar um usuário
 void printStdioUser(UserDocumentStructure user) {
 
-    printStdioUserIdentificatio(user.identification);
+    printStdioUserIdentification(user.identification);
     printStdioUserName(user.name);
     printStdioUserDateOfBirth(user.date);
     printStdioUserVideosIdentifications(user.history);

@@ -1,13 +1,11 @@
 #include "read_file_user.hpp"
 
 // função que faz a leitura do arquivo de usuários da identificação de um usuário
-string readFileUserIdentificatio(ifstream &fn) {
+string readFileUserIdentification(ifstream &fn) {
 	string aux;
-	auto timenow = chrono::system_clock::to_time_t(chrono::system_clock::now());
-	aux = ctime(&timenow);
+	getline(fn, aux);
 	aux = removeCharacter(aux, ' ');
-	aux = removeCharacter(aux, ':');
-	aux = removeCharacter(aux, '\n');
+	aux = processInput(aux);
 	return aux;
 }
 
@@ -135,7 +133,7 @@ void findEndOfStructureUser (ifstream &fn) {
 UserDocumentStructure readFileUser(ifstream &fn) {
 	UserDocumentStructure aux;
 
-	aux.identification = readFileUserIdentificatio(fn);
+	aux.identification = readFileUserIdentification(fn);
 	aux.name = readFileUserName(fn);
 	aux.date = readFileUserDateOfBirth(fn);
 	aux.history = readFileUserVideosIdentifications(fn);

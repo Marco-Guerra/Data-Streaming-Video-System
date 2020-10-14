@@ -15,7 +15,7 @@ void errorMessagesCodeVideo(int code, string message) {
 
 bool validateVideoIdentification(string identification) {
 
-    if ( identification.size() != 20 ) {
+    /*if ( identification.size() != 20 ) {
         errorMessagesCodeVideo(0, "");
         return 0;
     }
@@ -23,7 +23,7 @@ bool validateVideoIdentification(string identification) {
     if ( !stringIsAlNum(identification) ) {
         errorMessagesCodeVideo(1, "");
         return 0;
-    }
+    }*/
 
     return 1;
 }
@@ -37,7 +37,7 @@ bool validateKindOfVideo(string kindOfVideo) {
 
 bool validateName(string name) {
 
-    if( name.size() != 0 ) {
+    /*if( name.size() != 0 ) {
         errorMessagesCodeVideo(2, "");
         return 0;
     }
@@ -45,7 +45,7 @@ bool validateName(string name) {
     if( stringIsAlpha(name) ) {
         errorMessagesCodeVideo(3, "");
         return 0;
-    }
+    }*/
 
     return 1;
 }
@@ -57,7 +57,7 @@ bool validateDirectorName(string directorName) {
     return 1;
 }
 
-bool validateHours(unsigned inthours) {
+bool validateHours(unsigned int hours) {
 
     // VERIFICAR SE AS HORAS SAO VALORES COrretos
 

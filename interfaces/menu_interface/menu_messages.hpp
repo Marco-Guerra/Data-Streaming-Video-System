@@ -4,11 +4,8 @@
 //#include "menu_utilities.hpp"
 #include"../../controllers/menu_controller/menu_utilities.hpp"
 
-//#include "../../interfaces/menu_interface/menu_messages.hpp"
-
 #include "../../controllers/user_controller/user_controller.hpp"
 #include "../../controllers/video_controller/video_controller.hpp"
-
 
 // mensagem de inicio do programa
 void initMessage();

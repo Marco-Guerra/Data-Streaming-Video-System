@@ -2,12 +2,9 @@
 
 // função que gera um ID automaticamente
 string readStdioVideoIdentification() {
+	cout << "Insira a identificação do vídeo: ";
 	string aux;
-	auto timenow = chrono::system_clock::to_time_t(chrono::system_clock::now());
-	aux = ctime(&timenow);
-	aux = removeCharacter(aux, ' ');
-	aux = removeCharacter(aux, ':');
-	aux = removeCharacter(aux, '\n');
+	getline(cin, aux);
 	return aux;
 }
 
@@ -108,7 +105,7 @@ GenresStructure readStdioVideoGenres() {
 VideoDocumentStructure readStdioVideo() {
 	VideoDocumentStructure aux;
 
-	aux.identification = readStdioVideoIdentification();
+	aux.identification = "";
 	aux.kindOfVideo = readStdioVideoKindOfVideo();
 	aux.name = readStdioVideoName();
 	aux.directorName = readStdioVideoDirectorName();
@@ -119,11 +116,3 @@ VideoDocumentStructure readStdioVideo() {
 
 	return aux;
 }
-
-// função que faz a leitura na saída estandar de todos os vídeos
-//VideoDocumentStructure readStdioVideoList() {
-//    
-//}
-// função que faz a leitura na saída estândar de todos os vídeos
-//VideoDocumentStructure readStdioVideoList() {
-//}

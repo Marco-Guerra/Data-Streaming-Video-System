@@ -1,7 +1,5 @@
 #include "menu_messages.hpp"
 
-#include "../../controllers/menu_controller/menu_utilities.hpp"
-
 // mensagem de inicio do programa
 void initMessage() {
 

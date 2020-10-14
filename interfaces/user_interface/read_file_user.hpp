@@ -11,15 +11,22 @@
 #define INPUT_FILE_USER "storage/user_storage"
 
 #include <string>
-#include <time.h> 
-#include <chrono> 
-#include <ctime>
 
 using namespace std;
 
 // função que faz a leitura do arquivo de usuários da identificação de um usuário
-string readFileUserIdentificatio(ifstream &fn);
+string readFileUserIdentification(ifstream &fn);
 
+// função que faz a leitura do arquivo de usuários do nome de um usuário
+string readFileUserName(ifstream &fn);
+
+// função que faz a leitura do arquivo de usuários do dia da data de aniversario de um usuário
+int readFileUserDay(string line);
+
+// função que faz a leitura do arquivo de usuários do mes da data de aniversario de um usuário
+int readFileUserMonth(string line);
+
+// função que faz a leitura do arquivo de usuários do ano da data de aniversario de um usuário
 int readFileUserYear(string line);
 
 // função que faz a leitura do arquivo de usuários da data de aniversario de um usuário

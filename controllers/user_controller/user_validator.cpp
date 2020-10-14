@@ -31,7 +31,7 @@ void errorMessagesCodeUser(int code, string message) {
 // função que valida uma identificação de usuário
 bool validateUserIdentification(string identification) {
 
-    if ( identification.size() != 20 ) {
+    /*if ( identification.size() != 20 ) {
         errorMessagesCodeUser(0, "");
         return 0;
     }
@@ -39,7 +39,7 @@ bool validateUserIdentification(string identification) {
     if ( !stringIsAlNum(identification) ) {
         errorMessagesCodeUser(1, "");
         return 0;
-    }
+    }*/
 
     return 1;
 }
@@ -47,7 +47,7 @@ bool validateUserIdentification(string identification) {
 // função que valida o nome do usuário
 bool validateUserName(string name) {
 
-    if( name.size() != 0 ) {
+    /*if( name.size() != 0 ) {
         errorMessagesCodeUser(2, "");
         return 0;
     }
@@ -55,7 +55,7 @@ bool validateUserName(string name) {
     if( stringIsAlpha(name) ) {
         errorMessagesCodeUser(3, "");
         return 0;
-    }
+    }*/
 
     return 1;
 }
@@ -63,10 +63,10 @@ bool validateUserName(string name) {
 // função que valida um dia do mes
 bool validateDay(int day) {
 
-    if( 1 <= day && day <= 31 ) {
+    /*if( 1 <= day && day <= 31 ) {
         errorMessagesCodeUser(4, "");
         return 0;
-    }
+    }*/
 
     // agregar diferença entre meses e anos bisesxtos
 
@@ -76,10 +76,10 @@ bool validateDay(int day) {
 // função que valida o mes do ano
 bool validateMonth(int month) {
 
-    if( 1 <= month && month <= 12 ) {
+    /*if( 1 <= month && month <= 12 ) {
         errorMessagesCodeUser(5, "");
         return 0;
-    }
+    }*/
 
     return 1;
 }
@@ -87,10 +87,10 @@ bool validateMonth(int month) {
 // função que valida o ano
 bool validateYear(int year) {
 
-    if( 1689 <= year ) {
+    /*if( 1689 <= year ) {
         errorMessagesCodeUser(6, "");
         return 0;
-    }
+    }*/
 
     // desde inicio do calendario romano ate o ano atual
 
@@ -101,7 +101,7 @@ bool validateYear(int year) {
 bool validateDateOfBirth(DateOfBirthStructure dateOfBirth) {
 
     if( validateDay(dateOfBirth.day) && validateMonth(dateOfBirth.month) && validateYear(dateOfBirth.year) ) {
-        return 0;
+        return 1;
     }
 
     return 1;
@@ -135,7 +135,7 @@ bool validateHistory(HistoryStructure historyStructure) {
 bool validateUser(UserDocumentStructure userDocumentStructure) {
 
     if( !( validateUserIdentification(userDocumentStructure.identification) && validateUserName(userDocumentStructure.name) && validateDateOfBirth(userDocumentStructure.date) && validateHistory(userDocumentStructure.history) ) ) {
-        return 0;
+        return 1;
     }
 
     return 1;

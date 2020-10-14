@@ -19,15 +19,6 @@ void printStdioVideoName(string name);
 // função que imprime na saída estândar o nome do diretor do vídeo
 void printStdioVideoDirectorName(string directorName);
 
-// função que imprime na saída estândar as horas de duração do vídeo
-void printStdioVideoHours(int hours);
-
-// função que imprime na saída estândar os minutos de duração do vídeo
-void printStdioVideoMinutes(int minutes);
-
-// função que imprime na saída estândar os segundos de duração do vídeo
-void printStdioVideoSeconds(int seconds);
-
 // função que imprime na saída estândar a duração do vídeo
 void printStdioVideoDuration(DurationStructure durartion);
 

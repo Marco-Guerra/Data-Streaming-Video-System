@@ -8,7 +8,7 @@
 using namespace std;
 
 // função que imprime na saída estândar a identificação de um usuário
-void printStdioUserIdentificatio(string identification);
+void printStdioUserIdentification(string identification);
 
 // função que imprime na saída estândar o nome de um usuário
 void printStdioUserName(string name);

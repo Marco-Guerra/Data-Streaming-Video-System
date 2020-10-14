@@ -28,9 +28,9 @@ UserDocumentStructure dataUserMenuController(UserDocumentStructure user);
 void videosMenuController(VideoListDocumentStructure &videoList);
 
 // controlador de opções do menu de vídeo
-void videoMenuController();
+void videoMenuController(VideoListDocumentStructure &videoList);
 
 // controlador de opções do menu de dados do vídeo
-void dataVideoMenuController();
+VideoDocumentStructure dataVideoMenuController(VideoDocumentStructure video);
 
 #endif

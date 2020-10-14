@@ -210,13 +210,13 @@ void videosMenuController(VideoListDocumentStructure &videoList) {
         if( selected == ENTER ) {
             // adiciona um novo vídeo
             if( option == 0 )
-                addVideoController();
+                addVideoController(videoList);
             // acessar menu de vídeo
             if( option == 1 )
-                //videoMenuController();
+                videoMenuController(videoList);
             // eliminar um vídeo
             if( option == 2 )
-                deleteVideoController();
+                //deleteVideoController(videoList);
             // retornar o controle para o menu principal
             if( option == 3 )
                 return;
@@ -230,8 +230,20 @@ void videosMenuController(VideoListDocumentStructure &videoList) {
 }
 
 // controlador de opções do menu de vídeo
-void videoMenuController() {
+void videoMenuController(VideoListDocumentStructure &videoList) {
 
+	VideoDocumentStructure video;
+	string identification;
+    int position;
+
+    identification = readStdioVideoIdentification();
+
+    position = findVideoById(videoList, identification);
+
+    if( position >= 0 ){
+        video = videoList.videosList[position];
+    }
+      
     int option = 0;
     char selected;
     
@@ -254,7 +266,7 @@ void videoMenuController() {
                 //printVideoController();
             // acessar menu de dados do vídeo
             if( option == 1 )
-                //dataVideoMenuController();
+                video = dataVideoMenuController(video);
             // retornar o controle para o menu de vídeos
             if( option == 2 )
                 return;
@@ -270,7 +282,7 @@ void videoMenuController() {
 }
 
 // controlador de opções do menu de dados do vídeo
-void dataVideoMenuController() {
+VideoDocumentStructure dataVideoMenuController(VideoDocumentStructure video) {
 
     int option = 0;
     char selected;
@@ -323,7 +335,6 @@ void dataVideoMenuController() {
             if( option == 10 ) {
 
 			}
-                //return;
         }
 
         system("clear");

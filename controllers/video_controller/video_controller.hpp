@@ -16,10 +16,10 @@ int findVideoById(VideoListDocumentStructure vet, string id);
 void swapVideo (VideoDocumentStructure &a, VideoDocumentStructure &b);
 
 // rotina para agregar um video
-void addVideoController();
+void addVideoController(VideoListDocumentStructure videoList);
 
 // rotina para acessar um video
-void accessVideoController();
+void accessVideoController(VideoListDocumentStructure videoList);
 
 // rotina para eliminar um video
 void deleteVideoController();

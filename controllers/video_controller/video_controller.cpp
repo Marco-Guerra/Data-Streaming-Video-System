@@ -27,18 +27,24 @@ void swapVideo (VideoDocumentStructure &a, VideoDocumentStructure &b) {
 }
 
 // rotina para agregar um vídeo
-void addVideoController() {
-    cout << "rotina para agregar um vídeo" << endl;
-    system("sleep 1");
+void addVideoController(VideoListDocumentStructure videoList) {
+	VideoDocumentStructure video;
     // realizar a leitura dos dados de um novo vídeo
+	video = readStdioVideo();
+	video.identification = gerateVideoIdentification();
     // realizar a validação dos dados de um vídeo
-		// adicionar o vídeo à lista de vídeos em memória
+	if ( validateVideo(video)) {
+		videoList.videosList[videoList.numberOfVideos++] = video;
+	}
+	// adicionar o vídeo à lista de vídeos em memória
 
     // retornar o controle ao menu de vídeos
+    cout << "vídeo agregado" << endl;
+    system("sleep 1");
 }
 
 // rotina para eliminar um vídeo
-void deleteVideoController() {
+void deleteVideoController(VideoListDocumentStructure videoList) {
     cout << "rotina para eliminar um vídeo" << endl;
     system("sleep 1");
     // ler a identificação do vídeo que vai ser eliminado

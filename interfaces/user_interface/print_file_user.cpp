@@ -1,27 +1,59 @@
 #include "print_file_user.hpp"
 
-// função que imprime no arquivo de usuários a identificação de um usuário
+/**
+* Funtion: que imprime no arquivo de usuários a identificação de um usuário
+* @param {string} - identificação do usuário
+* @param {ofstream} - ponteiro para arquivo de saída
+* @returns {void} - none
+* 
+* @precondition: none
+* @postcondition: none
+*/
 void printFileUserIdentificatio(string identification, ofstream &storageUserFile) {
 
      storageUserFile << "identification = " << identification << ";" << endl;
 
 }
 
-// função que imprime no arquivo de usuários o nome de um usuário
+/**
+* Funtion: que imprime no arquivo de usuários o nome de um usuário
+* @param {string} - nome do usuário
+* @param {ofstream} - ponteiro para arquivo de saída
+* @returns {void} - none
+* 
+* @precondition: none
+* @postcondition: none
+*/
 void printFileUserName(string username, ofstream &storageUserFile) {
 
     storageUserFile << "UserName = " << username << ";" << endl;
 
 }
 
-// função que imprime no arquivo de usuários a data de aniversario de um usuário
+/**
+* Funtion: que imprime no arquivo de usuários a data de aniversario de um usuário
+* @param {DateOfBirthStructure} - data de nascimento do usuário
+* @param {ofstream} - ponteiro para arquivo de saída
+* @returns {void} - none
+* 
+* @precondition: none
+* @postcondition: none
+*/
 void printFileUserDateOfBirth(DateOfBirthStructure date, ofstream &storageUserFile) {
 
 	 storageUserFile << "date = " << date.day << " / " << date.month << " / " << date.year << ";" << endl;
 
 }
 
-// função que imprime no arquivo de usuários a identificação dos vídeos visto por um usuário
+/**
+* Funtion: que imprime no arquivo de usuários a identificação dos vídeos visto por um usuário
+* @param {HistoryStructure} - histórico do usuário
+* @param {ofstream} - ponteiro para arquivo de saída
+* @returns {void} - none
+* 
+* @precondition: none
+* @postcondition: none
+*/
 void printFileUserVideosIdentifications(HistoryStructure history, ofstream &storageUserFile) {
 
 	storageUserFile << "history = {" << endl;
@@ -33,7 +65,15 @@ void printFileUserVideosIdentifications(HistoryStructure history, ofstream &stor
 	storageUserFile << "}" << endl;
 }
 
-// função que imprime no arquivo de usuários um usuário
+/**
+* Funtion: que imprime no arquivo de usuários um usuário
+* @param {UserDocumentStructure} - todos os dados do usuário
+* @param {ofstream} - ponteiro para arquivo de saída
+* @returns {void} - none
+* 
+* @precondition: none
+* @postcondition: none
+*/
 void printFileUser(UserDocumentStructure user, ofstream &storageUserFile) {
 
     printFileUserIdentificatio(user.identification, storageUserFile);
@@ -45,7 +85,15 @@ void printFileUser(UserDocumentStructure user, ofstream &storageUserFile) {
 	printFileUserVideosIdentifications(user.history, storageUserFile);
 }
 
-// função que imprime no arquivo de usuários todos os usuário
+/**
+* Funtion: que imprime no arquivo de usuários todos os usuário
+* @param {UserListDocumentStructure} - número de usuários
+* @param {string} - representa o nome do arquivo
+* @returns {void} - none
+* 
+* @precondition: none
+* @postcondition: none
+*/
 void printFileUserList(UserListDocumentStructure userList, string storageUserFileName) {
 
     ofstream storageUserFile;

@@ -1,6 +1,12 @@
 #include "read_stdio_video.hpp"
 
-// função que gera um ID automaticamente
+/**
+* Funtion: que gera um ID automaticamente
+* @returns {string} - retorna um ID gerado automaticamente
+* 
+* @precondition: none
+* @postcondition: none
+*/
 string readStdioVideoIdentification() {
 
 	string identification;
@@ -15,7 +21,13 @@ string readStdioVideoIdentification() {
 	return identification;
 }
 
-// função que faz a leitura na saída estândar do tipo de vídeo
+/**
+* Funtion: que faz a leitura na saída estândar do tipo de vídeo
+* @returns {string} - retorna o tipo do vídeo
+* 
+* @precondition: none
+* @postcondition: none
+*/
 string readStdioVideoKindOfVideo() {
 	
 	string kindOfVideo;
@@ -30,7 +42,13 @@ string readStdioVideoKindOfVideo() {
 	return kindOfVideo;
 }
 
-// função que faz a leitura na saída estândar do nome do vídeo
+/**
+* Funtion: que faz a leitura na saída estândar do nome do vídeo
+* @returns {string} - retorna o nome do vídeo
+* 
+* @precondition: none
+* @postcondition: none
+*/
 string readStdioVideoName() {
 	
 	string name;
@@ -45,7 +63,13 @@ string readStdioVideoName() {
 	return name;
 }
 
-// função que faz a leitura na saída estândar do nome do diretor do vídeo
+/**
+* Funtion: que faz a leitura na saída estândar do nome do diretor do vídeo
+* @returns {string} - retorna o nome do diretor do vídeo
+* 
+* @precondition: none
+* @postcondition: none
+*/
 string readStdioVideoDirectorName() {
 	
 	string directorsName;
@@ -60,7 +84,13 @@ string readStdioVideoDirectorName() {
 	return directorsName;
 }
 
-// função que faz a leitura na saída estândar das horas de duração do vídeo
+/**
+* Funtion: que faz a leitura na saída estândar das horas de duração do vídeo
+* @returns {int} - retorna quantas horas o vídeo possuí
+* 
+* @precondition: none
+* @postcondition: none
+*/
 int readStdioVideoHours() {
 	
 	int hours;
@@ -75,7 +105,13 @@ int readStdioVideoHours() {
 	return hours;
 }
 
-// função que faz a leitura na saída estândar dos minutos de duração do vídeo
+/**
+* Funtion: que faz a leitura na saída estândar dos minutos de duração do vídeo
+* @returns {int} - retorna quantos minutos o vídeo possuí
+* 
+* @precondition: none
+* @postcondition: none
+*/
 int readStdioVideoMinutes() {
 	
 	int minutes;
@@ -90,7 +126,13 @@ int readStdioVideoMinutes() {
 	return minutes;
 }
 
-// função que faz a leitura na saída estândar dos segundos de duração do vídeo
+/**
+* Funtion: que faz a leitura na saída estândar dos segundos de duração do vídeo
+* @returns {int} - retorna quantos segundos o vídeo possuí
+* 
+* @precondition: none
+* @postcondition: none
+*/
 int readStdioVideoSeconds() {
 	
 	int seconds;
@@ -105,7 +147,13 @@ int readStdioVideoSeconds() {
 	return seconds;
 }
 
-// função que faz a leitura na saída estândar da duração do vídeo
+/**
+* Funtion: que faz a leitura na saída estândar da duração do vídeo
+* @returns {DurationStructure} - retorna a duração completa do vídeo
+* 
+* @precondition: none
+* @postcondition: none
+*/
 DurationStructure readStdioVideoDuration() {
 	
 	DurationStructure duration;
@@ -117,7 +165,13 @@ DurationStructure readStdioVideoDuration() {
 	return duration;
 }
 
-// função que faz a leitura na saída estândar do número de temporadas de um vídeo
+/**
+* Funtion: que faz a leitura na saída estândar do número de temporadas de um vídeo
+* @returns {int} - retorna a número de temporadas que o vídeo possuí
+* 
+* @precondition: none
+* @postcondition: none
+*/
 int readStdioVideoNumberOfSeasons() {
 	
 	int numberOfSeasons;
@@ -132,7 +186,13 @@ int readStdioVideoNumberOfSeasons() {
 	return numberOfSeasons;
 }
 
-// função que faz a leitura na saída estândar do vídeo o ano de lançamento
+/**
+* Funtion: que faz a leitura na saída estândar do vídeo o ano de lançamento
+* @returns {int} - retorna o ano de lançamento de um vídeo
+* 
+* @precondition: none
+* @postcondition: none
+*/
 int readStdioVideoReleaseYear() {
 	
 	int releaseYear;
@@ -147,7 +207,13 @@ int readStdioVideoReleaseYear() {
 	return releaseYear;
 }
 
-// função que faz a leitura na saída estândar do número de gêneros do vídeo
+/**
+* Funtion: que faz a leitura na saída estândar do número de gêneros do vídeo
+* @returns {int} - retorna o numero de gêneros que o vídeo possuí
+* 
+* @precondition: none
+* @postcondition: none
+*/
 int readStdioVideoNumberOfGenres() {
 	
 	int numberOfGenres;
@@ -162,7 +228,13 @@ int readStdioVideoNumberOfGenres() {
 	return numberOfGenres;
 }
 
-// função que faz a leitura na saída estândar dos gêneros aos quais o vídeo pertence
+/**
+* Funtion: que faz a leitura na saída estândar dos gêneros aos quais o vídeo pertence
+* @returns {GenreStructure} - retorna os gêneros que o vídeo possuí
+* 
+* @precondition: none
+* @postcondition: none
+*/
 GenresStructure readStdioVideoGenres() {
 
 	GenresStructure genres;
@@ -187,7 +259,13 @@ GenresStructure readStdioVideoGenres() {
 	return genres;
 }
 
-// função que faz a leitura na saída estândar de um vídeo
+/**
+* Funtion: que faz a leitura na saída estândar de um vídeo
+* @returns {VideoDocumentStructure} - retorna todos os dados de um vídeo
+* 
+* @precondition: none
+* @postcondition: none
+*/
 VideoDocumentStructure readStdioVideo() {
 	
 	VideoDocumentStructure video;

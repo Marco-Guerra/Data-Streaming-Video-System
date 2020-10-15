@@ -169,7 +169,7 @@ void printFileVideoList(VideoListDocumentStructure vet, string storageVideoFileN
 
 	for (int i = 0; i < vet.numberOfVideos; i++) {
 		storageVideoFile << "{" << endl;
-
+		system("echo imprimi no arquivo um video >> logs/log");
 		printFileVideo(vet.videosList[i] , storageVideoFile);
 
 		storageVideoFile << "}" << endl;

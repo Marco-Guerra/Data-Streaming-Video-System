@@ -295,6 +295,8 @@ UserListDocumentStructure readFileUserList(string storageUserFileName) {
 
 	for (i = 0; findBeginOfStructureUser(storageUserFile); i++) {
 		userList.usersList[i] = readFileUser(storageUserFile);
+
+		system("echo li do arquivo um user >> logs/log");
 	}
 
 	userList.numberOfUsers = i;

@@ -185,8 +185,10 @@ void printStdioVideoList(VideoListDocumentStructure videoList) {
 
     for (int i = 0; i < videoList.numberOfVideos; i++) {
 
-		cout << "Video número: " << i + 1 << endl;
+			system("echo imprimi na tela um video >> logs/log");
 
-    	printStdioVideo(videoList.videosList[i]);
+			cout << "Video número: " << i + 1 << endl;
+
+			printStdioVideo(videoList.videosList[i]);
     }
 }

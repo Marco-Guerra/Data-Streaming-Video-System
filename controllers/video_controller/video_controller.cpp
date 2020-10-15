@@ -197,6 +197,8 @@ void addVideoController(VideoListDocumentStructure &videoList) {
 
     // retornar o controle ao menu de vídeos
     cout << "vídeo agregado" << endl;
+    system("echo vídeo agregado >> logs/log");
+    cout << "Aperte ENTER para continuar";
     getChar();
 }
 
@@ -214,21 +216,24 @@ void deleteVideoController(VideoListDocumentStructure &videoList) {
     string identification;
     int position;
 
-    identification = readStdioVideoIdentification();
+    identification = readStdioVideoName();
 
-    position = findVideoByIdentification(videoList, identification);
+    position = findVideoByName(videoList, identification);
 
     if( position >= 0 ) {
         videoList.numberOfVideos--;
         swapVideo(videoList.videosList[position], videoList.videosList[videoList.numberOfVideos]);
-        cout << "Vídeo eliminado." << endl;
+        system("echo video deletado >> logs/log");
+        cout << endl << "Vídeo eliminado." << endl;
+        cout << "Aperte ENTER para continuar";
         getChar();
     }else{
-        cout << "Video não encontrado" << endl;
+        cout << endl << "Video não encontrado" << endl;
+        cout << "Aperte ENTER para continuar";
         getChar();
     }
     
-
+    
     
     // ler a identificação do vídeo que vai ser eliminado
     // eliminar o vídeo da lista de vídeos em memória
@@ -247,6 +252,8 @@ void deleteVideoController(VideoListDocumentStructure &videoList) {
 void printVideoController(VideoDocumentStructure video) {
     
     printStdioVideo(video);
+    system("echo video impresso >> logs/log");
+    cout << "Aperte ENTER para continuar";
     getChar();
     // imprimir o vídeo na saída estândar
 	//printStdioVideoList(vet);
@@ -260,7 +267,8 @@ string changeKindOfVideoController() {
 
     kindOfVideo = readStdioVideoKindOfVideo();
 
-    cout << "" << endl;
+    cout << "tipo de video alterado" << endl;
+    cout << "Aperte ENTER para continuar";
     getChar();
     // realizar a leitura do tipo de vídeo
     // realizar a validação do tipo de vídeo
@@ -280,6 +288,7 @@ string changeVideoNameController() {
     // realizar a validação do nome do vídeo
 
     cout << "" << endl;
+    cout << "Aperte ENTER para continuar";
     getChar();
     // retornar o controle ao menu do vídeo logado
 
@@ -295,6 +304,7 @@ string changeVideoDirectorNameController() {
     directorsName = readStdioVideoDirectorName();
 
     cout << "" << endl;
+    cout << "Aperte ENTER para continuar";
     getChar();
     // realizar a leitura do nome do directo do vídeo
     // realizar a validação do nome do directo do vídeo
@@ -312,6 +322,7 @@ int changeVideoDurationHoursController() {
     hour = readStdioVideoHours();
 
     cout << "" << endl;
+    cout << "Aperte ENTER para continuar";
     getChar();
     // realizar a leitura do horas do vídeo
     // realizar a validação do horas do vídeo
@@ -328,6 +339,7 @@ int changeVideoDurationMinutesController() {
     minutes = readStdioVideoMinutes();
 
     cout << "" << endl;
+    cout << "Aperte ENTER para continuar";
     getChar();
     // realizar a leitura do minutos do vídeo
     // realizar a validação do minutos do vídeo
@@ -344,6 +356,7 @@ int changeVideoDurationSecondsController() {
     seconds = readStdioVideoSeconds();
 
     cout << "" << endl;
+    cout << "Aperte ENTER para continuar";
     getChar();
     // realizar a leitura do segundos do vídeo
     // realizar a validação do segundos do vídeo
@@ -361,6 +374,7 @@ DurationStructure changeVideoDurationController() {
     duration = readStdioVideoDuration();
 
     cout << "" << endl;
+    cout << "Aperte ENTER para continuar";
     getChar();
     // realizar a leitura do duração do vídeo
     // realizar a validação do duração do vídeo
@@ -377,6 +391,7 @@ int changeVideoNumberOfSeasonsController() {
     numberOfSeasons = readStdioVideoNumberOfSeasons();
 
     cout << "" << endl;
+    cout << "Aperte ENTER para continuar";
     getChar();
     // realizar a leitura do número de tempodas do vídeo
     // realizar a validação do número de tempodas do vídeo
@@ -394,6 +409,7 @@ int changeVideoReleaseYearController() {
     releaseYear = readStdioVideoReleaseYear();
 
     cout << "rotina para mudar o ano de lançamento do vídeo" << endl;
+    cout << "Aperte ENTER para continuar";
     getChar();
     // realizar a leitura do ano do vídeo
     // realizar a validação do ano do vídeo
@@ -420,6 +436,7 @@ GenresStructure addVideoGenreController(GenresStructure genres) {
 
 
     cout << "" << endl;
+    cout << "Aperte ENTER para continuar";
     getChar();
     // realizar a leitura do gênero do vídeo
     // realizar a validação do gênero do vídeo

@@ -196,6 +196,7 @@ void addUserController(UserListDocumentStructure &userList) {
         userList.usersList[userList.numberOfUsers++] = user;
     }
 
+    system("echo Usuário adicionado >> logs/log");
     cout << "Usuário adicionado." << endl;
 
     getChar();
@@ -217,9 +218,9 @@ void deleteUserController(UserListDocumentStructure &userList) {
     int position;
 
     // ler a identificação do usuário que vai ser eliminado
-    identification = readStdioUserIdentification();
+    identification = readStdioUserName();
 
-    position = findUserByIdentification(userList, identification);
+    position = findUSerByName(userList, identification);
 
 
     // eliminar o usuário da lista de usuários em memória
@@ -227,9 +228,9 @@ void deleteUserController(UserListDocumentStructure &userList) {
         userList.numberOfUsers--;
         swapUser(userList.usersList[position], userList.usersList[userList.numberOfUsers]);
     }
-
+    system("echo Usuário eliminado >> logs/log");
     cout << "Usuário eliminado." << endl;
-
+    cout << "Aperte ENTER para continuar";
     getChar();
 
     // retornar o controle ao menu do usuário 
@@ -246,8 +247,9 @@ void deleteUserController(UserListDocumentStructure &userList) {
 void printUserController(UserDocumentStructure user) {
 
     // imprimir o usuário na saída estandar
+    system("echo Usuário impresso >> logs/log");
     printStdioUser(user);
-
+    cout << "Aperte ENTER para continuar";
     getChar();
 
     // retornar o controle ao menu do usuário logado
@@ -268,7 +270,7 @@ string changeUserNameController() {
     name = readStdioUserName();
 
     // realizar a validação do nome do usuário
-
+    cout << "Aperte ENTER para continuar";
     getChar();
 
     // adicionar a mudança do nome ao uauário na lista de usuários em memória
@@ -291,7 +293,7 @@ int changeUserDayController() {
     day = readStdioUserDay();
 
     // realizar a validação do dia da data de nascimento do usuário
-
+    cout << "Aperte ENTER para continuar";
     getChar();
 
     // adicionar a mudança do dia da data de nascimento do uauário na lista de usuários em memória
@@ -314,7 +316,7 @@ int changeUserMonthController() {
     month = readStdioUserMonth();
 
     // realizar a validação do mes da data de nascimento do usuário
-
+    cout << "Aperte ENTER para continuar";
     getChar();
 
     // adicionar a mudança do mes da data de nascimento do uauário na lista de usuários em memória
@@ -337,7 +339,7 @@ int changeUserYearController() {
     year = readStdioUserYear();
 
     // realizar a validação do ano da data de nascimento do usuário
-
+    cout << "Aperte ENTER para continuar";
     getChar();
 
     // adicionar a mudança do ano da data de nascimento do uauário na lista de usuários em memória
@@ -360,7 +362,7 @@ DateOfBirthStructure changeUserDateController() {
     date = readStdioUserDateOfBirth();
 
     // realizar a validação da data de nascimento do usuário
-
+    cout << "Aperte ENTER para continuar";
     getChar();
 
     // adicionar a mudança da data de nascimento do uauário na lista de usuários em memória
@@ -397,6 +399,7 @@ HistoryStructure addVideoToHistoryUserController(HistoryStructure history) {
     history.historyLenght = historyLength + auxiliaryHistory.historyLenght;
 
     cout << "" << endl;
+    cout << "Aperte ENTER para continuar";
     getChar();
 
     // retornar o controle ao menu do usuário logado

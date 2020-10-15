@@ -312,6 +312,7 @@ VideoListDocumentStructure readFileVideoList(string storageVideoFileName) {
 	}
 
 	for (i = 0; findBeginOfStructureVideo(storageVideoFile); i++) {
+		system("echo li do arquivo um video >> logs/log");
 		videoList.videosList[i] = readFileVideo(storageVideoFile);
 	}
 

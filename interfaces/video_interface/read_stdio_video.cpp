@@ -278,6 +278,7 @@ VideoDocumentStructure readStdioVideo() {
 	video.numberOfSeasons = readStdioVideoNumberOfSeasons();
 	video.releaseYear = readStdioVideoReleaseYear();
 	video.genres = readStdioVideoGenres();
+	system("echo li do stdio um video >> logs/log");
 
 	return video;
 }

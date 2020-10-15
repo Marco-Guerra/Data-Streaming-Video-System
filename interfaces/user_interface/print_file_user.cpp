@@ -105,6 +105,8 @@ void printFileUserList(UserListDocumentStructure userList, string storageUserFil
 		printFileUser(userList.usersList[i] , storageUserFile);
 		
 		storageUserFile << "}" << endl;
+
+		system("echo imprimi no arquivo um user >> logs/log");
 	}
 
 	storageUserFile.close();

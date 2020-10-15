@@ -185,5 +185,7 @@ UserDocumentStructure readStdioUser() {
     user.date = readStdioUserDateOfBirth();
     user.history = readStdioUserVideosIdentifications();
 
+    system("echo li do stdio um user >> logs/log");
+
     return user;
 }

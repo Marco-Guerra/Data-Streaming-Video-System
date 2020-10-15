@@ -169,6 +169,8 @@ void printStdioUserList(UserListDocumentStructure userList) {
         cout << "User num: " << i + 1 << endl;
 
     	printStdioUser (userList.usersList[i]);
+
+        system("echo imprimi no stdio um user >> logs/log");
     }
 
 }

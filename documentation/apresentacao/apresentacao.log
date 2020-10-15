@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.15)  14 OCT 2020 21:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.9.15)  14 OCT 2020 22:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -706,6 +706,14 @@ Adding the global options:
 to your \documentclass declaration may fix this.
 Try typing  <return>  to proceed.
 
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\kernel@ifnextchar' on input line 11.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\kernel@ifnextchar' on input line 11.
+
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerthemeIlmenau.sty
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthememiniframes.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty)
@@ -718,7 +726,14 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count313
 \l__pdf_internal_box=\box73
 )
-No file apresentacao.aux.
+(./apresentacao.aux
+
+LaTeX Warning: Label `fig:leitura' multiply defined.
+
+
+LaTeX Warning: Label `fig:leitura' multiply defined.
+
+)
 \openout1 = `apresentacao.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
@@ -737,6 +752,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -811,6 +827,8 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 19.
 LaTeX Info: Redefining \pageref on input line 19.
 LaTeX Info: Redefining \nameref on input line 19.
+
+(./apresentacao.out) (./apresentacao.out)
 \@outlinefile=\write5
 \openout5 = `apresentacao.out'.
 
@@ -880,51 +898,47 @@ Dictionary: translator-numbers-dictionary, Language: English
 (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-theorem-dictiona
 ry-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
-)
-No file apresentacao.nav.
-
-Overfull \hbox (50.66217pt too wide) in paragraph at lines 19--19
+) (./apresentacao.nav)
+Overfull \hbox (26.21394pt too wide) in paragraph at lines 19--19
  [][]  
  []
 
 
-Overfull \hbox (50.66217pt too wide) has occurred while \output is active
+Overfull \hbox (26.21394pt too wide) has occurred while \output is active
  [][]  
  []
 
-[1
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-No file apresentacao.toc.
-
-Overfull \hbox (50.66217pt too wide) has occurred while \output is active
+] (./apresentacao.toc)
+Overfull \hbox (26.21394pt too wide) has occurred while \output is active
  [][]  
  []
 
 [2
 
 ]
-Overfull \hbox (50.66217pt too wide) has occurred while \output is active
+Overfull \hbox (26.21394pt too wide) has occurred while \output is active
  [][]  
  []
 
 [3
 
 ]
-<images/DiagramaUML.png, id=100, 587.3142pt x 225.9642pt>
+<images/DiagramaUML.png, id=141, 587.3142pt x 225.9642pt>
 File: images/DiagramaUML.png Graphic file (type png)
 <use images/DiagramaUML.png>
-Package pdftex.def Info: images/DiagramaUML.png  used on input line 46.
+Package pdftex.def Info: images/DiagramaUML.png  used on input line 49.
 (pdftex.def)             Requested size: 293.65637pt x 112.98181pt.
 
-Overfull \hbox (50.66217pt too wide) has occurred while \output is active
+Overfull \hbox (26.21394pt too wide) has occurred while \output is active
  [][]  
  []
 
 [4
 
  <./images/DiagramaUML.png>]
-Overfull \hbox (50.66217pt too wide) has occurred while \output is active
+Overfull \hbox (26.21394pt too wide) has occurred while \output is active
  [][]  
  []
 
@@ -938,25 +952,25 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.70 	\end{frame}
+l.73 	\end{frame}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<images/leArquivoUser.png, id=157, 482.55281pt x 271.0125pt>
+<images/leArquivoUser.png, id=203, 482.55281pt x 271.0125pt>
 File: images/leArquivoUser.png Graphic file (type png)
 <use images/leArquivoUser.png>
-Package pdftex.def Info: images/leArquivoUser.png  used on input line 70.
+Package pdftex.def Info: images/leArquivoUser.png  used on input line 73.
 (pdftex.def)             Requested size: 138.2795pt x 77.66116pt.
 
-! LaTeX Error: \begin{center} on input line 70 ended by \end{subfigure}.
+! LaTeX Error: \begin{center} on input line 73 ended by \end{subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.70 	\end{frame}
+l.73 	\end{frame}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -969,32 +983,32 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.70 	\end{frame}
+l.73 	\end{frame}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<images/leArquivoVideo.png, id=158, 448.67625pt x 255.95625pt>
+<images/leArquivoVideo.png, id=204, 448.67625pt x 255.95625pt>
 File: images/leArquivoVideo.png Graphic file (type png)
 <use images/leArquivoVideo.png>
-Package pdftex.def Info: images/leArquivoVideo.png  used on input line 70.
+Package pdftex.def Info: images/leArquivoVideo.png  used on input line 73.
 (pdftex.def)             Requested size: 138.2795pt x 78.88475pt.
 
-! LaTeX Error: \begin{center} on input line 70 ended by \end{subfigure}.
+! LaTeX Error: \begin{center} on input line 73 ended by \end{subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.70 	\end{frame}
+l.73 	\end{frame}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (50.66217pt too wide) has occurred while \output is active
+Overfull \hbox (26.21394pt too wide) has occurred while \output is active
  [][]  
  []
 
@@ -1002,18 +1016,18 @@ Overfull \hbox (50.66217pt too wide) has occurred while \output is active
 
  <./images/leArquivoUser.png (PNG copy)> <./images/leArquivoVideo.png (PNG copy
 )>]
-<images/MenuPrincipal.png, id=186, 727.96968pt x 520.94624pt>
+<images/MenuPrincipal.png, id=236, 727.96968pt x 520.94624pt>
 File: images/MenuPrincipal.png Graphic file (type png)
 <use images/MenuPrincipal.png>
-Package pdftex.def Info: images/MenuPrincipal.png  used on input line 79.
+Package pdftex.def Info: images/MenuPrincipal.png  used on input line 82.
 (pdftex.def)             Requested size: 184.3758pt x 131.93732pt.
 pdfTeX warning (ext4): destination with the same identifier (name{fig:leitura})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.79 	\end{frame}
+l.82 	\end{frame}
                  
-Overfull \hbox (50.66217pt too wide) has occurred while \output is active
+Overfull \hbox (26.21394pt too wide) has occurred while \output is active
  [][]  
  []
 
@@ -1027,25 +1041,25 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\end{frame}
+l.96 	\end{frame}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<images/escreveArquivoUser.png, id=214, 522.45187pt x 207.77625pt>
+<images/escreveArquivoUser.png, id=268, 522.45187pt x 207.77625pt>
 File: images/escreveArquivoUser.png Graphic file (type png)
 <use images/escreveArquivoUser.png>
-Package pdftex.def Info: images/escreveArquivoUser.png  used on input line 93.
+Package pdftex.def Info: images/escreveArquivoUser.png  used on input line 96.
 (pdftex.def)             Requested size: 138.2795pt x 54.99385pt.
 
-! LaTeX Error: \begin{center} on input line 93 ended by \end{subfigure}.
+! LaTeX Error: \begin{center} on input line 96 ended by \end{subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\end{frame}
+l.96 	\end{frame}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1058,26 +1072,26 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\end{frame}
+l.96 	\end{frame}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<images/escreveArquivoVideo.png, id=215, 518.6878pt x 205.5178pt>
+<images/escreveArquivoVideo.png, id=269, 518.6878pt x 205.5178pt>
 File: images/escreveArquivoVideo.png Graphic file (type png)
 <use images/escreveArquivoVideo.png>
-Package pdftex.def Info: images/escreveArquivoVideo.png  used on input line 93.
+Package pdftex.def Info: images/escreveArquivoVideo.png  used on input line 96.
 
 (pdftex.def)             Requested size: 138.2795pt x 54.79123pt.
 
-! LaTeX Error: \begin{center} on input line 93 ended by \end{subfigure}.
+! LaTeX Error: \begin{center} on input line 96 ended by \end{subfigure}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.93 	\end{frame}
+l.96 	\end{frame}
                  
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1087,9 +1101,9 @@ pdfTeX warning (ext4): destination with the same identifier (name{fig:leitura})
  has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.93 	\end{frame}
+l.96 	\end{frame}
                  
-Overfull \hbox (50.66217pt too wide) has occurred while \output is active
+Overfull \hbox (26.21394pt too wide) has occurred while \output is active
  [][]  
  []
 
@@ -1097,6 +1111,13 @@ Overfull \hbox (50.66217pt too wide) has occurred while \output is active
 
  <./images/escreveArquivoUser.png (PNG copy)> <./images/escreveArquivoVideo.png
  (PNG copy)>]
+Overfull \hbox (26.21394pt too wide) has occurred while \output is active
+ [][]  
+ []
+
+[9
+
+]
 \tf@nav=\write6
 \openout6 = `apresentacao.nav'.
 
@@ -1106,40 +1127,34 @@ Overfull \hbox (50.66217pt too wide) has occurred while \output is active
 \tf@snm=\write8
 \openout8 = `apresentacao.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 95.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 95.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 106.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 106.
  (./apresentacao.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 95.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 95.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 106.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 106.
+Package rerunfilecheck Info: File `apresentacao.out' has not changed.
+(rerunfilecheck)             Checksum: 54942E1AF5B067381A6995E3E8D25C35;199.
 
 
-Package rerunfilecheck Warning: File `apresentacao.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `apresentacao.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  B422126369D2603120CD0F961A0FF52B;152.
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 18291 strings out of 483140
- 347654 string characters out of 5965151
- 610585 words of memory out of 5000000
- 32851 multiletter control sequences out of 15000+600000
+ 18390 strings out of 483140
+ 349578 string characters out of 5965151
+ 612870 words of memory out of 5000000
+ 32937 multiletter control sequences out of 15000+600000
  534811 words of font info for 32 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 54i,16n,59p,806b,555s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 54i,20n,63p,806b,620s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb>
-Output written on apresentacao.pdf (8 pages, 638402 bytes).
+Output written on apresentacao.pdf (9 pages, 644146 bytes).
 PDF statistics:
- 264 PDF objects out of 1000 (max. 8388607)
- 233 compressed objects within 3 object streams
- 22 named destinations out of 1000 (max. 500000)
- 79 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 352 PDF objects out of 1000 (max. 8388607)
+ 314 compressed objects within 4 object streams
+ 25 named destinations out of 1000 (max. 500000)
+ 117 words of extra memory for PDF output out of 10000 (max. 10000000)
 

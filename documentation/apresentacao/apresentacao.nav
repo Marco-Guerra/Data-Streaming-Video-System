@@ -23,8 +23,13 @@
 \headcommand {\beamer@framepages {7}{7}}
 \headcommand {\slideentry {3}{0}{4}{8/8}{}{0}}
 \headcommand {\beamer@framepages {8}{8}}
-\headcommand {\beamer@partpages {1}{8}}
-\headcommand {\beamer@subsectionpages {5}{8}}
 \headcommand {\beamer@sectionpages {5}{8}}
-\headcommand {\beamer@documentpages {8}}
-\headcommand {\gdef \inserttotalframenumber {8}}
+\headcommand {\beamer@subsectionpages {5}{8}}
+\headcommand {\sectionentry {4}{Encerramento}{9}{Encerramento}{0}}
+\headcommand {\slideentry {4}{0}{1}{9/9}{}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\beamer@partpages {1}{9}}
+\headcommand {\beamer@subsectionpages {9}{9}}
+\headcommand {\beamer@sectionpages {9}{9}}
+\headcommand {\beamer@documentpages {9}}
+\headcommand {\gdef \inserttotalframenumber {9}}

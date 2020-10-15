@@ -2,3 +2,4 @@
 \beamer@sectionintoc {1}{Introdução}{3}{0}{1}
 \beamer@sectionintoc {2}{Diagrama UML}{4}{0}{2}
 \beamer@sectionintoc {3}{Implementação}{5}{0}{3}
+\beamer@sectionintoc {4}{Encerramento}{9}{0}{4}

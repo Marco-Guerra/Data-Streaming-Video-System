@@ -1,6 +1,6 @@
 {
 identification = 342342342342;
-kindOfVideo = Tipo de video;
+kindOfVideo = 2342342;
 name = Nome do video;
 directorName = Nome do director;
 duration = 1:30:15;
@@ -16,17 +16,19 @@ genero 23,
 }
 }
 {
-identification = 10000000;
-kindOfVideo = Filme;
-name = World of Warcraft;
-directorName = Nome do director;
-duration = 2:10:25;
-numberOfSeasons = 0;
-releaseYear = 2018;
+identification = WedOct142253332020;
+kindOfVideo = 412342;
+name = 23423;
+directorName = 23423;
+duration = 2234:23:234;
+numberOfSeasons = 23;
+releaseYear = 23;
 genres = {
-genero acao,
-genero aventura,
-genero fantasia,
+genero 234,
+genero 23423,
+genero 23423,
+genero 234234,
+genero 324234,
 }
 }
 {

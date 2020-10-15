@@ -22,7 +22,6 @@ void printStdioUserIdentification(string identification) {
 * @precondition: none
 * @postcondition: none
 */
-void p
 void printStdioUserName(string name) {
 
     cout << "   Nome do usuário: " << name << endl << endl;

@@ -1,14 +1,13 @@
 #include "menu_controller.hpp"
 
-// controlador de opções do menu principal
 /**
-* Funtion: 
-* @param {} - 
-* @param {} - 
-* @returns {} - 
+* Funtion: controlador de opções do menu principal
+* @param {UserListDocumentStructure} - ponteiro para a lista de usuários
+* @param {VideoListDocumentStructure} - ponteiro para a lista de vídeos
+* @returns {void} - none
 * 
-* @precondition: 
-* @postcondition: 
+* @precondition: none
+* @postcondition: none
 */
 void menuPrincipalController(UserListDocumentStructure &userList, VideoListDocumentStructure &videoList) {
 
@@ -54,15 +53,13 @@ void menuPrincipalController(UserListDocumentStructure &userList, VideoListDocum
     }
 }
 
-// controlador de opções do menu de usuários
 /**
-* Funtion: 
-* @param {} - 
-* @param {} - 
-* @returns {} - 
+* Funtion: controlador de opções do menu de usuários
+* @param {UserListDocumentStructure} - ponteiro para a lista de usuários
+* @returns {void} - none
 * 
-* @precondition: 
-* @postcondition: 
+* @precondition: none
+* @postcondition: none
 */
 void usersMenuController(UserListDocumentStructure &userList) {
 
@@ -113,15 +110,13 @@ void usersMenuController(UserListDocumentStructure &userList) {
     }
 }
 
-// controlador de opções do menu de usuário
 /**
-* Funtion: 
-* @param {} - 
-* @param {} - 
-* @returns {} - 
+* Funtion: controlador de opções do menu de usuário
+* @param {UserListDocumentStructure} - ponteiro para a lista de usuários
+* @returns {void} - none
 * 
-* @precondition: 
-* @postcondition: 
+* @precondition: none
+* @postcondition: none
 */
 void userMenuController(UserListDocumentStructure &userList) {
     UserDocumentStructure user;
@@ -180,15 +175,13 @@ void userMenuController(UserListDocumentStructure &userList) {
     }
 }
 
-// controlador de opções do menu de dados do usuário
 /**
-* Funtion: 
-* @param {} - 
-* @param {} - 
-* @returns {} - 
+* Funtion: controlador de opções do menu de dados do usuário
+* @param {UserDocumentStructure} - o usuário que foi acessado
+* @returns {UserDocumentStructure} - o usuário acessado e modificado
 * 
-* @precondition: 
-* @postcondition: 
+* @precondition: none
+* @postcondition: none
 */
 UserDocumentStructure dataUserMenuController(UserDocumentStructure user) {
 
@@ -254,15 +247,13 @@ UserDocumentStructure dataUserMenuController(UserDocumentStructure user) {
     }
 }
 
-// controlador de opções do menu de vídeos
 /**
-* Funtion: 
-* @param {} - 
-* @param {} - 
-* @returns {} - 
+* Funtion: controlador de opções do menu de vídeos
+* @param {VideoListDocumentStructure} - ponteiro para a lista de vídeos
+* @returns {void} - none
 * 
-* @precondition: 
-* @postcondition: 
+* @precondition: none
+* @postcondition: none
 */
 void videosMenuController(VideoListDocumentStructure &videoList) {
 
@@ -313,15 +304,13 @@ void videosMenuController(VideoListDocumentStructure &videoList) {
     }
 }
 
-// controlador de opções do menu de vídeo
 /**
-* Funtion: 
-* @param {} - 
-* @param {} - 
-* @returns {} - 
+* Funtion: controlador de opções do menu de vídeo
+* @param {VideoListDocumentStructure} - ponteiro para a lista de vídeos
+* @returns {void} - none
 * 
-* @precondition: 
-* @postcondition: 
+* @precondition: none
+* @postcondition: none
 */
 void videoMenuController(VideoListDocumentStructure &videoList) {
 
@@ -379,15 +368,13 @@ void videoMenuController(VideoListDocumentStructure &videoList) {
     }
 }
 
-// controlador de opções do menu de dados do vídeo
 /**
-* Funtion: 
-* @param {} - 
-* @param {} - 
-* @returns {} - 
+* Funtion: controlador de opções do menu de dados do vídeo
+* @param {VideoDocumentStructure} - vídeo que foi acessado
+* @returns {VideoDocumentStructure} - video que foi acessado e modificado
 * 
-* @precondition: 
-* @postcondition: 
+* @precondition: none
+* @postcondition: none
 */
 VideoDocumentStructure dataVideoMenuController(VideoDocumentStructure video) {
 

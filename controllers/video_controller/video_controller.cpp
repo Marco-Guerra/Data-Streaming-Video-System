@@ -1,6 +1,15 @@
 #include "video_controller.hpp"
 
-// 
+
+/**
+* Funtion: troca vídeos de posição
+* @param {VideoDocumentStructure} - vídeo a
+* @param {VideoDocumentStructure} - vídeo b
+* @returns {void} - none
+* 
+* @precondition: none
+* @postcondition: none
+*/
 void swapVideo (VideoDocumentStructure &videoA, VideoDocumentStructure &videoB) {
 	
     VideoDocumentStructure auxiliaryVideo = videoA;
@@ -9,7 +18,15 @@ void swapVideo (VideoDocumentStructure &videoA, VideoDocumentStructure &videoB) 
 	videoB = auxiliaryVideo;
 }
 
-// 
+/**
+* Funtion: busca um vídeo pela sua identificação
+* @param {VideoListDocumentStructure} - 
+* @param {string} - identificação do vídeo que está sendo buscado
+* @returns {int} - posição do vídeo
+* 
+* @precondition: none
+* @postcondition: none
+*/
 int findVideoByIdentification(VideoListDocumentStructure &videoList, string identification) {
 	
     string thisIdentification;
@@ -28,7 +45,15 @@ int findVideoByIdentification(VideoListDocumentStructure &videoList, string iden
 	return -1;
 }
 
-// 
+/**
+* Funtion: busca um vídeo pelo seu nome
+* @param {VideoListDocumentStructure} - lista onde buscar um vídeo
+* @param {string} - nome do vídeo
+* @returns {int} - posição do vídeo
+* 
+* @precondition: none
+* @postcondition: none
+*/
 int findVideoByName(VideoListDocumentStructure &videoList, string name) {
 	
     string thisName;
@@ -48,7 +73,13 @@ int findVideoByName(VideoListDocumentStructure &videoList, string name) {
 	return -1;
 }
 
-// função que gera um ID automaticamente
+/**
+* Funtion: gera uma identificação automaticamente
+* @returns {string} - identificação gerada automaticamente
+* 
+* @precondition: none
+* @postcondition: none
+*/
 string gerateVideoIdentification() {
 
 	string newIdentification;
@@ -63,6 +94,14 @@ string gerateVideoIdentification() {
 	return newIdentification;
 }
 
+/**
+* Funtion: retorna a posição do vídeo selecionado
+* @param {UserListDocumentStructure} - lista de vídeos onde será feita a busca
+* @returns {void} - posição do íveo
+* 
+* @precondition: none
+* @postcondition: none
+*/
 int selectVideoByIdentification(VideoListDocumentStructure &videoList) {
 
 	string identification;
@@ -95,6 +134,14 @@ int selectVideoByIdentification(VideoListDocumentStructure &videoList) {
     }
 }
 
+/**
+* Funtion: retorna a posição do usuário selecionado
+* @param {UserListDocumentStructure} - lista de usuários onde será feita a busca
+* @returns {int} - posição do usuário
+* 
+* @precondition: none
+* @postcondition: none
+*/
 int selectVideoByName(VideoListDocumentStructure &videoList) {
 
     string name;
@@ -129,6 +176,14 @@ int selectVideoByName(VideoListDocumentStructure &videoList) {
 }
 
 // rotina para agregar um vídeo
+/**
+* Funtion: rotina para agregar um usuário
+* @param {UserListDocumentStructure} - lista onde será adiconado o novo usuário
+* @returns {void} - none
+* 
+* @precondition: none
+* @postcondition: none
+*/
 void addVideoController(VideoListDocumentStructure &videoList) {
 	VideoDocumentStructure video;
     // realizar a leitura dos dados de um novo vídeo
@@ -146,6 +201,14 @@ void addVideoController(VideoListDocumentStructure &videoList) {
 }
 
 // rotina para eliminar um vídeo
+/**
+* Funtion: rotina para eliminar um usuário
+* @param {UserListDocumentStructure} - lista de donde será eliminado o usuário
+* @returns {void} - none
+* 
+* @precondition: none
+* @postcondition: none
+*/
 void deleteVideoController(VideoListDocumentStructure &videoList) {
 
     string identification;
@@ -173,6 +236,14 @@ void deleteVideoController(VideoListDocumentStructure &videoList) {
 }
 
 // rotina para imprimir os dados de um vídeo na saída estândar
+/**
+* Funtion: rotina para imprimir os dados de um usuário na saída estandar
+* @param {UserDocumentStructure} - usuário a ser impresso na tela
+* @returns {void} - none
+* 
+* @precondition: none
+* @postcondition: none
+*/
 void printVideoController(VideoDocumentStructure video) {
     
     printStdioVideo(video);

@@ -1,14 +1,12 @@
 #include "menu_controller.hpp"
 
-// função que marca com 'x' a opção em que o usuário se encontra
 /**
-* Funtion: 
-* @param {} - 
-* @param {} - 
-* @returns {} - 
+* Funtion: que marca com 'x' a opção em que o usuário se encontra
+* @param {bool} - opsão escolhida pelo usuário
+* @returns {void} - none
 * 
-* @precondition: 
-* @postcondition: 
+* @precondition: none
+* @postcondition: none
 */
 void selectedOption(bool selected) {
     
@@ -23,15 +21,12 @@ void selectedOption(bool selected) {
     cout << "] ";
 }
 
-// realizar a leitura de um ùnico carater, retorna o carater lido
 /**
-* Funtion: 
-* @param {} - 
-* @param {} - 
-* @returns {} - 
+* Funtion: realizar a leitura de um ùnico carater, retorna o carater lido
+* @returns {char} - caracter lido do teclado
 * 
-* @precondition: 
-* @postcondition: 
+* @precondition: none
+* @postcondition: none
 */
 char getChar() {
 
@@ -67,15 +62,13 @@ char getChar() {
 	return character;
 }
 
-// imprimir linha de delimitação do menu
 /**
-* Funtion: 
-* @param {} - 
-* @param {} - 
-* @returns {} - 
+* Funtion: imprimir linha de delimitação do menu
+* @param {int} - tamanho da linha
+* @returns {void} - none
 * 
-* @precondition: 
-* @postcondition: 
+* @precondition: none
+* @postcondition: none
 */
 void line (int lineLength) {
 
@@ -88,15 +81,13 @@ void line (int lineLength) {
 	cout << "|\n";
 }
 
-// realizar o prenchimento de espaços em branco
 /**
-* Funtion: 
-* @param {} - 
-* @param {} - 
-* @returns {} - 
+* Funtion: realizar o prenchimento de espaços em branco
+* @param {int} - número de espaços em branco a preencher
+* @returns {void} - none
 * 
-* @precondition: 
-* @postcondition: 
+* @precondition: none
+* @postcondition: none
 */
 void fillSpaces (int numberOfSpaces) {
 	

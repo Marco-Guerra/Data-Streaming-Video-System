@@ -1,6 +1,13 @@
 #include "read_file_video.hpp"
 
-// função que faz a leitura no arquivo do vídeo a identificação de um vídeo
+/**
+* Funtion: que faz a leitura no arquivo do vídeo a identificação de um vídeo
+* @param {ifstream} - arquivo de entrada
+* @returns {string} - line
+* 
+* @precondition: none
+* @postcondition: none
+*/
 string readFileVideoIdentificatio(ifstream &storageVideoFile) {
 
     string line;
@@ -13,7 +20,14 @@ string readFileVideoIdentificatio(ifstream &storageVideoFile) {
 	return line;
 }
 
-// função que faz a leitura no arquivo do vídeo o tipo de vídeo
+/**
+* Funtion: que faz a leitura no arquivo do vídeo o tipo de vídeo
+* @param {ifstream} - arquivo de entrada
+* @returns {string} - line
+* 
+* @precondition: none
+* @postcondition: none
+*/
 string readFileVideoKindOfVideo(ifstream &storageVideoFile) {
 
     string line;
@@ -26,7 +40,14 @@ string readFileVideoKindOfVideo(ifstream &storageVideoFile) {
 	return line;
 }
 
-// função que faz a leitura no arquivo do vídeo o nome do vídeo
+/**
+* Funtion: que faz a leitura no arquivo do vídeo o nome do vídeo
+* @param {ifstream} - arquivo de entrada
+* @returns {string} - line
+* 
+* @precondition: none
+* @postcondition: none
+*/
 string readFileVideoName(ifstream &storageVideoFile) {
 
     string line;
@@ -39,7 +60,14 @@ string readFileVideoName(ifstream &storageVideoFile) {
 	return line;
 }
 
-// função que faz a leitura no arquivo do vídeo o nome do diretor do vídeo
+/**
+* Funtion: que faz a leitura no arquivo do vídeo o nome do diretor do vídeo
+* @param {ifstream} - arquivo de entrada
+* @returns {string} - line
+* 
+* @precondition: none
+* @postcondition: none
+*/
 string readFileVideoDirectorName(ifstream &storageVideoFile) {
 
     string line;
@@ -52,7 +80,14 @@ string readFileVideoDirectorName(ifstream &storageVideoFile) {
 	return line;
 }
 
-// função que faz a leitura no arquivo do vídeo a duração do vídeo
+/**
+* Funtion: que faz a leitura no arquivo do vídeo a duração do vídeo
+* @param {ifstream} - arquivo de entrada
+* @returns {DurationStructure} - retorna a duração de um vídeo
+* 
+* @precondition: none
+* @postcondition: none
+*/
 DurationStructure readFileVideoDuration(ifstream &storageVideoFile) {
 
     string discard;
@@ -72,7 +107,14 @@ DurationStructure readFileVideoDuration(ifstream &storageVideoFile) {
 	return duration;
 }
 
-// função que faz a leitura no arquivo do vídeo o número de temporadas de um vídeo
+/**
+* Funtion: que faz a leitura no arquivo do vídeo o número de temporadas de um vídeo
+* @param {ifstream} - arquivo de entrada
+* @returns {int} - retorna o número de temporadas
+* 
+* @precondition: none
+* @postcondition: none
+*/
 int readFileVideoNumberOfSeasons(ifstream &storageVideoFile) {
 
 	string discard;
@@ -88,7 +130,14 @@ int readFileVideoNumberOfSeasons(ifstream &storageVideoFile) {
 	return numberOfSeasons;
 }
 
-// função que faz a leitura no arquivo do vídeo do ano de lançamento
+/**
+* Funtion: que faz a leitura no arquivo do vídeo do ano de lançamento
+* @param {ifstream} - arquivo de entrada
+* @returns {int} - retorna o ano de lançamento
+* 
+* @precondition: none
+* @postcondition: none
+*/
 int readFileVideoReleaseYear(ifstream &storageVideoFile) {
 
     string discard;
@@ -104,14 +153,29 @@ int readFileVideoReleaseYear(ifstream &storageVideoFile) {
 	return releaseYear;
 }
 
-// retira vírgulas do final da cadeia de caracteres
+/**
+* Funtion: que retira vírgulas do final da cadeia de caracteres
+* @param {string} - line
+* @returns {string} - retorna os caracteres sem ','
+* 
+* @precondition: none
+* @postcondition: none
+*/
 string processGenre(string line) {
 
 	return line.substr( 0 , line.find(","));
 
 }
 
-// ler um gênero de vídeo
+/**
+* Funtion: que le um gênero de vídeo
+* @param {ifstream} - arquivo de entrada
+* @param {string} - gênero de um vídeo
+* @returns {bool} - caso false parar de ler gêneros, caso true continuar lendo gêneros
+* 
+* @precondition: none
+* @postcondition: none
+*/
 bool readFileVideoGenre(ifstream &storageVideoFile, string &genre) {
 
 	string line;
@@ -127,8 +191,14 @@ bool readFileVideoGenre(ifstream &storageVideoFile, string &genre) {
 	return true;
 }
 
-
-// função que faz a leitura no arquivo do vídeo os gêneros aos quais o vídeo pertence
+/**
+* Funtion: que faz a leitura no arquivo do vídeo os gêneros aos quais o vídeo pertence
+* @param {ifstream} - arquivo de entrada
+* @returns {GenreStructure} - Retorna os gêneros de um vídeo
+* 
+* @precondition: none
+* @postcondition: none
+*/
 GenresStructure readFileVideoGenres(ifstream &storageVideoFile) {
 
     string line;
@@ -150,7 +220,14 @@ GenresStructure readFileVideoGenres(ifstream &storageVideoFile) {
 	return genres;
 }
 
-// encontrar o ultimo fechamento de chaves
+/**
+* Funtion: que encontra o ultimo fechamento de chaves
+* @param {ifstream} - arquivo de entrada
+* @returns {void} - none
+* 
+* @precondition: none
+* @postcondition: none
+*/
 void findEndOfStructureVideo(ifstream &storageVideoFile) {
 
 	string line;
@@ -164,7 +241,14 @@ void findEndOfStructureVideo(ifstream &storageVideoFile) {
 	return;
 }
 
-// função que faz a leitura no arquivo do vídeo um vídeo
+/**
+* Funtion: que faz a leitura no arquivo do vídeo um vídeo
+* @param {ifstream} - arquivo de entrada
+* @returns {VideoDocumentStructure} - retorna todos os dados de um vídeo
+* 
+* @precondition: none
+* @postcondition: none
+*/
 VideoDocumentStructure readFileVideo(ifstream &storageVideoFile) {
     
 	VideoDocumentStructure video;
@@ -182,9 +266,14 @@ VideoDocumentStructure readFileVideo(ifstream &storageVideoFile) {
 	return video;
 }
 
-// acha o fim da struct
-// true caso ache
-// false caso ache o fim do arquivo
+/**
+* Funtion: que acha o fim da struct
+* @param {ifstream} - arquivo de entrada
+* @returns {bool} - retorna true caso ache o inicío da estrutura ou false caso ache o fim do arquivo
+* 
+* @precondition: none
+* @postcondition: none
+*/
 bool findBeginOfStructureVideo(ifstream &storageVideoFile) {
 
 	string line;
@@ -201,7 +290,14 @@ bool findBeginOfStructureVideo(ifstream &storageVideoFile) {
 	return false;
 }
 
-// função que faz a leitura no arquivo do vídeo todos os vídeos
+/**
+* Funtion: que faz a leitura no arquivo do vídeo todos os vídeos
+* @param {string} - nome do arquivo
+* @returns {VideoListDocumentStructure} - retorna toda a quantidade de vídeos
+* 
+* @precondition: none
+* @postcondition: none
+*/
 VideoListDocumentStructure readFileVideoList(string storageVideoFileName) {
 
 	ifstream storageVideoFile;

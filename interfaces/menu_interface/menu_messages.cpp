@@ -1,6 +1,12 @@
 #include "menu_messages.hpp"
 
-// mensagem de inicio do programa
+/**
+* Funtion: mensagem de inicio do programa
+* @returns {void} - none
+* 
+* @precondition: none
+* @postcondition: none
+*/
 void initMessage() {
 
     system("clear");
@@ -16,7 +22,14 @@ void initMessage() {
     getChar();
 }
 
-// formato e texto do menu principal
+/**
+* Funtion: formato e texto do menu principal
+* @param {int} - opção do usuario
+* @returns {void} - none
+* 
+* @precondition: none
+* @postcondition: none
+*/
 void menuPrincipalMessage(int option) {
 
     cout << endl
@@ -36,7 +49,14 @@ void menuPrincipalMessage(int option) {
     cout << "Finalizar o programa" << endl << endl;
 }
 
-// formato e texto do menu de usuários
+/**
+* Funtion: formato e texto do menu de usuários
+* @param {int} - opção do usuario
+* @returns {void} - none
+* 
+* @precondition: none
+* @postcondition: none
+*/
 void usersMenuMessage(int option) {
 
     cout << endl
@@ -61,7 +81,14 @@ void usersMenuMessage(int option) {
 
 }
 
-// formato e texto do menu de usuário
+/**
+* Funtion: formato e texto do menu de usuário
+* @param {int} - opção do usuario
+* @returns {void} - none
+* 
+* @precondition: none
+* @postcondition: none
+*/
 void userMenuMessage(int option) {
 
     cout << endl
@@ -82,7 +109,14 @@ void userMenuMessage(int option) {
 
 }
 
-// formato e texto do menu de dados do usuário
+/**
+* Funtion: formato e texto do menu de dados do usuário
+* @param {int} - opção do usuario
+* @returns {void} - none
+* 
+* @precondition: none
+* @postcondition: none
+*/
 void dataUserMenuMessage(int option) {
 
     cout << endl
@@ -119,7 +153,14 @@ void dataUserMenuMessage(int option) {
 
 }
 
-// formato e texto do menu de vídeos
+/**
+* Funtion: formato e texto do menu de vídeos
+* @param {int} - opção do usuario
+* @returns {void} - none
+* 
+* @precondition: none
+* @postcondition: none
+*/
 void videosMenuMessage(int option) {
 
     cout << endl
@@ -144,7 +185,14 @@ void videosMenuMessage(int option) {
 
 }
 
-// formato e texto do menu de vídeo
+/**
+* Funtion: formato e texto do menu de vídeo
+* @param {int} - opção do usuario
+* @returns {void} - none
+* 
+* @precondition: none
+* @postcondition: none
+*/
 void videoMenuMessage(int option) {
 
     cout << endl
@@ -165,7 +213,14 @@ void videoMenuMessage(int option) {
 
 }
 
-// formato e texto do menu de dados do vídeo
+/**
+* Funtion: formato e texto do menu de dados do vídeo
+* @param {int} - opção do usuario
+* @returns {void} - none
+* 
+* @precondition: none
+* @postcondition: none
+*/
 void dataVideoMenuMessage(int option) {
 
     cout << endl
@@ -219,6 +274,13 @@ void dataVideoMenuMessage(int option) {
 }
 
 // mensagem final do programa
+/**
+* Funtion: formato e texto do menu de dados do vídeo
+* @returns {void} - none
+* 
+* @precondition: none
+* @postcondition: none
+*/
 void endMessage() {
 
     system("clear");

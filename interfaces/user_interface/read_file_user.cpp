@@ -1,6 +1,13 @@
 #include "read_file_user.hpp"
 
-// função que faz a leitura do arquivo de usuários da identificação de um usuário
+/**
+* Funtion: que faz a leitura do arquivo de usuários da identificação de um usuário
+* @param {ifstream} - arquivo de entrada
+* @returns {string} -
+* 
+* @precondition: none
+* @postcondition: none
+*/
 string readFileUserIdentification(ifstream &storageUserFile) {
 
 	string line;
@@ -13,8 +20,14 @@ string readFileUserIdentification(ifstream &storageUserFile) {
 	return line;
 }
 
-
-// função que faz a leitura do arquivo de usuários do nome de um usuário
+/**
+* Funtion:  que faz a leitura do arquivo de usuários do nome de um usuário
+* @param {ifstream} - arquivo de entrada
+* @returns {string} -
+* 
+* @precondition: none
+* @postcondition: none
+*/
 string readFileUserName(ifstream &storageUserFile) {
 
     string line;
@@ -27,7 +40,14 @@ string readFileUserName(ifstream &storageUserFile) {
 	return line;
 }
 
-// função que faz a leitura do arquivo de usuários do dia da data de aniversario de um usuário
+/**
+* Funtion:  que faz a leitura do arquivo de usuários do dia da data de aniversario de um usuário
+* @param {string} - line
+* @returns {int} -
+* 
+* @precondition: none
+* @postcondition: none
+*/
 int readFileUserDay(string line) {
 
 	int init, length;
@@ -43,7 +63,14 @@ int readFileUserDay(string line) {
 
 }
 
-// função que faz a leitura do arquivo de usuários do mes da data de aniversario de um usuário
+/**
+* Funtion:  que faz a leitura do arquivo de usuários do mes da data de aniversario de um usuário
+* @param {string} - line
+* @returns {int} -
+* 
+* @precondition: none
+* @postcondition: none
+*/
 int readFileUserMonth(string line) {
 
 	int init, length;
@@ -59,7 +86,14 @@ int readFileUserMonth(string line) {
 
 }
 
-// função que faz a leitura do arquivo de usuários do ano da data de aniversario de um usuário
+/**
+* Funtion:  que faz a leitura do arquivo de usuários do ano da data de aniversario de um usuário
+* @param {string} - line
+* @returns {int} -
+* 
+* @precondition: none
+* @postcondition: none
+*/
 int readFileUserYear(string line) {
 
 	int init, length;
@@ -75,7 +109,14 @@ int readFileUserYear(string line) {
 
 }
 
-// função que faz a leitura do arquivo de usuários da data de aniversario de um usuário
+/**
+* Funtion:  que faz a leitura do arquivo de usuários do ano da data de aniversario de um usuário
+* @param {ifstream} - arquivo de entrada
+* @returns {DateOfBirthStructure} - retorna a data de nascimento de um usuário
+* 
+* @precondition: none
+* @postcondition: none
+*/
 DateOfBirthStructure readFileUserDateOfBirth(ifstream &storageUserFile) {
 
 	string line;
@@ -92,7 +133,14 @@ DateOfBirthStructure readFileUserDateOfBirth(ifstream &storageUserFile) {
 	return data;
 }
 
-// função que retorna apenas o ID, sem caracteres desnecessários
+/**
+* Funtion: que retorna apenas o ID, sem caracteres desnecessários
+* @param {string} - line
+* @returns {string} - retorna ID do usuário
+* 
+* @precondition: none
+* @postcondition: none
+*/
 string processHistory (string line) {
 
 	string subString = line.substr( 0 , line.find(","));
@@ -101,7 +149,15 @@ string processHistory (string line) {
 
 }
 
-// acha um ID no histórico, caso contrario retorna falso
+/**
+* Funtion: que acha um ID no histórico, caso contrario retorna falso
+* @param {ifstream} - arquivo de entrada
+* @param {string} - line
+* @returns {bool} - encontra um ID no histórico
+* 
+* @precondition: none
+* @postcondition: none
+*/
 bool readFileUserHistory(ifstream &storageUserFile, string &line) {
 
 	string auxiliaryLine;
@@ -117,7 +173,14 @@ bool readFileUserHistory(ifstream &storageUserFile, string &line) {
 	return true;
 }
 
-// função que faz a leitura do arquivo de usuários da identificação dos vídeos visto por um usuário
+/**
+* Funtion: que faz a leitura do arquivo de usuários da identificação dos vídeos visto por um usuário
+* @param {ifstream} - arquivo de entrada
+* @returns {HistoryStructure} - retorna o arquivo de usuários que contém o histórico de vídeos assistidos	
+* 
+* @precondition: none
+* @postcondition: none
+*/
 HistoryStructure readFileUserVideosIdentifications(ifstream &storageUserFile) {
 
 	string line;
@@ -141,7 +204,14 @@ HistoryStructure readFileUserVideosIdentifications(ifstream &storageUserFile) {
 
 }
 
-// encontrar o ultimo fechamento de chaves
+/**
+* Funtion: para encontrar o ultimo fechamento de chaves
+* @param {ifstream} - arquivo de entrada
+* @returns {void} - none
+* 
+* @precondition: none
+* @postcondition: none
+*/
 void findEndOfStructureUser (ifstream &storageUserFile) {
 
 	string line;
@@ -155,7 +225,14 @@ void findEndOfStructureUser (ifstream &storageUserFile) {
 	return;
 }
 
-// função que faz a leitura do arquivo de usuários de um usuário
+/**
+* Funtion: que faz a leitura do arquivo de usuários de um usuário
+* @param {ifstream} - arquivo de entrada
+* @returns {UserDocumentStructure} - retorna um usuário
+* 
+* @precondition: none
+* @postcondition: none
+*/
 UserDocumentStructure readFileUser(ifstream &storageUserFile) {
 	
 	UserDocumentStructure user;
@@ -171,9 +248,14 @@ UserDocumentStructure readFileUser(ifstream &storageUserFile) {
 
 }
 
-// acha o fim da struct
-// true caso ache
-// false caso ache o fim do arquivo
+/**
+* Funtion: que acha o fim da struct
+* @param {ifstream} - arquivo de entrada
+* @returns {bool} - retorna true caso ache o fim da struct ou false caso ache o fim do arquivo
+* 
+* @precondition: none
+* @postcondition: none
+*/
 bool findBeginOfStructureUser(ifstream &storageUserFile) {
 	
 	string line;
@@ -190,7 +272,14 @@ bool findBeginOfStructureUser(ifstream &storageUserFile) {
 }
 
 
-// função que faz a leitura do arquivo de usuários de todos os usuário
+/**
+* Funtion: que faz a leitura do arquivo de usuários de todos os usuário
+* @param {string} - nome do arquivo
+* @returns {UserListDocumentStructure} - retorna os dados de todos os usuários
+* 
+* @precondition: none
+* @postcondition: none
+*/
 UserListDocumentStructure readFileUserList(string storageUserFileName) {
 
 	ifstream storageUserFile;

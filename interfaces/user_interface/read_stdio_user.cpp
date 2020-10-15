@@ -1,6 +1,12 @@
 #include "read_stdio_user.hpp"
 
-// função que faz a leitura da saída estandar a identificação de um usuário
+/**
+* Funtion: que faz a leitura da saída estandar a identificação de um usuário
+* @returns {string} - retorna a identificação do usuário
+* 
+* @precondition: none
+* @postcondition: none
+*/
 string readStdioUserIdentification() {
 
     string name;
@@ -14,7 +20,13 @@ string readStdioUserIdentification() {
     return name;
 }
 
-// função que faz a leitura da saída estandar o nome de um usuário
+/**
+* Funtion: que faz a leitura da saída estandar o nome de um usuário
+* @returns {string} - retorna o nome do usuário
+* 
+* @precondition: none
+* @postcondition: none
+*/
 string readStdioUserName() {
 
     string name;
@@ -28,7 +40,13 @@ string readStdioUserName() {
     return name;
 }
 
-// função que faz a leitura da saída estandar o dia da data de aniversario de um usuário
+/**
+* Funtion: que faz a leitura da saída estandar do dia da data de aniversario de um usuário
+* @returns {int} - retorna um valor inteiro que representa o dia de nascimento do usuário
+* 
+* @precondition: none
+* @postcondition: none
+*/
 int readStdioUserDay() {
 
     int day;
@@ -42,7 +60,13 @@ int readStdioUserDay() {
     return day;
 }
 
-// função que faz a leitura da saída estandar o mes da data de aniversario de um usuário
+/**
+* Funtion: que faz a leitura da saída estandar do mes da data de aniversario de um usuário
+* @returns {int} - retorna um valor inteiro que representa o mes de nascimento do usuário
+* 
+* @precondition: none
+* @postcondition: none
+*/
 int readStdioUserMonth() {
 
     int month;
@@ -56,7 +80,13 @@ int readStdioUserMonth() {
     return month;
 }
 
-// função que faz a leitura da saída estandar o ano da data de aniversario de um usuário
+/**
+* Funtion: que faz a leitura da saída estandar do ano da data de aniversario de um usuário
+* @returns {int} - retorna um valor inteiro que representa o ano de nascimento do usuário
+* 
+* @precondition: none
+* @postcondition: none
+*/
 int readStdioUserYear() {
 
     int year;
@@ -70,7 +100,13 @@ int readStdioUserYear() {
     return year;
 }
 
-// função que faz a leitura da saída estandar a data de aniversario de um usuário
+/**
+* Funtion: que faz a leitura da saída estandar a data de aniversario de um usuário
+* @returns {DateOfBirthStructure} - retorna todos os dados da data de nascimento de um usuário
+* 
+* @precondition: none
+* @postcondition: none
+*/
 DateOfBirthStructure readStdioUserDateOfBirth() {
 
     DateOfBirthStructure dateOfBirth;
@@ -82,7 +118,14 @@ DateOfBirthStructure readStdioUserDateOfBirth() {
     return dateOfBirth;
 }
 
-// função que faz a leitura da saída estandar a identificação de um vídeo visto por um usuário
+/**
+* Funtion: que faz a leitura da saída estandar a identificação de um vídeo visto por um usuário
+* @param {int} - numéro de identificação do vídeo visto
+* @returns {string} - retorna a identificação do vídeo
+* 
+* @precondition: none
+* @postcondition: none
+*/
 string readStdioUserVideoIdentification(int videoNmeber) {
 
     string videoIdentification;
@@ -96,7 +139,13 @@ string readStdioUserVideoIdentification(int videoNmeber) {
     return videoIdentification;
 }
 
-// função que faz a leitura da saída estandar a identificação dos vídeos visto por um usuário
+/**
+* Funtion: que faz a leitura da saída estandar a identificação dos vídeos visto por um usuário
+* @returns {HistoryStructure} - retorna histórico de vídeos assistidos pelo usuário
+* 
+* @precondition: none
+* @postcondition: none
+*/
 HistoryStructure readStdioUserVideosIdentifications() {
 
     HistoryStructure videoIdentifications;
@@ -121,7 +170,13 @@ HistoryStructure readStdioUserVideosIdentifications() {
     return videoIdentifications;
 }
 
-// função que faz a leitura da saída estandar um usuário
+/**
+* Funtion: que faz a leitura da saída estandar um usuário
+* @returns {UserDocumentStructure} - retorna os dados completos de um usuário
+* 
+* @precondition: none
+* @postcondition: none
+*/
 UserDocumentStructure readStdioUser() {
 
     UserDocumentStructure user;

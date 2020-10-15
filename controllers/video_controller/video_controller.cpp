@@ -175,7 +175,6 @@ int selectVideoByName(VideoListDocumentStructure &videoList) {
     }
 }
 
-// rotina para agregar um vídeo
 /**
 * Funtion: rotina para agregar um usuário
 * @param {UserListDocumentStructure} - lista onde será adiconado o novo usuário
@@ -202,7 +201,6 @@ void addVideoController(VideoListDocumentStructure &videoList) {
     getChar();
 }
 
-// rotina para eliminar um vídeo
 /**
 * Funtion: rotina para eliminar um usuário
 * @param {UserListDocumentStructure} - lista de donde será eliminado o usuário
@@ -240,7 +238,6 @@ void deleteVideoController(VideoListDocumentStructure &videoList) {
     // retornar o controle ao menu de vídeos
 }
 
-// rotina para imprimir os dados de um vídeo na saída estândar
 /**
 * Funtion: rotina para imprimir os dados de um usuário na saída estandar
 * @param {UserDocumentStructure} - usuário a ser impresso na tela
@@ -260,7 +257,13 @@ void printVideoController(VideoDocumentStructure video) {
     // retornar o controle ao menu do vídeo logado
 }
 
-// rotina para mudar o tipo do vídeo
+/**
+* Funtion: rotina para mudar o tipo do vídeo
+* @returns {string} - retorna o tipo de vídeo
+* 
+* @precondition: none
+* @postcondition: none
+*/
 string changeKindOfVideoController() {
 
     string kindOfVideo;
@@ -277,7 +280,13 @@ string changeKindOfVideoController() {
     return kindOfVideo;
 }
 
-// rotina para mudar o name do vídeo
+/**
+* Funtion: rotina para mudar o name do vídeo
+* @returns {string} - retorna o nome do vídeo
+* 
+* @precondition: none
+* @postcondition: none
+*/
 string changeVideoNameController() {
     
     string videoName;
@@ -295,8 +304,13 @@ string changeVideoNameController() {
     return videoName;
 }
 
-
-// rotina para mudar o name do director do vídeo
+/**
+* Funtion: rotina para mudar o name do director do vídeo
+* @returns {string} - retorna o nome do diretor
+* 
+* @precondition: none
+* @postcondition: none
+*/
 string changeVideoDirectorNameController() {
 
     string directorsName;
@@ -314,7 +328,13 @@ string changeVideoDirectorNameController() {
     return directorsName;
 }
 
-// rotina para mudar as horas que dura o vídeo
+/**
+* Funtion: rotina para mudar as horas que dura o vídeo
+* @returns {int} - retorna a quantidade de horas do vídeo
+* 
+* @precondition: none
+* @postcondition: none
+*/
 int changeVideoDurationHoursController() {
 
     int hour;
@@ -331,7 +351,13 @@ int changeVideoDurationHoursController() {
     return hour;
 }
 
-// rotina para mudar os minutos que dura o vídeo
+/**
+* Funtion: rotina para mudar os minutos que dura o vídeo
+* @returns {int} - retorna a quantidade de minutos do vídeo
+* 
+* @precondition: none
+* @postcondition: none
+*/
 int changeVideoDurationMinutesController() {
 
     int minutes;
@@ -348,7 +374,13 @@ int changeVideoDurationMinutesController() {
     return minutes;
 }
 
-// rotina para mudar os segundos que dura o vídeo
+/**
+* Funtion: para mudar os segundos que dura o vídeo
+* @returns {int} - retorna a quantidade de segundos do vídeo
+* 
+* @precondition: none
+* @postcondition: none
+*/
 int changeVideoDurationSecondsController() {
 
     int seconds;
@@ -366,7 +398,13 @@ int changeVideoDurationSecondsController() {
     return seconds;
 }
 
-// rotina para mudar a duração do vídeo
+/**
+* Funtion: rotina para mudar a duração do vídeo
+* @returns {DurationStructure} - retorna a duração total do vídeo
+* 
+* @precondition: none
+* @postcondition: none
+*/
 DurationStructure changeVideoDurationController() {
 
     DurationStructure duration;
@@ -383,7 +421,13 @@ DurationStructure changeVideoDurationController() {
     return duration;
 }
 
-// rotina para mudar o numero de temporadas de um vídeo
+/**
+* Funtion: rotina para mudar o numero de temporadas de um vídeo
+* @returns {int} - retorna a número de temporadas do vídeo
+* 
+* @precondition: none
+* @postcondition: none
+*/
 int changeVideoNumberOfSeasonsController() {
 
     int numberOfSeasons;
@@ -401,7 +445,13 @@ int changeVideoNumberOfSeasonsController() {
     return numberOfSeasons;
 }
 
-// rotina para mudar o ano de lançamento do vídeo
+/**
+* Funtion: rotina para mudar o ano de lançamento do vídeo
+* @returns {int} - retorna a ano de lançamento do vídeo
+* 
+* @precondition: none
+* @postcondition: none
+*/
 int changeVideoReleaseYearController() {
 
     int releaseYear;
@@ -419,7 +469,13 @@ int changeVideoReleaseYearController() {
     return releaseYear;
 }
 
-// rotina para adicionar um gênero ao vídeo
+/**
+* Funtion: rotina para adicionar um gênero ao vídeo
+* @returns {GenreStructure} - retorna os gêneros do vídeo
+* 
+* @precondition: none
+* @postcondition: none
+*/
 GenresStructure addVideoGenreController(GenresStructure genres) {
 
     GenresStructure auxiliaryGenres;

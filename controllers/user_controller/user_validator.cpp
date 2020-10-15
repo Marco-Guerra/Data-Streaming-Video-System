@@ -1,6 +1,14 @@
 #include "user_validator.hpp"
 
-// função imprime as mensagens que encerram de erra
+/**
+* Funtion: função imprime as mensagens que encerram de erra
+* @param {int} - codigo de erro
+* @param {string} - auxilia a impressao da mensagem
+* @returns {void} - none
+* 
+* @precondition: none
+* @postcondition: none
+*/
 void errorMessagesCodeUser(int code, string message) {
 
 	switch(code) {
@@ -28,7 +36,14 @@ void errorMessagesCodeUser(int code, string message) {
 	}
 }
 
-// função que valida uma identificação de usuário
+/**
+* Funtion: função que valida uma identificação de usuário
+* @param {string} - ID do usuario
+* @returns {bool} - entrada é válida
+* 
+* @precondition: none
+* @postcondition: none
+*/
 bool validateUserIdentification(string identification) {
 
     /*if ( identification.size() != 20 ) {
@@ -44,7 +59,14 @@ bool validateUserIdentification(string identification) {
     return 1;
 }
 
-// função que valida o nome do usuário
+/**
+* Funtion: função que valida o nome do usuário
+* @param {string} - nome do usuario
+* @returns {bool} - entrada é válida
+* 
+* @precondition: none
+* @postcondition: none
+*/
 bool validateUserName(string name) {
 
     /*if( name.size() != 0 ) {
@@ -60,7 +82,14 @@ bool validateUserName(string name) {
     return 1;
 }
 
-// função que valida um dia do mes
+/**
+* Funtion: função que valida um dia do mes
+* @param {int} - dia de nascimento do usuario
+* @returns {bool} - entrada é válida
+* 
+* @precondition: none
+* @postcondition: none
+*/
 bool validateDay(int day) {
 
     /*if( 1 <= day && day <= 31 ) {
@@ -73,7 +102,14 @@ bool validateDay(int day) {
     return 1;
 }
 
-// função que valida o mes do ano
+/**
+* Funtion: função que valida o mes do ano
+* @param {int} - mes de nascimento do usuario
+* @returns {bool} - entrada é válida
+* 
+* @precondition: none
+* @postcondition: none
+*/
 bool validateMonth(int month) {
 
     /*if( 1 <= month && month <= 12 ) {
@@ -84,7 +120,14 @@ bool validateMonth(int month) {
     return 1;
 }
 
-// função que valida o ano
+/**
+* Funtion: função que valida o ano
+* @param {int} - ano de nascimento do usuario
+* @returns {bool} - entrada é válida
+* 
+* @precondition: none
+* @postcondition: none
+*/
 bool validateYear(int year) {
 
     /*if( 1689 <= year ) {
@@ -97,7 +140,14 @@ bool validateYear(int year) {
     return 1;
 }
 
-// função que valida a data de aniversario do usuário
+/**
+* Funtion: função que valida a data de aniversario do usuário
+* @param {DateOfBirthStructure} - data de nascimento do usuario
+* @returns {bool} - entrada é válida
+* 
+* @precondition: none
+* @postcondition: none
+*/
 bool validateDateOfBirth(DateOfBirthStructure dateOfBirth) {
 
     if( validateDay(dateOfBirth.day) && validateMonth(dateOfBirth.month) && validateYear(dateOfBirth.year) ) {
@@ -107,7 +157,14 @@ bool validateDateOfBirth(DateOfBirthStructure dateOfBirth) {
     return 1;
 }
 
-// fun;'ao que valida se os videos do historial de um usuário existem
+/**
+* Funtion: função que valida se os videos do historico de um usuário existem
+* @param {string} - ID de um video no historico de usuario
+* @returns {bool} - entrada é válida
+* 
+* @precondition: none
+* @postcondition: none
+*/
 bool validateVideoIdentificationForUser(string identification) {
 
     // verificaar se existe video com esse id e se o formato do id é correto
@@ -115,7 +172,14 @@ bool validateVideoIdentificationForUser(string identification) {
     return 1;
 }
 
-// função que valida o numero de videos de um usuário
+/**
+* Funtion: função que valida o numero de videos de um usuário
+* @param {int} - numero de videos assistidos pelo usuário
+* @returns {bool} - entrada é válida
+* 
+* @precondition: none
+* @postcondition: none
+*/
 bool validateNumberOfVideoIdentification(int numberOfVideoIdentification) {
 
 
@@ -123,7 +187,14 @@ bool validateNumberOfVideoIdentification(int numberOfVideoIdentification) {
     return 1;
 }
 
-// função que valida o historial de um usuário
+/**
+* Funtion: função que valida o historial de um usuário
+* @param {HistoryStructure} - historico completo
+* @returns {bool} - entrada é válida
+* 
+* @precondition: none
+* @postcondition: none
+*/
 bool validateHistory(HistoryStructure historyStructure) {
 
     // fazer as duas verificaçoes anteriores
@@ -131,7 +202,15 @@ bool validateHistory(HistoryStructure historyStructure) {
     return 1;
 }
 
-// função que valida um usuário
+// 
+/**
+* Funtion: função que valida um usuário
+* @param {UserDocumentStructure userDocumentStructure} - usuário completo
+* @returns {bool} - entrada é válida
+* 
+* @precondition: none
+* @postcondition: none
+*/
 bool validateUser(UserDocumentStructure userDocumentStructure) {
 
     if( !( validateUserIdentification(userDocumentStructure.identification) && validateUserName(userDocumentStructure.name) && validateDateOfBirth(userDocumentStructure.date) && validateHistory(userDocumentStructure.history) ) ) {

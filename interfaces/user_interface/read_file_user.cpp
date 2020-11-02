@@ -168,6 +168,9 @@ bool readFileUserHistory(ifstream &storageUserFile, string &line) {
 		return false;
 	}
 
+    /**
+    * @error{aqui pode dar problema se ler coisas com ' '}
+    */
 	line = auxiliaryLine.substr(auxiliaryLine.find(' ') + 1);
 
 	return true;

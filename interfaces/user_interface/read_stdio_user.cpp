@@ -131,7 +131,7 @@ string readStdioUserVideoIdentification(int videoNmeber) {
     string videoIdentification;
 
     cout << endl << endl 
-         << "       Entre com a identificação do vídeo " << videoNmeber 
+         << "       Entre com o nome do vídeo " << videoNmeber 
          << " visto pelo usuário: ";
     
     getline(cin, videoIdentification);

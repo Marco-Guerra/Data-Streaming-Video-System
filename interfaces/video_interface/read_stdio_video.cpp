@@ -237,20 +237,23 @@ int readStdioVideoNumberOfGenres() {
 */
 GenresStructure readStdioVideoGenres() {
 
+	cin.clear();
+	cin.ignore(numeric_limits<streamsize>::max(),'\n');
+
 	GenresStructure genres;
 	
 	genres.numberOfGenre = readStdioVideoNumberOfGenres();
 	
 	for (int i = 0; i < genres.numberOfGenre; i++) {
 
-		cin.clear();
-	    cin.ignore(numeric_limits<streamsize>::max(),'\n');
 
 		cout << endl << endl;
 	
 		cout << "      Genero " << i + 1 << ": ";
 	
 		cin >> genres.genres[i];
+		cin.clear();
+	    cin.ignore(numeric_limits<streamsize>::max(),'\n');
 	}
 
 	cout << endl

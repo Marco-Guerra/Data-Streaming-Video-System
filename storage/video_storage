@@ -1,93 +1,92 @@
 {
-identification = 342342342342;
-kindOfVideo = 2342342;
-name = Nome do video;
-directorName = Nome do director;
-duration = 1:30:15;
-numberOfSeasons = 12;
+identification = ThuOct151411512020;
+kindOfVideo = filme;
+name = O poderoso chefao;
+directorName = Franccis Ford;
+duration = 2:15:0;
+numberOfSeasons = 0;
+releaseYear = 1972;
+genres = {
+genero drama,
+genero crime,
+}
+}
+{
+identification = ThuOct151415042020;
+kindOfVideo = filme;
+name = De volta para o futuro;
+directorName = Robert Zemeckis;
+duration = 5:41:0;
+numberOfSeasons = 3;
+releaseYear = 1985;
+genres = {
+genero ficcao,
+}
+}
+{
+identification = ThuOct151420282020;
+kindOfVideo = filme;
+name = Cidade de Deus;
+directorName = Fernando Meirelles;
+duration = 1:30:0;
+numberOfSeasons = 0;
+releaseYear = 2002;
+genres = {
+genero drama,
+genero acao,
+}
+}
+{
+identification = ThuOct151422362020;
+kindOfVideo = filme;
+name = King Kong;
+directorName = Merian Cooper;
+duration = 1:30:0;
+numberOfSeasons = 0;
+releaseYear = 1933;
+genres = {
+genero aventura,
+genero suspense,
+genero fantasia,
+genero terror,
+}
+}
+{
+identification = ThuOct151424152020;
+kindOfVideo = filme;
+name = O sacrificio;
+directorName = Andray Tarkovsky;
+duration = 2:29:12;
+numberOfSeasons = 0;
+releaseYear = 1986;
+genres = {
+genero drama,
+}
+}
+{
+identification = ThuOct151428282020;
+kindOfVideo = serie;
+name = Kobra Kay;
+directorName = Jon Hurwtz;
+duration = 10:11:32;
+numberOfSeasons = 2;
+releaseYear = 2018;
+genres = {
+genero comedia-dramatica,
+genero artes,
+genero acao,
+}
+}
+{
+identification = ThuOct151640122020;
+kindOfVideo = filme;
+name = O senhor dos aneis;
+directorName = Peter Jackson;
+duration = 20:37:23;
+numberOfSeasons = 0;
 releaseYear = 2001;
 genres = {
-genero 1,
-genero 2,
-genero 3,
-genero 23,
-genero 234,
-genero 23,
-}
-}
-{
-identification = WedOct142253332020;
-kindOfVideo = 412342;
-name = 23423;
-directorName = 23423;
-duration = 2234:23:234;
-numberOfSeasons = 23;
-releaseYear = 23;
-genres = {
-genero 234,
-genero 23423,
-genero 23423,
-genero 234234,
-genero 324234,
-}
-}
-{
-identification = 1234567890;
-kindOfVideo = Filme de açao;
-name = Guerra Ultima Brutal de todo Mundo pelo Fim;
-directorName = Diretor Famoso;
-duration = 2:28:45;
-numberOfSeasons = 1;
-releaseYear = 2025;
-genres = {
-genero Para,
-genero todo,
-genero mundo,
-}
-}
-{
-identification = 1234567890;
-kindOfVideo = filme;
-name = Joao e Maria;
-directorName = aldskfjnasdlf;
-duration = 1:1:1;
-numberOfSeasons = 1;
-releaseYear = 1;
-genres = {
-genero cleivo,
-}
-}
-{
-identification = WedOct141923592020;
-kindOfVideo = 234234;
-name = 23423;
-directorName = 3242;
-duration = 23:23:23;
-numberOfSeasons = 4;
-releaseYear = 2424;
-genres = {
-genero 23424,
-genero 23423,
-genero 234,
-genero 234,
-genero 34234,
-}
-}
-{
-identification = WedOct141942052020;
-kindOfVideo = 234234;
-name = 4234;
-directorName = 234;
-duration = 2234:234:4234;
-numberOfSeasons = 2;
-releaseYear = 2344;
-genres = {
-genero 23423,
-genero 234,
-genero 234,
-genero 234,
-genero 23,
-genero 42342,
-genero 2342,
+genero fantasia,
+genero aventura,
 }
 }
